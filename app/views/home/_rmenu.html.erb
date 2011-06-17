@@ -1,0 +1,35 @@
+<div id="right">
+	<!-- about me begins -->
+ <h2>About Me</h2>
+ <div class="right_bg">
+     <div class="right_grad">
+         <div class="categories">
+           <img src="<%= gravatar_url_for("gaoshengyang2000@163.com",:size => 100)%>" title="kimi" alt="img" style="float: left; padding: 10px;"/>
+            <p><%=raw aboutme%></p>  
+         </div>
+     </div>
+ </div>
+ <div class="right_bot"></div>
+ <!-- about me end -->
+
+ <h2>Tags Cloud</h2>
+ <div class="right_bg">
+     <div class="right_grad">
+         <%=raw cloud_tag(tag_link_hash,height="230",width="280")%>
+     </div>
+ </div>
+ <div class="right_bot"></div>
+ 
+ <h2>Recent Posts</h2>
+ <div class="right_bg">
+     <div class="right_grad">
+         <div class="recent">
+             <ul>
+                 <%= render :partial => "home/post",:collection => posts%>
+
+             </ul>
+         </div>
+     </div>
+ </div>
+ <div class="right_bot"></div>
+</div>

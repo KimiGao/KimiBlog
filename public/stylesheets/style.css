@@ -1,0 +1,569 @@
+/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+a{
+    font-family: Georgia, sans-serif;
+    font-size: 12px;
+    font-weight:bold;
+    color: #06639e;
+    text-decoration:underline;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #000000;
+}
+
+*
+{
+    border: 0;
+    margin: 0;
+}
+img{
+	border:none;
+}
+
+
+.demo a{ float:left; padding:0; margin:5px 0px 15px 30px!important;display:block; border:3px solid #efefef;}
+.demo a:hover{ border:3px solid #fff}
+.demo a img{ float:left}
+
+body
+{
+    font: 12px Georgia, sans-serif;
+    color: #000000;
+    line-height: 20px;
+    background: #7dbfd7 url(/images/bg.jpg);
+    background-repeat:repeat-x;
+    background-position: top;
+}
+
+#mainbg{
+    width: 1016px;
+    margin: 0 auto;
+}
+
+#main{
+    margin: 0 auto;
+    width: 1016px;
+    padding-top: 10px;
+}
+
+#header{
+    background: url(/images/header.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+}
+
+#logo{
+    width: 1016px;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 50px;
+    height: 100px;
+}
+
+#logo a {
+    font-family: Georgia, sans-serif;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 26px;
+    color:#fff;
+    text-decoration:none;
+    text-shadow:1px 1px 2px #000;
+    font-weight: normal;
+    padding-left: 20px;
+}
+
+#logo H2 a{
+    font-size: 20px;
+}
+
+#buttons{
+    width: 1016px;
+    height: 57px;
+    margin: 0 auto;
+    padding-top: 0px;
+    background: url(/images/menubg.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+#buttons ul {
+    padding-left: 0px;
+}
+
+#buttons li {
+    display: inline;
+}
+
+#buttons a {
+    font-size: 16px;
+    color:#fff;
+    text-decoration:none;
+    text-shadow:1px 1px 2px #000;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    float: left;
+    width: 20%;
+    height: 37px;
+    padding-top: 19px;
+    margin-top: 1px;
+}
+
+#buttons a:hover{
+   background: url(/images/menu_h.png);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+#home  .home{
+   background: url(/images/menu_h.png);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+#blogs .blogs{
+   background: url(/images/menu_h.png);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+#galleries  .galleries{
+   background: url(/images/menu_h.png);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+#about .about{
+   background: url(/images/menu_h.png);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+#messages .messages{
+   background: url(/images/menu_h.png);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+#content{
+
+}
+
+#left{
+    width:249px;
+    padding-left: 1px;
+    float: left;
+}
+
+#left h2 {
+    font-weight:normal;
+    color: #ffffff;
+    font-size: 16px;
+    text-align:center;
+    height: 27px;
+    padding-top: 10px;
+    background: url(/images/title_left.png);
+    background-repeat:no-repeat;
+    background-position:top left;
+}
+
+#left .company{
+    padding-top: 10px;
+}
+
+.numleft{
+    background: url(/images/numbg.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    float:left;
+    width: 37px;
+    min-height: 37px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin: 0px 8px 0px 8px;
+}
+
+.numleft p{
+    padding-top: 10px;
+}
+
+.newsright{
+    padding-left: 53px;
+    padding-right: 10px;
+}
+
+#left .read a{
+    color: #06639e;
+    font-weight:normal;
+    font-style: italic;
+    font-size: 12px;
+    text-decoration:none;
+    border-bottom: 1px dotted #06639e;
+    margin-right: 5px;
+}
+
+.left_grad{
+    background: url(/images/left_grad.png) no-repeat;
+    background-position: top left;
+    min-height: 220px;
+}
+
+.left_bg{
+    background: url(/images/left_bg.png) repeat-y;
+    background-position:left;
+}
+
+.left_bot{
+    background: url(/images/left_bot.png) repeat-y;
+    background-position:left top;
+    height: 5px;
+    margin-bottom: 10px;
+}
+
+#center{
+    width: 696px;
+    padding-left: 0px;
+    float: left;
+}
+
+#center p{
+    padding-left:0px;
+    padding-right:0px;
+    padding-bottom: 10px;
+}
+
+#center .tag h2{
+    font-family: Georgia, sans-serif;
+    font-size: 15px;
+    font-weight:bold;
+    color: #000000;
+}
+
+.text{
+    padding: 10px;
+    background: #ffffff url(/images/text_bg.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    min-height: 64px;
+}
+
+
+.center_grad{
+    background: url(/images/center_grad.png) no-repeat;
+    background-position: top left;
+    min-height: 220px;
+}
+
+.center_bg{
+    background: url(/images/center_bg.png) repeat-y;
+    background-position:left;
+}
+
+.center_bot{
+    background: url(/images/center_bot.png) repeat-y;
+    background-position:left top;
+    height: 5px;
+    margin-bottom: 10px;
+}
+
+#center H1{
+    height: 49px;
+    width: 696px;
+    padding-top: 10px;
+    padding-left: 0px;
+    background: url(/images/title_center.png);
+    background-repeat:no-repeat;
+    background-position: top;
+}
+
+#center a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#center a:hover{
+    color:#eeeeee;
+    text-decoration:none; 
+}
+
+#center H1 a{
+    color:#000;
+    text-decoration:none;
+    text-shadow:1px 1px 2px #666666;
+    font-size: 20px;
+	 padding-left: 10px;
+	 padding-top: 5px;
+}
+
+#center H1 a:hover{
+    color:#06639e;
+    text-decoration:none;
+}
+
+
+#center .read{
+    height: 26px;
+    text-align: right;
+    padding-bottom:5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    font-style: italic;
+    font-size: 12px;
+    background: url(/images/read.png);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#center .read a{
+    color: #ffffff;
+    font-weight:normal;
+    padding-right: 15px;
+    text-decoration:none;
+}
+#date {
+    color: #0000ff;
+    padding-right: 470px;
+    display: inline;
+}
+
+#message{
+    display: none
+}
+.message{
+    padding: 10px;
+    min-height: 50px;
+}
+
+.message_bg{
+    text-align: right;
+    padding-bottom:0px;
+    padding-right: 0px;
+}
+
+.message_end{
+    padding-bottom:10px;
+    padding-right: 0px;
+}
+
+.message_title a{
+    padding-bottom:10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+    color: #0000ee;
+
+    font-weight:normal;
+    font-style: blod;
+    font-size: 15px;
+    text-decoration:none;
+}
+
+
+.message_text {
+	 padding-left: 50px;	
+		
+}
+
+#center .message_bg{
+    height: 1px;
+    padding-top: 0px;
+    background: url(/images/message_bg.png);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.read a:hover{
+    text-decoration:underline;
+}
+
+#right{
+    width:298px;
+    padding-right: 1px;
+    float:right;
+}
+
+#right h2 {
+    font-weight:normal;
+    color:#fff;
+    text-decoration:none;
+    text-shadow:1px 1px 2px #000;
+    font-size: 16px;
+    text-align:center;
+    height: 27px;
+    padding-top: 10px;
+    background: url(/images/title_right.png);
+    background-repeat:no-repeat;
+    background-position:top left;
+}
+
+.right_grad{
+    background: url(/images/right_grad.png) no-repeat;
+    background-position: top left;
+    min-height: 206px;
+}
+
+.right_bg{
+    background: url(/images/right_bg.png) repeat-y;
+    background-position:left;
+}
+
+.right_bot{
+    background: url(/images/right_bot.png) repeat-y;
+    background-position:left top;
+    height: 4px;
+    margin-bottom: 10px;
+}
+
+
+
+.categories{
+	 padding-left: 5px;
+    padding-right: 10px;
+}
+
+.categories a{
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+}
+
+.categories ul{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.categories ul li{
+    list-style: none;
+    padding: 3px 5px 3px 5px;
+    border-bottom: 1px dotted #979797;
+}
+
+.categories p{
+    font-family: Georgia, sans-serif;
+    font-size: 13px;
+    color: #000000;
+}
+
+.categories p a{
+    font-family: Georgia, sans-serif;
+    font-size: 13px;
+    color: #06639e;
+}
+.categories p a:hover{
+    font-family: Georgia, sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.recent a{
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+}
+
+.recent ul{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.recent ul li{
+    list-style: none;
+    padding: 3px 5px 3px 13px;
+    background: url(/images/ls1.png);
+    background-repeat: no-repeat;
+    background-position: 0px 11px;
+}
+
+#footer
+{
+    height: 40px;
+    font-size: 10px;
+    color: #ffffff;
+    padding-top: 10px;
+    text-align: center;
+    clear:both;
+    background: url(/images/footer.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-top: 1px;
+    padding-bottom: 5px;
+}
+
+#footer a{
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.padding{
+    padding: 10px;
+    color:#FF0000;
+    font-weight: bold;
+}
+
+.form_settings{ 
+	 padding-left: 60px;
+	 margin: 15px 0 0 0;
+}
+
+.form_settings p{ 
+	 padding: 0 0 4px 0;
+}
+
+.form_settings span{
+	 float: left; 
+  	 width: 100px; 
+  	 text-align: left;
+    font-weight:normal;
+    color: #333333;
+    text-decoration:none;
+    font-size: 16px;
+}
+  
+.form_settings input, .form_settings textarea{ 
+		padding: 5px; 
+	  width: 399px; 
+	  font: 100% arial; 
+	  border: 1px solid #aaaaee; 
+	  background: #FFF; 
+	  color: #47433F;
+}
+  
+.form_settings .submit{ 
+		font: 100% Georgia; 
+	  border: 1px solid; 
+	  width: 99px; 
+	  height: 33px;
+	  padding-right: 10px;
+	  cursor: pointer; 
+	  background: #303030; 
+	  color: #FFF;
+	  margin: 0 0 0 312px; 
+	  padding: 2px 0 3px 0;
+}
+
+.form_settings select{ 
+		font: 100% Georgia; 
+	  width: 299px;
+}
+
+.form_settings select{ 
+		width: 310px;
+}
+
+.form_settings .checkbox{ 
+		margin: 4px 0; 
+	  padding: 0; 
+	  width: 14px;
+	  border: 0;
+	  background: none;
+}
+

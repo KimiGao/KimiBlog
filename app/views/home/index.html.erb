@@ -1,0 +1,7 @@
+<div id="center">                     	
+  <% if @blogs%>
+    <%= render(:partial => "blog",:collection => @blogs )%>
+    <%= will_paginate @blogs%>
+  <% end%>
+</div>
+<div style="clear: both"></div>

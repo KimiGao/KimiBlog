@@ -1,0 +1,10 @@
+<div id="center">
+  <% if @tag.to_s!=""%>
+    <div class="tag">
+      <h2>标签>><%= @tag%> </h2>
+    </div>
+  <% end%>
+  <%= render(:partial => "blog",:collection => @blogs )%>
+  <%= will_paginate @blogs%>
+</div>
+<div style="clear: both"></div>

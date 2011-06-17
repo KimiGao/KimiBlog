@@ -1,0 +1,10 @@
+<div class="message">
+  <div style="float: left;padding-left: 0px"><%= link_to_website(image_tag(gravatar_url_for(message.email,:size => 50)),message.url)%></div>
+    <div class="message_title">
+      <%= link_to_website(message.name,message.url)%><span style="float: right;padding-right:2px"><%= format_time(message.created_at)%></span>
+    </div>
+    <div class="message_text">
+      <%= message.content%> 
+    </div>
+</div>
+<div class="message_bg"></div>
