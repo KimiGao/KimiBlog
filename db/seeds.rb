@@ -7,3 +7,4 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 Admin.create(:user_name => 'admin',:password => '123')
+Aboutme.create(:content => '个人简介')
