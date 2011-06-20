@@ -8,6 +8,7 @@ KimiBlog::Application.routes.draw do
 
   resources :messages do
     collection do
+      get 'messages_list'
       post 'comment'
     end
   end
