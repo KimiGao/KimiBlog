@@ -1,0 +1,11 @@
+<h1>Editing aboutme</h1>
+<%= form_for(@aboutme,:url => { :action => "update"}) do |f| %>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.cktext_area :content, :width => 700,:height => 400, :swf_params=>{:assetable_type=>'User', :assetable_id=>1} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
