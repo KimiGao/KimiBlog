@@ -8174,3 +8174,16 @@ Rendered home/_post.html.erb (9.2ms)
 Rendered home/_rmenu.html.erb (22.0ms)
 Rendered messages/index.html.erb within layouts/messages (25.8ms)
 Completed 200 OK in 45ms (Views: 28.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at Sat Jun 25 17:22:49 +0800 2011
+  Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mBlog Load (0.2ms)[0m  SELECT id,title FROM `blogs` ORDER BY updated_at DESC LIMIT 10
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT `blogs`.* FROM `blogs` WHERE `blogs`.`id` = 4 LIMIT 1[0m
+Rendered home/_header.html.erb (0.2ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT `tags`.* FROM `tags`
+Rendered home/_post.html.erb (0.6ms)
+Rendered home/_rmenu.html.erb (13.0ms)
+Rendered blogs/show.html.erb within layouts/blogs (25.8ms)
+Completed 200 OK in 47ms (Views: 28.7ms | ActiveRecord: 0.6ms)
