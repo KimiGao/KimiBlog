@@ -1,7 +1,7 @@
 <div id="center">                     	
   <% if @blogs%>
     <%= render(:partial => "blog",:collection => @blogs )%>
-    <%= will_paginate @blogs%>
+    <%= will_paginate @blogs,:previous_label => '上一页',:next_label => '下一页'%>
   <% end%>
 </div>
 <div style="clear: both"></div>
