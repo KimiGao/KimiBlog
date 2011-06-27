@@ -1,22 +1,22 @@
 <div id="center">
-    <div id="disqus_thread"></div>
-		<script type="text/javascript">
-		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-		    var disqus_shortname = 'kimigao'; // required: replace example with your forum shortname
-		
-		    // The following are highly recommended additional parameters. Remove the slashes in front to use.
-          //var disqus_developer = 1;
-          var disqus_identifier = 'messages';
-          var disqus_url = 'http://www.kimigao.me/messages';
-		
-		    /* * * DON'T EDIT BELOW THIS LINE * * */
-		    (function() {
-		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		    })();
-		</script>
+   	<h1><a href="#center">评论</a></h1>
+      <div class="text">
+        <%= show_message @messages%>   
+       </div>
+       <div class="message_end"></div>
 
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+       <h1><a href="#center">发表评论</a></h1>
+       <div class="text"><div id="comment"></div>
+         <%= form_for(:message,:url => comment_messages_path,:html => {:id => "message_form"}) do |form|%>
+           <div class="form_settings">
+             <p><span>Name(*)</span><%= form.text_field :name,:class => "contact"%></p>
+             <p><span>Email(*)</span><%= form.text_field :email,:class => "contact"%></p>
+             <p><span>Blog</span><%= form.text_field :url,:class => "contact"%></p>
+             <p><span>Message(*)</span><%= form.text_area :content,:class => "contact textarea",:rows => 10%>
+             <div id="error" style="display:none;color:red;padding-left:100px"></div>
+             <p style="padding-top: 10px"><span>&nbsp;</span><%= form.submit "submit",:class => "submit"%>
+           </div>
+         <% end%>
+        </div>
 			        
 </div><div style="clear: both"></div>
