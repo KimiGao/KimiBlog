@@ -1,15 +1,21 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-
+  def user_authorize
+    unless session[:admin_id]
+      redirect_to('/admin/login')
+    end
+  end
+  
   def get_recent_posts
-    @posts = Blog.all(:select => "id,title",:limit => 10,:order => "updated_at DESC")
+    @posts = Blog.order('created_at DESC').limit(10)
   end
 
-  def validate_user
-    unless Admin.find_by_id session[:admin_id]
-      flash[:notice] = "请登录"
-      redirect_to "/admins/login"
-    end
+  def get_result info
+    "{success:true,info:\"#{info}\"}"
+  end
+
+  def get_json count,json
+    "{totalProperty:#{count},root:#{json}}"
   end
 end

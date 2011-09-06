@@ -1,0 +1,63 @@
+/**********************************************************************
+ * images definition
+ **********************************************************************/
+.cost { background-image: url(/images/icons/cost.png) !important;}
+.email { background-image: url(/images/icons/email.png) !important;}
+.pen { background-image: url(/images/icons/pen.png) !important;}
+.lightbulb { background-image: url(/images/icons/lightbulb.png) !important;}
+.searchNew { background-image: url(/images/icons/search.png) !important;}
+.accordion {background-image:url(/images/window/accordian.gif) !important;}
+.addItem { background-image:url(/images/icons/add.gif) !important;}
+.bogus { background-image: url( /images/icons/bogus.png ) !important;}
+.calendar { background-image: url( /images/icons/calendar.png ) !important;}
+.careConn_icon{background-image:url(/images/icons/chart_organisation.png) !important;}ext
+.comments{background-image:url(/images/icons/comments.png) !important;}
+.contactUs {background-image:url(/images/icons/telephone.png) !important;}
+.demo { background-image:url(/images/icons/demo.png) !important;}
+.document{background-image:url(/images/icons/page.png) !important;}
+.donate{background-image:url(/images/icons/money_dollar.png) !important;}
+.download{background-image:url(/images/icons/download.png) !important;}
+.editItem { background-image:url(/images/icons/edit.png) !important;}
+.feedback{background-image:url(/images/icons/feed.png) !important;}
+.feya_icon {background-image:url(/images/icons/page_white_flash.png) !important;}
+.group {background-image:url(/images/icons/group.png) !important;}
+.displayconf {background-image:url(/images/icons/wrench_orange.png) !important;}
+.paintbrush {background-image:url(/images/icons/paintbrush.png) !important;}
+.project {background-image:url(/images/icons/book_open.png) !important;}
+.remove { background-image:url(/images/icons/delete.gif) !important;}
+.icon-save { background-image:url(/images/icons/save.gif) !important;}
+.record { background-image:url(/images/icons/record.gif) !important;}
+.recorder { background-image:url(/images/icons/recorder.gif) !important;}
+.script {background-image:url(/images/icons/script.png) !important;}
+.server{background-image:url(/images/icons/server.png) !important;}
+.sourceCode {background-image:url(/images/icons/page_white_c.png) !important;}
+.start { background-image: url( /images/taskbar/black/startbutton-icon.gif ) !important;}
+.tabs {background-image:url(/images/icons/table_multiple.png) !important;}
+.technology {background-image:url(/images/icons/wrench.png) !important;}
+.tutorials {background-image:url(/images/icons/page_edit.png) !important;}
+.customers { background-image:url(/images/icons/customers.gif) !important;}
+.exit { background-image:url(/images/icons/exit.gif) !important;}
+.heart { background-image:url(/images/icons/heart.gif) !important;}
+.print { background-image:url(/images/icons/print.gif) !important;}
+.finding { background-image:url(/images/icons/find.png) !important;}
+.yes { background-image:url(/images/icons/yes.gif) !important;}
+.no { background-image:url(/images/icons/no.gif) !important;}
+.gold { background-image:url(/images/icons/gold.gif) !important;}
+.mobil { background-image:url(/images/icons/mobil.gif) !important;}
+.phone { background-image:url(/images/icons/phone.gif) !important;}
+.album { background-image:url(/images/icons/album.gif) !important;}
+.blue_triangle { background-image:url(/images/icons/blue_triangle.gif) !important;}
+.blue_point { background-image:url(/images/icons/blue_point.gif) !important;}
+.user { background-image:url(/images/icons/user.gif) !important;}
+.refresh { background-image:url(/images/icons/refresh.gif) !important;}
+.search { background-image:url(/images/icons/search.png) !important;}
+.maxItem { background-image:url(/images/icons/max.png) !important;}
+.viewItem { background-image:url(/images/icons/form.png) !important;}
+.searchItem { background-image:url(/images/icons/search.png) !important;}
+.chart { background-image:url(/images/icons/price.png) !important;}
+.undo { background-image:url(/images/icons/undo.png) !important;}
+.upload { background-image:url(/images/icons/upload.png) !important;}
+.selectItem{background-image:url(/images/icons/album.gif) !important;}
+.exit{background-image:url(/images/icons/exit.gif) !important;}
+.clear{background-image:url(/images/icons/clear.png) !important;}
+.imageUploadItem{background: url("/images/icons/application_form_image_add.png") no-repeat left center !important}

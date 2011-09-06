@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+
+    <title>留言管理</title>
+    <script type="text/javascript">
+      var editMessageWin;
+      var newMessageWin;
+      var messageId;
+      var blogId = null;
+      Ext.onReady(function(){
+
+        var messageDS = new Ext.data.Store({
+          paramNames: {
+            start: "start",
+            limit: "limit"
+          },
+          baseParams: {
+            start: 0,
+            limit: pageSize
+          },
+          proxy: new Ext.data.HttpProxy({
+            url: '/admin/messages/get_messages'
+          }),
+          reader: new Ext.data.JsonReader({
+            totalProperty: 'totalProperty',
+            root: 'root'
+          }, [
+            {name: 'id'},
+            {name: 'name'},
+            {name: 'url'},
+            {name: 'email'},
+            {name: 'content'},
+            {name: 'created_at'}
+          ])
+        });
+        var messageSM = new Ext.grid.CheckboxSelectionModel();
+        var messageCM = new Ext.grid.ColumnModel([
+          new Ext.grid.RowNumberer(),messageSM,
+          {header: '姓名',dataIndex: 'name',width:100},
+          {header: '网址',dataIndex: 'url',width:100},
+          {header: 'email',dataIndex: 'email',width:100},
+          {header: '留言',dataIndex: 'content',width:500},
+          {header: '留言时间',dataIndex: 'created_at',width:120,renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')}
+        ]);
+
+        var addMessageButton = new Ext.Button({
+          text: '添加留言',
+          width: 50,
+          iconCls: 'addItem',
+          handler: function(){
+            newMessageWin = new Ext.Window({
+              width: 617,
+              height: 470,
+              closeAction: 'destroy',
+              modal: true,
+              title: '添加留言',
+              autoLoad: {
+                url: '/admin/messages/new',
+                scripts: true
+              }
+            });
+            newMessageWin.on('destroy',function(){
+              KE.remove('content');
+              messageDS.reload();
+            });
+            newMessageWin.resizable = false;
+            newMessageWin.show();
+          }
+        })
+
+        var editMessageButton = new Ext.Button({
+          text: '编辑留言',
+          width: 50,
+          iconCls: 'editItem',
+          handler: function(){
+            var records = messageGrid.getSelectionModel().getSelections();
+            if(records.length == 0){
+              Ext.MessageBox.alert('提示信息','请选择要编辑的数据');
+            }else{
+              messageId = records[0].get('id');
+              editMessageWin = new Ext.Window({
+                title: '编辑留言',
+                width: 617,
+                height: 470,
+                closeAction: 'destroy',
+                modal: true,
+                autoLoad: {
+                  url: '/admin/messages/'+messageId,
+                  scripts: true
+                }
+              });
+              editMessageWin.on('destroy',function(){
+                KE.remove('content');
+                messageDS.reload();
+              })
+              editMessageWin.resizable = false;
+              editMessageWin.show()
+            }
+          }
+        })
+
+        var delMessageButton = new Ext.Button({
+          text: '删除留言',
+          width: 50,
+          iconCls: 'remove',
+          handler: function(){
+            if(messageGrid.getSelectionModel().hasSelection()){
+              var rs = messageGrid.getSelectionModel().getSelections();
+              var ids = [];
+              var name = '';
+              for(var i = 0 ; i < rs.length ; i++){
+                var data = rs[i].data
+                ids.push(data.id);
+                name += data.name + '<br />'
+              }
+              var keys = Ext.util.JSON.encode(ids)
+              Ext.MessageBox.confirm('警告','确定删除留言?<br /><font color="red">' + name + '</font>',function(button){
+                if(button == 'yes'){
+                  Ext.Ajax.request({
+                    url: 'admin/messages/destroy_list',
+                    method: 'post',
+                    success: function(response,opts){
+                      var data = Ext.util.JSON.decode(response.responseText);
+                      if(data.success&&data.info == 'success'){
+                        messageDS.reload();
+                      }else{
+                        Ext.Msg.alert('提示',data.info);
+                      }
+
+                    },
+                    params:{'id':keys}
+                  })
+                }
+              })
+            }else{
+              Ext.MessageBox.alert('提示','请选择要删除的留言');
+            }
+          }
+        })
+        var messageGrid =  new Ext.grid.GridPanel({
+          ds: messageDS,
+          cm: messageCM,
+          sm: messageSM,
+          width: screenWidth-425,
+          height: screenHeight-338,
+          iconCls: 'icon-grid',
+          tbar:['-',addMessageButton,editMessageButton,delMessageButton],
+          bbar: new Ext.PagingToolbar({
+            pageSize: pageSize,
+            store: messageDS,
+            displayInfo: true,
+            displayMsg: "显示第 {0} 条到 {1} 条记录，一共 {2} 条",
+            emptyMsg: "没有记录"
+          })
+        });
+        messageGrid.render('message_list');
+        messageDS.load();
+
+      })
+
+    </script>
+  </head>
+
+  <body>
+    <div id="message_list"></div>
+  </body>
+</html>

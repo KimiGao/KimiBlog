@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>添加博客</title>
+    <script>
+      Ext.onReady(function(){
+        var title = new Ext.form.TextField({
+          fieldLabel: '博客标题',
+          name:'blog[title]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var tag = new Ext.form.TextField({
+          fieldLabel: '标签（多个标签用“，”分隔）',
+          name:'blog[tag_name]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var content = new Ext.form.TextArea({
+          fieldLabel: '博客内容',
+          name: 'blog[content]',
+          id: 'content',
+          height: '360px',
+          allowBlank: false,
+          anchor: '100%',
+          listeners: {
+            render:function(){
+              KE.show({
+                id:'content',
+                resizeMode : 0,
+                allowFileManager : true,
+                imageUploadJson : '/kindeditor/upload',
+                fileManagerJson : '/kindeditor/filemanager'
+              });
+              setTimeout("KE.create('content');", 10);
+            }
+          }
+        })
+
+        var okButton = new Ext.Button({
+          text: '确定',
+          handler: function(){
+            KE.sync('content');
+            if(newBlogForm.form.isValid()){
+              okButton.setDisabled(true);
+              newBlogForm.form.submit({
+                method: 'post',
+                waitMsg: '正在保存信息...',
+                success: function(result,response){
+                  if(response.result.info == 'success'){
+                    newBlogWin.destroy();
+                  }else{
+                    Ext.Msg.alert('提示',response.result.info);
+                    okButton.setDisabled(false)
+                  }
+                },
+                failure: function(result,response){
+                  Ext.Msg.alert('提示',result.responseText)
+                  okButton.setDisabled(false)
+                }
+              })
+            }else{
+              Ext.Msg.alert('提示','请填入必填项')
+            }
+          }
+        })
+
+        var cancelButton = new Ext.Button({
+          text: '取消',
+          handler: function(){
+            newBlogWin.destroy();
+          }
+        })
+
+        var newBlogForm = new Ext.form.FormPanel({
+          labelAlign: 'top',
+          url:'/admin/blogs',
+          buttonAlign:'center',
+          bodyStyle: 'padding:5px',
+          labelWidth:100,
+          waitMsgTarget: true,
+          frame: true,
+          items:[{
+              layout:'column',
+              items:[{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [title]
+                },{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [tag]
+                }]
+            },content],
+          buttons:[okButton,cancelButton]
+        });
+        newBlogForm.render('new_blog_form');
+      })
+    </script>
+  </head>
+  <body>
+    <div id="new_blog_form"></div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>编辑管理员</title>
+    <script>
+      Ext.onReady(function(){
+        adminId = <%= params[:id] %>;
+        var name = new Ext.form.TextField({
+          fieldLabel: '用户名',
+          name:'admin[user_name]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var password = new Ext.form.TextField({
+          fieldLabel: '密码',
+          name:'admin[password]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var okButton = new Ext.Button({
+          text: '确定',
+          handler: function(){
+            if(editAdminForm.form.isValid()){
+              okButton.setDisabled(true);
+              editAdminForm.form.submit({
+                method: 'put',
+                waitMsg: '正在保存信息...',
+                success: function(result,response){
+                  if(response.result.info == 'success'){
+                    editAdminWin.destroy();
+                  }else{
+                    Ext.Msg.alert('提示',response.result.info);
+                    okButton.setDisabled(false)
+                  }
+                },
+                failure: function(result,response){
+                  Ext.Msg.alert('提示',result.responseText)
+                  okButton.setDisabled(false)
+                }
+              })
+            }else{
+              Ext.Msg.alert('提示','请填入必填项')
+            }
+          }
+        })
+
+        var cancelButton = new Ext.Button({
+          text: '取消',
+          handler: function(){
+            editAdminWin.destroy();
+          }
+        })
+
+        var editAdminForm = new Ext.form.FormPanel({
+          labelAlign: 'top',
+          url:'/admin/admins/' + adminId ,
+          buttonAlign:'center',
+          bodyStyle: 'padding:5px',
+          labelWidth:100,
+          waitMsgTarget: true,
+          frame: true,
+          reader:new Ext.data.JsonReader({
+          },[
+            {name:'id'},
+            {name:'admin[user_name]',mapping:'user_name'},
+            {name:'admin[password]',mapping:'password'}
+          ]
+        ),
+          items:[{
+              layout:'column',
+              items:[{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [name]
+                },{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [password]
+                }]
+            }],
+          buttons:[okButton,cancelButton]
+        });
+
+        editAdminForm.form.load({
+          url: '/admin/admins/' + adminId+'/edit',
+          method: 'get',
+          success: function(form, action){
+          },
+          failure: function(form, action){
+            Ext.MessageBox.alert('提示信息', '信息加载失败');
+          }
+        });
+
+        editAdminForm.render('edit_admin_form');
+      })
+    </script>
+  </head>
+  <body>
+    <div id="edit_admin_form"></div>
+  </body>
+</html>

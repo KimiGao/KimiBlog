@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+
+    <title>管理员管理</title>
+    <script type="text/javascript">
+      var editAdminWin;
+      var newAdminWin;
+      var adminId;
+      Ext.onReady(function(){
+
+        var adminDS = new Ext.data.Store({
+          paramNames: {
+            start: "start",
+            limit: "limit"
+          },
+          baseParams: {
+            start: 0,
+            limit: pageSize
+          },
+          proxy: new Ext.data.HttpProxy({
+            url: '/admin/admins/get_admins'
+          }),
+          reader: new Ext.data.JsonReader({
+            totalProperty: 'totalProperty',
+            root: 'root'
+          }, [
+            {name: 'id'},
+            {name: 'user_name'},
+            {name: 'password'},
+            {name: 'created_at'}
+          ])
+        });
+        var adminSM = new Ext.grid.CheckboxSelectionModel();
+        var adminCM = new Ext.grid.ColumnModel([
+          new Ext.grid.RowNumberer(),adminSM,
+          {header: '用户名',dataIndex: 'user_name',width:300},
+          {header: '密码',dataIndex: 'password',width:300},
+          {header: '创建时间',dataIndex: 'created_at',width:120,renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')}
+        ]);
+
+        var addAdminButton = new Ext.Button({
+          text: '添加管理员',
+          width: 50,
+          iconCls: 'addItem',
+          handler: function(){
+            newAdminWin = new Ext.Window({
+              width: 317,
+              height: 190,
+              closeAction: 'destroy',
+              modal: true,
+              title: '添加管理员',
+              autoLoad: {
+                url: '/admin/admins/new',
+                scripts: true
+              }
+            });
+            newAdminWin.on('destroy',function(){
+              adminDS.reload();
+            });
+            newAdminWin.resizable = false;
+            newAdminWin.show();
+          }
+        })
+
+        var editAdminButton = new Ext.Button({
+          text: '编辑管理员',
+          width: 50,
+          iconCls: 'editItem',
+          handler: function(){
+            var records = adminGrid.getSelectionModel().getSelections();
+            if(records.length == 0){
+              Ext.MessageBox.alert('提示信息','请选择要编辑的数据');
+            }else{
+              adminId = records[0].get('id');
+              editAdminWin = new Ext.Window({
+                title: '编辑管理员',
+                width: 317,
+                height: 190,
+                closeAction: 'destroy',
+                modal: true,
+                autoLoad: {
+                  url: '/admin/admins/'+adminId,
+                  scripts: true
+                }
+              });
+              editAdminWin.on('destroy',function(){
+                adminDS.reload();
+              })
+              editAdminWin.resizable = false;
+              editAdminWin.show()
+            }
+          }
+        })
+
+        var delAdminButton = new Ext.Button({
+          text: '删除管理员',
+          width: 50,
+          iconCls: 'remove',
+          handler: function(){
+            if(adminGrid.getSelectionModel().hasSelection()){
+              var rs = adminGrid.getSelectionModel().getSelections();
+              var ids = [];
+              var name = '';
+              for(var i = 0 ; i < rs.length ; i++){
+                var data = rs[i].data
+                ids.push(data.id);
+                name += data.user_name + '<br />'
+              }
+              var keys = Ext.util.JSON.encode(ids)
+              Ext.MessageBox.confirm('警告','确定删除管理员?<br /><font color="red">' + name + '</font>',function(button){
+                if(button == 'yes'){
+                  Ext.Ajax.request({
+                    url: 'admin/admins/destroy_list',
+                    method: 'post',
+                    success: function(response,opts){
+                      var data = Ext.util.JSON.decode(response.responseText);
+                      if(data.success&&data.info == 'success'){
+                        adminDS.reload();
+                      }else{
+                        Ext.Msg.alert('提示',data.info);
+                      }
+
+                    },
+                    params:{'id':keys}
+                  })
+                }
+              })
+            }else{
+              Ext.MessageBox.alert('提示','请选择要删除的管理员');
+            }
+          }
+        })
+        var adminGrid =  new Ext.grid.GridPanel({
+          ds: adminDS,
+          cm: adminCM,
+          sm: adminSM,
+          width: screenWidth-425,
+          height: screenHeight-338,
+          iconCls: 'icon-grid',
+          tbar:['-',addAdminButton,editAdminButton,delAdminButton],
+          bbar: new Ext.PagingToolbar({
+            pageSize: pageSize,
+            store: adminDS,
+            displayInfo: true,
+            displayMsg: "显示第 {0} 条到 {1} 条记录，一共 {2} 条",
+            emptyMsg: "没有记录"
+          })
+        });
+        adminGrid.render('admin_list');
+        adminDS.load();
+
+      })
+
+    </script>
+  </head>
+
+  <body>
+    <div id="admin_list"></div>
+  </body>
+</html>

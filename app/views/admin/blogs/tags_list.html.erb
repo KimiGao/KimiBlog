@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+
+    <title>标签管理</title>
+    <script type="text/javascript">
+      var editTagWin;
+      var newTagWin;
+      var tagId;
+      Ext.onReady(function(){
+
+        var tagDS = new Ext.data.Store({
+          paramNames: {
+            start: "start",
+            limit: "limit"
+          },
+          baseParams: {
+            start: 0,
+            limit: pageSize
+          },
+          proxy: new Ext.data.HttpProxy({
+            url: '/admin/blogs/get_tags'
+          }),
+          reader: new Ext.data.JsonReader({
+            totalProperty: 'totalProperty',
+            root: 'root'
+          }, [
+            {name: 'id'},
+            {name: 'tag_name'}
+          ])
+        });
+        var tagSM = new Ext.grid.CheckboxSelectionModel();
+        var tagCM = new Ext.grid.ColumnModel([
+          new Ext.grid.RowNumberer(),tagSM,
+          {header: '标签标题',dataIndex: 'tag_name',width:900}
+        ]);
+
+        var delTagButton = new Ext.Button({
+          text: '删除标签',
+          width: 50,
+          iconCls: 'remove',
+          handler: function(){
+            if(tagGrid.getSelectionModel().hasSelection()){
+              var rs = tagGrid.getSelectionModel().getSelections();
+              var ids = [];
+              var name = '';
+              for(var i = 0 ; i < rs.length ; i++){
+                var data = rs[i].data
+                ids.push(data.id);
+                name += data.tag_name + '<br />'
+              }
+              var keys = Ext.util.JSON.encode(ids)
+              Ext.MessageBox.confirm('警告','确定删除标签?<br /><font color="red">' + name + '</font>',function(button){
+                if(button == 'yes'){
+                  Ext.Ajax.request({
+                    url: '/admin/blogs/destroy_tags',
+                    method: 'post',
+                    success: function(response,opts){
+                      var data = Ext.util.JSON.decode(response.responseText);
+                      if(data.success&&data.info == 'success'){
+                        tagDS.reload();
+                      }else{
+                        Ext.Msg.alert('提示',data.info);
+                      }
+
+                    },
+                    params:{'id':keys}
+                  })
+                }
+              })
+            }else{
+              Ext.MessageBox.alert('提示','请选择要删除的标签');
+            }
+          }
+        })
+        var tagGrid =  new Ext.grid.GridPanel({
+          ds: tagDS,
+          cm: tagCM,
+          sm: tagSM,
+          width: screenWidth-425,
+          height: 338,
+          iconCls: 'icon-grid',
+          tbar:['-',delTagButton],
+          bbar: new Ext.PagingToolbar({
+            pageSize: pageSize,
+            store: tagDS,
+            displayInfo: true,
+            displayMsg: "显示第 {0} 条到 {1} 条记录，一共 {2} 条",
+            emptyMsg: "没有记录"
+          })
+        });
+        tagGrid.render('tag_list');
+        tagDS.load();
+      })
+
+    </script>
+  </head>
+
+  <body>
+    <div id="tag_list"></div>
+    <div id="message_list"></div>
+  </body>
+</html>

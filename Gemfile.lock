@@ -30,8 +30,8 @@ GEM
     activesupport (3.0.7)
     arel (2.0.9)
     builder (2.1.2)
-    ckeditor (3.5.0)
-      mime-types (>= 1.16)
+    carrierwave (0.5.7)
+      activesupport (~> 3.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -41,7 +41,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.2.6)
+    mysql (2.8.1-x86-mingw32)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -59,6 +59,8 @@ GEM
       activesupport (= 3.0.7)
       bundler (~> 1.0)
       railties (= 3.0.7)
+    rails_kindeditor (0.0.2)
+      carrierwave (~> 0.5.4)
     railties (3.0.7)
       actionpack (= 3.0.7)
       activesupport (= 3.0.7)
@@ -73,10 +75,12 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
-  ckeditor (= 3.5.0)
-  mysql2 (< 0.3)
+  carrierwave (~> 0.5.4)
+  mysql
   paperclip (= 2.3.8)
   rails (= 3.0.7)
+  rails_kindeditor (= 0.0.2)
   will_paginate (= 2.3.15)

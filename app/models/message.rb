@@ -10,7 +10,7 @@ class Message < ActiveRecord::Base
   validates_format_of :url,:with => /[a-zA-z]+:\/\/[^\s]*/,
     :message => "请输入正确的网址",:if => :url?
 
-  def self.find_messages_without_blog
-    find :all, :conditions => ["blog_id is null"],:order => "created_at DESC"
-  end
+  #get message board information
+  scope :board, where('blog_id is null').order('created_at')
+
 end

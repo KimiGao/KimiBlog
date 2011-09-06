@@ -4,10 +4,7 @@ class Blog < ActiveRecord::Base
 
   has_many :messages
 
-  validates_presence_of :title,
-    :message => "标题不能为空"
-  validates_presence_of :tag_name,
-    :message => "标签不能为空"
-  validates_presence_of :content,
-    :message => "内容不能为空"
+  validates :title,:presence => {:message => "标题不能为空"}
+  validates :tag_name,:presence => {:message => "标签不能为空"}
+  validates :content,:presence => {:message => "内容不能为空"}
 end
