@@ -1,6 +1,6 @@
 class Admin::AdminsController < ApplicationController
-  before_filter :validate_user,:except => :login
-  
+  before_filter :user_authorize
+
   def get_admins
     admins = Admin.all
     render :text => get_json(Admin.count,admins.to_json),:layout => false

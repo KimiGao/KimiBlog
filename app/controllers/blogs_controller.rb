@@ -1,9 +1,7 @@
 class BlogsController < ApplicationController
   before_filter :get_recent_posts
   
-  def blogs_list
-    @blogs = Blog.all
-  end
+  caches_page :index,:show
 
   def index
     @tag = params[:tag]

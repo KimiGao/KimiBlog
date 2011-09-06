@@ -1,14 +1,14 @@
 KimiBlog::Application.routes.draw do
   root :to => "home#index"
 
-  resources :messages,:path => :message do
+  resources :messages do
     collection do
       get 'messages_list'
       post 'comment'
     end
   end
 
-  resources :blogs,:path => :blog do
+  resources :blogs do
     collection do
       get 'blogs_list'
       post 'comment'
