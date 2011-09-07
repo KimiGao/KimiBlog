@@ -1,4 +1,5 @@
 class Admin::BlogsController < ApplicationController
+  before_filter :user_authorize
   
   def get_blogs
     blogs = Blog.order('created_at DESC').offset(params[:start].to_i).limit(params[:limit].to_i)

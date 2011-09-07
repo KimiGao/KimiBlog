@@ -8,21 +8,21 @@
 <meta content="高升洋的简历,高升洋的工作简历" name="description" />
 <meta content="高升洋的简历" name="author" />
 <title>简历-高升洋</title>
-<link href="/job/css/style.css" rel="stylesheet" type="text/css" />
+<link href="http://www.kimigao.me/job/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
 <div id="head">
-    <h1>高升洋的简历</h1>
+	<h1><%= @job.subject %>---<%= @job.company_name %></h1>
 </div>
 <div class="br">
 </div>
 <div id="body">
-	
+        <h1>高升洋的简历</h1>
 	<h3>关于我</h3>
 		<div id="about">
-			<img src="/job/me.jpg" alt="kimi" />
+			<img src="http://www.kimigao.me/job/me.jpg" alt="kimi" />
 			Person.new(<br/>&nbsp;&nbsp;&nbsp;&nbsp;
 			:name => '高升洋,Kimi',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
 			:detail => '1986年生，男，未婚',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -74,8 +74,8 @@
 			2009-09至2010-01&nbsp;&nbsp;&nbsp;&nbsp;中国海洋大学日常零星物资采购系统<br/>
 			<b>所用技术：</b>rails 2(升级为rails3)、extjs<br/>
 		</div>
-	
-	
+
+
 </div>
 <div class="br">
 </div>

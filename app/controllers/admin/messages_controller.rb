@@ -1,4 +1,6 @@
 class Admin::MessagesController < ApplicationController
+  before_filter :user_authorize
+  
   def get_messages
     messages = Message.board.offset(params[:start].to_i).limit(params[:limit].to_i)
     render :text => get_json(Message.count,messages.to_json),:layout => false

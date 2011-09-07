@@ -43,6 +43,12 @@ KimiBlog::Application.routes.draw do
         post 'destroy_list'
       end
     end
+    resources :job do
+      collection do
+        post 'get_jobs'
+        post 'destroy_list'
+      end
+    end
   end
 
   match ':controller(/:action(/:id(.:format)))'

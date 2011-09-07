@@ -1,20 +1,26 @@
-class Admin::AdminsController < ApplicationController
+class Admin::JobController < ApplicationController
   before_filter :user_authorize
-  
-  def get_admins
-    admins = Admin.all
-    render :text => get_json(Admin.count,admins.to_json),:layout => false
+
+  def get_jobs
+    jobs = Job.all
+    render :text => get_json(Job.count,jobs.to_json),:layout => false
   end
 
   def create
-    admin = Admin.new(params[:admin])
-    result = get_result(admin.save ? 'success' : admin.errors.to_s)
+    job = Job.new(params[:job])
+    if job.save
+      result = 'success'
+      JobMailer.job_email(job).deliver
+    else
+      result = job.errors.to_s
+    end
+    result = get_result(job.save ? 'success' : job.errors.to_s)
     render :text => result,:layout => false
   end
 
   def update
-    admin = Admin.find params[:id]
-    if admin.update_attributes(params[:admin])
+    job = Job.find params[:id]
+    if job.update_attributes(params[:job])
       result = 'success'
     else
       result = '更新出错，请重新操作'
@@ -24,16 +30,16 @@ class Admin::AdminsController < ApplicationController
 
   def edit
     begin
-      render :text => Admin.find(params[:id]).to_json,:layout => false
+      render :text => Job.find(params[:id]).to_json,:layout => false
     rescue ActiveRecord::RecordNotFound
-      logger.error '请求不存在的文章'
+      logger.error '请求不存在的job'
     end
   end
 
   def destroy_list
     begin
       ids = params[:id][1..params[:id].length-2].split(',')
-      Admin.destroy(ids)
+      Job.destroy(ids)
       info = 'success'
     rescue Exception => e
       logger.error e.to_s

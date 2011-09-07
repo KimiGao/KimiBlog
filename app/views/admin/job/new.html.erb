@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>添加Job</title>
+    <script>
+      Ext.onReady(function(){
+        var name = new Ext.form.TextField({
+          fieldLabel: '公司名称',
+          name:'job[company_name]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var subject = new Ext.form.TextField({
+          fieldLabel: '主题',
+          name:'job[subject]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var email = new Ext.form.TextField({
+          fieldLabel: 'email',
+          name:'job[email]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var okButton = new Ext.Button({
+          text: '确定',
+          handler: function(){
+            if(newJobForm.form.isValid()){
+              okButton.setDisabled(true);
+              newJobForm.form.submit({
+                method: 'post',
+                waitMsg: '正在保存信息...',
+                success: function(result,response){
+                  if(response.result.info == 'success'){
+                    newJobWin.destroy();
+                  }else{
+                    Ext.Msg.alert('提示',response.result.info);
+                    okButton.setDisabled(false)
+                  }
+                },
+                failure: function(result,response){
+                  Ext.Msg.alert('提示',result.responseText)
+                  okButton.setDisabled(false)
+                }
+              })
+            }else{
+              Ext.Msg.alert('提示','请填入必填项')
+            }
+          }
+        })
+
+        var cancelButton = new Ext.Button({
+          text: '取消',
+          handler: function(){
+            newJobWin.destroy();
+          }
+        })
+
+        var newJobForm = new Ext.form.FormPanel({
+          labelAlign: 'top',
+          url:'/admin/job',
+          buttonAlign:'center',
+          bodyStyle: 'padding:5px',
+          labelWidth:100,
+          waitMsgTarget: true,
+          frame: true,
+          items:[{
+              layout:'column',
+              items:[{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [subject]
+                },{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [name]
+                },{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [email]
+                }]
+            }],
+          buttons:[okButton,cancelButton]
+        });
+        newJobForm.render('new_job_form');
+      })
+    </script>
+  </head>
+  <body>
+    <div id="new_job_form"></div>
+  </body>
+</html>

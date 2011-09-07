@@ -14,7 +14,7 @@
 <body>
 
 <div id="head">
-    <h1>高升洋的简历</h1>
+	<h1>高升洋的简历</h1>
 </div>
 <div class="br">
 </div>
@@ -49,7 +49,7 @@
 			熟悉apache,ROR在ubuntu和centos上的安装部署。<br/>
 			熟悉SVN,git版本控制系统，有svn在centos上安装、维护经验。<br/>
 			自学android，做过android的小程序。（真不好意思）<br/>
-			租用国外的vps，OS为ubuntu，个人博客和几个ROR网站部署在上面，因此积累了些对ROR的部署和优化的经验。
+			租用国外的vps，OS为ubuntu，个人博客和几个ROR网站部署在上面，因此积累了些对ROR的部署和优化
 		</div>
 	<h3 class="yel">项目经验</h3>
 		<div id="detail">

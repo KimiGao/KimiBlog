@@ -8210,3 +8210,1155 @@ Rendered home/_post.html.erb (2.0ms)
 Rendered home/_rmenu.html.erb (52.0ms)
 Rendered home/index.html.erb within layouts/home (116.0ms)
 Completed 200 OK in 173ms (Views: 148.0ms | ActiveRecord: 2.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 21:26:40 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (292.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (414.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[35mTag Load (217.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (264.0ms)
+Rendered home/index.html.erb within layouts/home (733.0ms)
+Completed 200 OK in 1559ms (Views: 565.0ms | ActiveRecord: 511.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at Wed Sep 07 21:29:17 +0800 2011
+  Processing by AboutController#index as HTML
+  [1m[35mAboutme Load (190.0ms)[0m  SELECT `aboutmes`.* FROM `aboutmes` LIMIT 1
+Rendered home/_header.html.erb (1.0ms)
+  [1m[36mTag Load (1.0ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (21.0ms)
+Rendered home/_rmenu.html.erb (74.0ms)
+Rendered about/index.html.erb within layouts/about (126.0ms)
+Completed 200 OK in 399ms (Views: 183.0ms | ActiveRecord: 192.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:33:19 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 0ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:33:26 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 70ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 22:34:26 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[36mAdmin Load (282.0ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 496ms (Views: 15.0ms | ActiveRecord: 282.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:34:27 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (6.0ms)
+Completed 200 OK in 155ms (Views: 151.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Wed Sep 07 22:34:31 +0800 2011
+
+LoadError (Expected E:/apps/rails_apps/KimiBlog/app/controllers/admin/job_controller.rb to define Admin::JobController):
+  
+
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (43.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Wed Sep 07 22:35:25 +0800 2011
+  Processing by Admin::JobController#index as HTML
+Rendered admin/job/index.html.erb (0.0ms)
+Completed 200 OK in 112ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 22:35:25 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:35:25 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (4.0ms)
+Completed 200 OK in 71ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Wed Sep 07 22:35:28 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 2ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:35:28 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (4.0ms)
+Completed 200 OK in 71ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:35:34 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:35:34 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 22:35:44 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[35mAdmin Load (1.0ms)[0m  SELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:35:44 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (5.0ms)
+Completed 200 OK in 74ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs" for 127.0.0.1 at Wed Sep 07 22:35:46 +0800 2011
+  Processing by Admin::BlogsController#index as HTML
+Rendered admin/blogs/index.html.erb (1.0ms)
+Completed 200 OK in 119ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 22:35:47 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started POST "/admin/messages/get_messages_with_blog" for 127.0.0.1 at Wed Sep 07 22:35:47 +0800 2011
+  Processing by Admin::MessagesController#get_messages_with_blog as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 2ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:35:47 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:35:47 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs/new" for 127.0.0.1 at Wed Sep 07 22:35:48 +0800 2011
+  Processing by Admin::BlogsController#new as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 5ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:35:48 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (4.0ms)
+Completed 200 OK in 69ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:35:51 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:35:51 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 22:36:54 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:36:55 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (4.0ms)
+Completed 200 OK in 119ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs" for 127.0.0.1 at Wed Sep 07 22:37:00 +0800 2011
+  Processing by Admin::BlogsController#index as HTML
+Rendered admin/blogs/index.html.erb (1.0ms)
+Completed 200 OK in 111ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 22:37:00 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 2ms
+
+
+Started POST "/admin/messages/get_messages_with_blog" for 127.0.0.1 at Wed Sep 07 22:37:01 +0800 2011
+  Processing by Admin::MessagesController#get_messages_with_blog as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 2ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:37:01 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 66ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:37:01 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 98ms (Views: 97.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:37:46 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:37:46 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 66ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 22:37:54 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[35mAdmin Load (0.0ms)[0m  SELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 16ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:37:54 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (5.0ms)
+Completed 200 OK in 74ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs" for 127.0.0.1 at Wed Sep 07 22:37:56 +0800 2011
+  Processing by Admin::BlogsController#index as HTML
+Rendered admin/blogs/index.html.erb (0.0ms)
+Completed 200 OK in 112ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 22:37:57 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:37:57 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:39:19 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:39:19 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (2.0ms)
+Completed 200 OK in 66ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 22:39:27 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 27ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:39:27 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (8.0ms)
+Completed 200 OK in 97ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs" for 127.0.0.1 at Wed Sep 07 22:39:35 +0800 2011
+  Processing by Admin::BlogsController#index as HTML
+Rendered admin/blogs/index.html.erb (2.0ms)
+Completed 200 OK in 119ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 22:39:36 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 7ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:39:36 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (5.0ms)
+Completed 200 OK in 76ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:40:31 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 22:40:31 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 65ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 22:40:38 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[35mAdmin Load (0.0ms)[0m  SELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 22:40:38 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (6.0ms)
+Completed 200 OK in 78ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs" for 127.0.0.1 at Wed Sep 07 22:40:41 +0800 2011
+  Processing by Admin::BlogsController#index as HTML
+Rendered admin/blogs/index.html.erb (1.0ms)
+Completed 200 OK in 108ms (Views: 107.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 22:40:41 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mSQL (76.0ms)[0m  [1mSELECT COUNT(*) FROM `blogs`[0m
+  [1m[35mBlog Load (2.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 20 OFFSET 0
+Rendered text template (0.0ms)
+Completed 200 OK in 144ms (Views: 2.0ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/admin/blogs/tags_list" for 127.0.0.1 at Wed Sep 07 22:40:43 +0800 2011
+  Processing by Admin::BlogsController#tags_list as HTML
+Rendered admin/blogs/tags_list.html.erb (0.0ms)
+Completed 200 OK in 121ms (Views: 121.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_tags" for 127.0.0.1 at Wed Sep 07 22:40:43 +0800 2011
+  Processing by Admin::BlogsController#get_tags as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM `tags`[0m
+  [1m[35mTag Load (0.0ms)[0m  SELECT `tags`.* FROM `tags` LIMIT 20 OFFSET 0
+Rendered text template (0.0ms)
+Completed 200 OK in 41ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Wed Sep 07 22:40:45 +0800 2011
+  Processing by Admin::JobController#index as HTML
+Rendered admin/job/index.html.erb (1.0ms)
+Completed 200 OK in 108ms (Views: 108.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 22:40:45 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+Mysql::Error: Table 'kimiblog.jobs' doesn't exist: SELECT `jobs`.* FROM `jobs`
+Completed   in 14ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'kimiblog.jobs' doesn't exist: SELECT `jobs`.* FROM `jobs`):
+  app/controllers/admin/job_controller.rb:5:in `get_jobs'
+
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Wed Sep 07 22:40:48 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (1.0ms)
+Completed 200 OK in 103ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 22:40:51 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+Mysql::Error: Table 'kimiblog.jobs' doesn't exist: SELECT `jobs`.* FROM `jobs`
+Completed   in 14ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'kimiblog.jobs' doesn't exist: SELECT `jobs`.* FROM `jobs`):
+  app/controllers/admin/job_controller.rb:5:in `get_jobs'
+
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Wed Sep 07 22:41:20 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (0.0ms)
+Completed 200 OK in 111ms (Views: 111.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Wed Sep 07 22:41:23 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"111", "email"=>"111"}}
+Completed   in 20ms
+
+Mysql::Error (Table 'kimiblog.jobs' doesn't exist):
+  app/controllers/admin/job_controller.rb:10:in `new'
+  app/controllers/admin/job_controller.rb:10:in `create'
+
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+  [1m[36mSQL (218.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (8.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (12.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateBlogs (20110520124238)
+Migrating to CreateTags (20110520124320)
+Migrating to CreateMessages (20110520124456)
+Migrating to CreateAdmins (20110522093108)
+Migrating to CreateCkeditorAssets (20110522174417)
+Migrating to AddNumberToBlogs (20110609032202)
+Migrating to CreateAboutmes (20110620161555)
+Migrating to CreateKindeditorAssets (20110906103357)
+Migrating to CreateJobs (20110907141756)
+  [1m[35mSQL (185.0ms)[0m  CREATE TABLE `jobs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `company_name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (33.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110907141756')[0m
+  [1m[35mSQL (6.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (5.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (5.0ms)[0m  [1mdescribe `aboutmes`[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW KEYS FROM `aboutmes`
+  [1m[36mSQL (6.0ms)[0m  [1mdescribe `admins`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `admins`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `blogs`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `blogs`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `ckeditor_assets`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `ckeditor_assets`
+  [1m[36mSQL (6.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `jobs`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `kindeditor_assets`[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW KEYS FROM `kindeditor_assets`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `messages`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `messages`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `tags`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `tags`
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+  [1m[36mSQL (11.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (9.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateBlogs (20110520124238)
+Migrating to CreateTags (20110520124320)
+Migrating to CreateMessages (20110520124456)
+Migrating to CreateAdmins (20110522093108)
+Migrating to CreateCkeditorAssets (20110522174417)
+Migrating to AddNumberToBlogs (20110609032202)
+Migrating to CreateAboutmes (20110620161555)
+Migrating to CreateKindeditorAssets (20110906103357)
+Migrating to CreateJobs (20110907141756)
+Migrating to AddSubjectToJob (20110907144513)
+  [1m[35mSQL (271.0ms)[0m  ALTER TABLE `jobs` ADD `subject` varchar(255)
+  [1m[36mSQL (21.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110907144513')[0m
+  [1m[35mSQL (4.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (4.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `aboutmes`[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW KEYS FROM `aboutmes`
+  [1m[36mSQL (6.0ms)[0m  [1mdescribe `admins`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `admins`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `blogs`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `blogs`
+  [1m[36mSQL (8.0ms)[0m  [1mdescribe `ckeditor_assets`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `ckeditor_assets`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW KEYS FROM `jobs`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `kindeditor_assets`[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW KEYS FROM `kindeditor_assets`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `messages`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `messages`
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `tags`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `tags`
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 22:50:10 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (56.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 80ms (Views: 3.0ms | ActiveRecord: 56.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Wed Sep 07 22:50:11 +0800 2011
+  Processing by Admin::JobController#index as HTML
+Rendered admin/job/index.html.erb (1.0ms)
+Completed 200 OK in 117ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 22:50:11 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 28ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Wed Sep 07 22:50:12 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (0.0ms)
+Completed 200 OK in 111ms (Views: 110.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 22:50:15 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 25ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to gaoshengyang2000@163.com (1204ms)
+Date: Wed, 07 Sep 2011 22:56:55 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e678637dadbb_122418da7903656b@kimi-PC.mail>
+Subject: yingpin
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iL2pvYi9j
+c3Mvc3R5bGUuY3NzIiByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3Nz
+IiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxkaXYgaWQ9ImhlYWQiPgoJPGgxPumr
+mOWNh+a0i+eahOeugOWOhjwvaDE+CjwvZGl2Pgo8ZGl2IGNsYXNzPSJiciI+
+CjwvZGl2Pgo8ZGl2IGlkPSJib2R5Ij4KCgk8aDM+5YWz5LqO5oiRPC9oMz4K
+CQk8ZGl2IGlkPSJhYm91dCI+CgkJCTxpbWcgc3JjPSIvam9iL21lLmpwZyIg
+YWx0PSJraW1pIiAvPgoJCQlQZXJzb24ubmV3KDxici8+Jm5ic3A7Jm5ic3A7
+Jm5ic3A7Jm5ic3A7CgkJCTpuYW1lID0+ICfpq5jljYfmtIssS2ltaScsPGJy
+Lz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRldGFpbCA9PiAnMTk4
+NuW5tOeUn++8jOeUt++8jOacquWpmicsPGJyLz4mbmJzcDsmbmJzcDsmbmJz
+cDsmbmJzcDsKCQkJOnBob25lID0+ICcxNTI2NTQyOTg5MicsPGJyLz4mbmJz
+cDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmVtYWlsID0+ICdraW1pZ2FvMTk4
+NkBnbWFpbCcsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRy
+ZWFtID0+ICforqnkupLogZTnvZHmm7TliqDnsr7lvanvvIHvvIEnLDxici8+
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTp3ZWJzaXRlID0+ICc8YSBo
+cmVmPSJodHRwOi8vd3d3LmtpbWlnYW8ubWUiIHRhcmdldD0iX2JsYW5rIj5o
+dHRwOi8vd3d3LmtpbWlnYW8ubWU8L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZu
+YnNwOyZuYnNwOwoJCQk6Y29kZV91cmwgPT4gJzxhIGhyZWY9Imh0dHBzOi8v
+Z2l0aHViLmNvbS9LaW1pR2FvIiB0YXJnZXQ9Il9ibGFuayI+aHR0cHM6Ly9n
+aXRodWIuY29tL0tpbWlHYW88L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNw
+OyZuYnNwOwoJCQk6am9iX3dhbnQgPT4gJ1J1YnkgT24gUmFpbHPlt6XnqIvl
+uIgnLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpza2lsbCA9
+PiAnUnVieSxSYWlscyxKYXZhLE15U1FMLEFwYWNoZSxzdm4sZ2l0LEV4dEpT
+LEpRdWVyeSxqYXZhc2NyaXB0LGNzcycsPGJyLz4mbmJzcDsmbmJzcDsmbmJz
+cDsmbmJzcDsKCQkJOmhvYmJ5ID0+ICfmraXooYws55S15b2xLOWPsOeQgyzm
+l4XooYws5pGE5b2xJzxici8+CgkJCSk8YnIvPgoJCTwvZGl2PgoJPGgzIGNs
+YXNzPSJncmUiPuiBjOS4muaipuaDszwvaDM+CgkJPGRpdiBpZD0iZGV0YWls
+Ij4KCQkJ5LqS6IGU572R5bey6L+b5YWl5Lq65Lus55qE55Sf5rS75Lit77yM
+5LiN6K665piv5Lyg57uf5LqS6IGU572R6L+Y5piv56e75Yqo5LqS6IGU572R
+6YO95LiO5Lq65Lus55qE5YWz57O76LaK5p2l6LaK57Sn5a+G44CC5biM5pyb
+5Zyo5LiN5LmF5Lul5ZCO6IO95YGa5LiA5Liq5pS55Y+Y5Lq65Lus55Sf5rS7
+6LSo6YeP55qE5LqS6IGU572R5bqU55So44CCCgkJPC9kaXY+Cgk8aDMgY2xh
+c3M9InJlZCI+5oqA5pyv54m56ZW/PC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwi
+PgoJCQnnhp/mgolSdWJ5IG9uIFJhaWxzLGphdmEsamF2YXNjcmlwdCxodG1s
+LGNzc+etieaKgOacr+OAgjxici8+CgkJCeeGn+aCiU5ldEJlYW5zLGd2aW3n
+rYnlvIDlj5Hlt6XlhbfjgIIKCQkJ54af5oKJZXh0anMsanF1ZXJ5562JanPm
+oYbmnrbjgII8YnIvPgoJCQnnhp/mgol1YnVudHUsY2VudG9zLHdpbmRvd3Pm
+k43kvZzns7vnu5/jgII8YnIvPgoJCQnnhp/mgolhcGFjaGUsUk9S5ZyodWJ1
+bnR15ZKMY2VudG9z5LiK55qE5a6J6KOF6YOo572y44CCPGJyLz4KCQkJ54af
+5oKJU1ZOLGdpdOeJiOacrOaOp+WItuezu+e7n++8jOaciXN2buWcqGNlbnRv
+c+S4iuWuieijheOAgee7tOaKpOe7j+mqjOOAgjxici8+CgkJCeiHquWtpmFu
+ZHJvaWTvvIzlgZrov4dhbmRyb2lk55qE5bCP56iL5bqP44CC77yI55yf5LiN
+5aW95oSP5oCd77yJPGJyLz4KCQkJ56ef55So5Zu95aSW55qEdnBz77yMT1Pk
+uLp1YnVudHXvvIzkuKrkurrljZrlrqLlkozlh6DkuKpST1LnvZHnq5npg6jn
+vbLlnKjkuIrpnaLvvIzlm6DmraTnp6/ntK/kuobkupvlr7lST1LnmoTpg6jn
+vbLlkozkvJjljJbnmoTnu4/pqozjgIIKCQk8L2Rpdj4KCTxoMyBjbGFzcz0i
+eWVsIj7pobnnm67nu4/pqow8L2gzPgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJ
+CTIwMTEtMDjoh7MyMDExLTA5Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PGEg
+aHJlZj0iaHR0cDovL3d3dy5zaW51bzE5LmNvbSIgdGFyZ2V0PSJfYmxhbmsi
+PuS4neivuue6uue7h+WFrOWPuOe9keermTwvYT48YnIvPgoJCQk8Yj7miYDn
+lKjmioDmnK/vvJo8L2I+cmFpbHMgM+OAgWV4dGpz44CBa2luZGVkaXRvcuOA
+gWpxdWVyeeOAgWdpdOOAgWdpdGh1Yjxici8+CgkJCTxkaXYgY2xhc3M9InBi
+ciI+PC9kaXY+CgkJCTIwMTEtMDToh7MyMDExLTA2Jm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A7PGEgaHJlZj0iaHR0cDovL2hhbmJhb3Bvd2VyLmdyZWVuc2Vy
+dmVyLmNuIiB0YXJnZXQ9Il9ibGFuayI+5oKN6LG555S155O25YWs5Y+4572R
+56uZPC9hPjxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAy
+LjPjgIFleHRqc+OAgWNrZGl0b3LjgIFqcXVlcnk8YnIvPgoJCQk8ZGl2IGNs
+YXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTA46IezMjAxMS0wNCZuYnNwOyZu
+YnNwOyZuYnNwOyZuYnNwO+a1juWNl+auteWKqOi9puajgOS/rueuoeeQhuez
+u+e7nzxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAz44CB
+ZXh0anM8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEw
+LTA26IezMjAxMC0wOCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+a1qea1t+e9
+kee7nOmHh+i0reernuS7t+W5s+WPsOezu+e7nzxici8+CgkJCTxiPuaJgOeU
+qOaKgOacr++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRq
+czxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMTAtMDLo
+h7MyMDEwLTA2Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A76Z2S5bKb5a6J55uR
+5bGA5Y2x6Zmp5rqQ6KeG6aKR55uR5o6n57O757ufPGJyLz4KCQkJPGI+5omA
+55So5oqA5pyv77yaPC9iPmphdmHjgIFleHRqc+OAgVZMQ+OAgXNwcmluZyBN
+VkPjgIFoaWJlcm5hdGU8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2
+PgoJCQkyMDA5LTEy6IezMjAxMC0wMyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNw
+O+W0guWxseWFmuagoeagoeWbreeuoeeQhuezu+e7nzxici8+CgkJCTxiPuaJ
+gOeUqOaKgOacr++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFl
+eHRqczxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDkt
+MDnoh7MyMDEwLTAxJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75Lit5Zu95rW3
+5rSL5aSn5a2m5pel5bi46Zu25pif54mp6LWE6YeH6LSt57O757ufPGJyLz4K
+CQkJPGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxzIDIo5Y2H57qn5Li6cmFp
+bHMzKeOAgWV4dGpzPGJyLz4KCQk8L2Rpdj4KCgo8L2Rpdj4KPGRpdiBjbGFz
+cz0iYnIiPgo8L2Rpdj4KPGRpdiBpZD0iZm9vdGVyIj4KPC9kaXY+CjwvYm9k
+eT4KCjwvaHRtbD4K
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to gaoshengyang2000@163.com (5467ms)
+Date: Wed, 07 Sep 2011 23:20:58 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e678bdaa92e6_34f81c3278c1026a@kimi-PC.mail>
+Subject: yingpin
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iL2pvYi9j
+c3Mvc3R5bGUuY3NzIiByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3Nz
+IiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxkaXYgaWQ9ImhlYWQiPgoJPGgxPumr
+mOWNh+a0i+eahOeugOWOhjwvaDE+CjwvZGl2Pgo8ZGl2IGNsYXNzPSJiciI+
+CjwvZGl2Pgo8ZGl2IGlkPSJib2R5Ij4KCgk8aDM+5YWz5LqO5oiRPC9oMz4K
+CQk8ZGl2IGlkPSJhYm91dCI+CgkJCTxpbWcgc3JjPSIvam9iL21lLmpwZyIg
+YWx0PSJraW1pIiAvPgoJCQlQZXJzb24ubmV3KDxici8+Jm5ic3A7Jm5ic3A7
+Jm5ic3A7Jm5ic3A7CgkJCTpuYW1lID0+ICfpq5jljYfmtIssS2ltaScsPGJy
+Lz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRldGFpbCA9PiAnMTk4
+NuW5tOeUn++8jOeUt++8jOacquWpmicsPGJyLz4mbmJzcDsmbmJzcDsmbmJz
+cDsmbmJzcDsKCQkJOnBob25lID0+ICcxNTI2NTQyOTg5MicsPGJyLz4mbmJz
+cDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmVtYWlsID0+ICdraW1pZ2FvMTk4
+NkBnbWFpbCcsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRy
+ZWFtID0+ICforqnkupLogZTnvZHmm7TliqDnsr7lvanvvIHvvIEnLDxici8+
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTp3ZWJzaXRlID0+ICc8YSBo
+cmVmPSJodHRwOi8vd3d3LmtpbWlnYW8ubWUiIHRhcmdldD0iX2JsYW5rIj5o
+dHRwOi8vd3d3LmtpbWlnYW8ubWU8L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZu
+YnNwOyZuYnNwOwoJCQk6Y29kZV91cmwgPT4gJzxhIGhyZWY9Imh0dHBzOi8v
+Z2l0aHViLmNvbS9LaW1pR2FvIiB0YXJnZXQ9Il9ibGFuayI+aHR0cHM6Ly9n
+aXRodWIuY29tL0tpbWlHYW88L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNw
+OyZuYnNwOwoJCQk6am9iX3dhbnQgPT4gJ1J1YnkgT24gUmFpbHPlt6XnqIvl
+uIgnLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpza2lsbCA9
+PiAnUnVieSxSYWlscyxKYXZhLE15U1FMLEFwYWNoZSxzdm4sZ2l0LEV4dEpT
+LEpRdWVyeSxqYXZhc2NyaXB0LGNzcycsPGJyLz4mbmJzcDsmbmJzcDsmbmJz
+cDsmbmJzcDsKCQkJOmhvYmJ5ID0+ICfmraXooYws55S15b2xLOWPsOeQgyzm
+l4XooYws5pGE5b2xJzxici8+CgkJCSk8YnIvPgoJCTwvZGl2PgoJPGgzIGNs
+YXNzPSJncmUiPuiBjOS4muaipuaDszwvaDM+CgkJPGRpdiBpZD0iZGV0YWls
+Ij4KCQkJ5LqS6IGU572R5bey6L+b5YWl5Lq65Lus55qE55Sf5rS75Lit77yM
+5LiN6K665piv5Lyg57uf5LqS6IGU572R6L+Y5piv56e75Yqo5LqS6IGU572R
+6YO95LiO5Lq65Lus55qE5YWz57O76LaK5p2l6LaK57Sn5a+G44CC5biM5pyb
+5Zyo5LiN5LmF5Lul5ZCO6IO95YGa5LiA5Liq5pS55Y+Y5Lq65Lus55Sf5rS7
+6LSo6YeP55qE5LqS6IGU572R5bqU55So44CCCgkJPC9kaXY+Cgk8aDMgY2xh
+c3M9InJlZCI+5oqA5pyv54m56ZW/PC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwi
+PgoJCQnnhp/mgolSdWJ5IG9uIFJhaWxzLGphdmEsamF2YXNjcmlwdCxodG1s
+LGNzc+etieaKgOacr+OAgjxici8+CgkJCeeGn+aCiU5ldEJlYW5zLGd2aW3n
+rYnlvIDlj5Hlt6XlhbfjgIIKCQkJ54af5oKJZXh0anMsanF1ZXJ5562JanPm
+oYbmnrbjgII8YnIvPgoJCQnnhp/mgol1YnVudHUsY2VudG9zLHdpbmRvd3Pm
+k43kvZzns7vnu5/jgII8YnIvPgoJCQnnhp/mgolhcGFjaGUsUk9S5ZyodWJ1
+bnR15ZKMY2VudG9z5LiK55qE5a6J6KOF6YOo572y44CCPGJyLz4KCQkJ54af
+5oKJU1ZOLGdpdOeJiOacrOaOp+WItuezu+e7n++8jOaciXN2buWcqGNlbnRv
+c+S4iuWuieijheOAgee7tOaKpOe7j+mqjOOAgjxici8+CgkJCeiHquWtpmFu
+ZHJvaWTvvIzlgZrov4dhbmRyb2lk55qE5bCP56iL5bqP44CC77yI55yf5LiN
+5aW95oSP5oCd77yJPGJyLz4KCQkJ56ef55So5Zu95aSW55qEdnBz77yMT1Pk
+uLp1YnVudHXvvIzkuKrkurrljZrlrqLlkozlh6DkuKpST1LnvZHnq5npg6jn
+vbLlnKjkuIrpnaLvvIzlm6DmraTnp6/ntK/kuobkupvlr7lST1LnmoTpg6jn
+vbLlkozkvJjljJbnmoTnu4/pqozjgIIKCQk8L2Rpdj4KCTxoMyBjbGFzcz0i
+eWVsIj7pobnnm67nu4/pqow8L2gzPgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJ
+CTIwMTEtMDjoh7MyMDExLTA5Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PGEg
+aHJlZj0iaHR0cDovL3d3dy5zaW51bzE5LmNvbSIgdGFyZ2V0PSJfYmxhbmsi
+PuS4neivuue6uue7h+WFrOWPuOe9keermTwvYT48YnIvPgoJCQk8Yj7miYDn
+lKjmioDmnK/vvJo8L2I+cmFpbHMgM+OAgWV4dGpz44CBa2luZGVkaXRvcuOA
+gWpxdWVyeeOAgWdpdOOAgWdpdGh1Yjxici8+CgkJCTxkaXYgY2xhc3M9InBi
+ciI+PC9kaXY+CgkJCTIwMTEtMDToh7MyMDExLTA2Jm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A7PGEgaHJlZj0iaHR0cDovL2hhbmJhb3Bvd2VyLmdyZWVuc2Vy
+dmVyLmNuIiB0YXJnZXQ9Il9ibGFuayI+5oKN6LG555S155O25YWs5Y+4572R
+56uZPC9hPjxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAy
+LjPjgIFleHRqc+OAgWNrZGl0b3LjgIFqcXVlcnk8YnIvPgoJCQk8ZGl2IGNs
+YXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTA46IezMjAxMS0wNCZuYnNwOyZu
+YnNwOyZuYnNwOyZuYnNwO+a1juWNl+auteWKqOi9puajgOS/rueuoeeQhuez
+u+e7nzxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAz44CB
+ZXh0anM8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEw
+LTA26IezMjAxMC0wOCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+a1qea1t+e9
+kee7nOmHh+i0reernuS7t+W5s+WPsOezu+e7nzxici8+CgkJCTxiPuaJgOeU
+qOaKgOacr++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRq
+czxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMTAtMDLo
+h7MyMDEwLTA2Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A76Z2S5bKb5a6J55uR
+5bGA5Y2x6Zmp5rqQ6KeG6aKR55uR5o6n57O757ufPGJyLz4KCQkJPGI+5omA
+55So5oqA5pyv77yaPC9iPmphdmHjgIFleHRqc+OAgVZMQ+OAgXNwcmluZyBN
+VkPjgIFoaWJlcm5hdGU8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2
+PgoJCQkyMDA5LTEy6IezMjAxMC0wMyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNw
+O+W0guWxseWFmuagoeagoeWbreeuoeeQhuezu+e7nzxici8+CgkJCTxiPuaJ
+gOeUqOaKgOacr++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFl
+eHRqczxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDkt
+MDnoh7MyMDEwLTAxJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75Lit5Zu95rW3
+5rSL5aSn5a2m5pel5bi46Zu25pif54mp6LWE6YeH6LSt57O757ufPGJyLz4K
+CQkJPGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxzIDIo5Y2H57qn5Li6cmFp
+bHMzKeOAgWV4dGpzPGJyLz4KCQk8L2Rpdj4KCgo8L2Rpdj4KPGRpdiBjbGFz
+cz0iYnIiPgo8L2Rpdj4KPGRpdiBpZD0iZm9vdGVyIj4KPC9kaXY+CjwvYm9k
+eT4KCjwvaHRtbD4K
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to gaoshengyang2000@163.com (5434ms)
+Date: Wed, 07 Sep 2011 23:22:28 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e678c3484982_34f81c3278c1034e@kimi-PC.mail>
+Subject: yingpin
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iaHR0cDov
+L3d3dy5raW1pZ2FvLm1lL2pvYi9jc3Mvc3R5bGUuY3NzIiByZWw9InN0eWxl
+c2hlZXQiIHR5cGU9InRleHQvY3NzIiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxk
+aXYgaWQ9ImhlYWQiPgoJPGgxPumrmOWNh+a0i+eahOeugOWOhjwvaDE+Cjwv
+ZGl2Pgo8ZGl2IGNsYXNzPSJiciI+CjwvZGl2Pgo8ZGl2IGlkPSJib2R5Ij4K
+Cgk8aDM+5YWz5LqO5oiRPC9oMz4KCQk8ZGl2IGlkPSJhYm91dCI+CgkJCTxp
+bWcgc3JjPSJodHRwOi8vd3d3LmtpbWlnYW8ubWUvam9iL21lLmpwZyIgYWx0
+PSJraW1pIiAvPgoJCQlQZXJzb24ubmV3KDxici8+Jm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A7CgkJCTpuYW1lID0+ICfpq5jljYfmtIssS2ltaScsPGJyLz4m
+bmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRldGFpbCA9PiAnMTk4NuW5
+tOeUn++8jOeUt++8jOacquWpmicsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsm
+bmJzcDsKCQkJOnBob25lID0+ICcxNTI2NTQyOTg5MicsPGJyLz4mbmJzcDsm
+bmJzcDsmbmJzcDsmbmJzcDsKCQkJOmVtYWlsID0+ICdraW1pZ2FvMTk4NkBn
+bWFpbCcsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRyZWFt
+ID0+ICforqnkupLogZTnvZHmm7TliqDnsr7lvanvvIHvvIEnLDxici8+Jm5i
+c3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTp3ZWJzaXRlID0+ICc8YSBocmVm
+PSJodHRwOi8vd3d3LmtpbWlnYW8ubWUiIHRhcmdldD0iX2JsYW5rIj5odHRw
+Oi8vd3d3LmtpbWlnYW8ubWU8L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNw
+OyZuYnNwOwoJCQk6Y29kZV91cmwgPT4gJzxhIGhyZWY9Imh0dHBzOi8vZ2l0
+aHViLmNvbS9LaW1pR2FvIiB0YXJnZXQ9Il9ibGFuayI+aHR0cHM6Ly9naXRo
+dWIuY29tL0tpbWlHYW88L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZu
+YnNwOwoJCQk6am9iX3dhbnQgPT4gJ1J1YnkgT24gUmFpbHPlt6XnqIvluIgn
+LDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpza2lsbCA9PiAn
+UnVieSxSYWlscyxKYXZhLE15U1FMLEFwYWNoZSxzdm4sZ2l0LEV4dEpTLEpR
+dWVyeSxqYXZhc2NyaXB0LGNzcycsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsm
+bmJzcDsKCQkJOmhvYmJ5ID0+ICfmraXooYws55S15b2xLOWPsOeQgyzml4Xo
+oYws5pGE5b2xJzxici8+CgkJCSk8YnIvPgoJCTwvZGl2PgoJPGgzIGNsYXNz
+PSJncmUiPuiBjOS4muaipuaDszwvaDM+CgkJPGRpdiBpZD0iZGV0YWlsIj4K
+CQkJ5LqS6IGU572R5bey6L+b5YWl5Lq65Lus55qE55Sf5rS75Lit77yM5LiN
+6K665piv5Lyg57uf5LqS6IGU572R6L+Y5piv56e75Yqo5LqS6IGU572R6YO9
+5LiO5Lq65Lus55qE5YWz57O76LaK5p2l6LaK57Sn5a+G44CC5biM5pyb5Zyo
+5LiN5LmF5Lul5ZCO6IO95YGa5LiA5Liq5pS55Y+Y5Lq65Lus55Sf5rS76LSo
+6YeP55qE5LqS6IGU572R5bqU55So44CCCgkJPC9kaXY+Cgk8aDMgY2xhc3M9
+InJlZCI+5oqA5pyv54m56ZW/PC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwiPgoJ
+CQnnhp/mgolSdWJ5IG9uIFJhaWxzLGphdmEsamF2YXNjcmlwdCxodG1sLGNz
+c+etieaKgOacr+OAgjxici8+CgkJCeeGn+aCiU5ldEJlYW5zLGd2aW3nrYnl
+vIDlj5Hlt6XlhbfjgIIKCQkJ54af5oKJZXh0anMsanF1ZXJ5562JanPmoYbm
+nrbjgII8YnIvPgoJCQnnhp/mgol1YnVudHUsY2VudG9zLHdpbmRvd3Pmk43k
+vZzns7vnu5/jgII8YnIvPgoJCQnnhp/mgolhcGFjaGUsUk9S5ZyodWJ1bnR1
+5ZKMY2VudG9z5LiK55qE5a6J6KOF6YOo572y44CCPGJyLz4KCQkJ54af5oKJ
+U1ZOLGdpdOeJiOacrOaOp+WItuezu+e7n++8jOaciXN2buWcqGNlbnRvc+S4
+iuWuieijheOAgee7tOaKpOe7j+mqjOOAgjxici8+CgkJCeiHquWtpmFuZHJv
+aWTvvIzlgZrov4dhbmRyb2lk55qE5bCP56iL5bqP44CC77yI55yf5LiN5aW9
+5oSP5oCd77yJPGJyLz4KCQkJ56ef55So5Zu95aSW55qEdnBz77yMT1PkuLp1
+YnVudHXvvIzkuKrkurrljZrlrqLlkozlh6DkuKpST1LnvZHnq5npg6jnvbLl
+nKjkuIrpnaLvvIzlm6DmraTnp6/ntK/kuobkupvlr7lST1LnmoTpg6jnvbLl
+kozkvJjljJbnmoTnu4/pqozjgIIKCQk8L2Rpdj4KCTxoMyBjbGFzcz0ieWVs
+Ij7pobnnm67nu4/pqow8L2gzPgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJCTIw
+MTEtMDjoh7MyMDExLTA5Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PGEgaHJl
+Zj0iaHR0cDovL3d3dy5zaW51bzE5LmNvbSIgdGFyZ2V0PSJfYmxhbmsiPuS4
+neivuue6uue7h+WFrOWPuOe9keermTwvYT48YnIvPgoJCQk8Yj7miYDnlKjm
+ioDmnK/vvJo8L2I+cmFpbHMgM+OAgWV4dGpz44CBa2luZGVkaXRvcuOAgWpx
+dWVyeeOAgWdpdOOAgWdpdGh1Yjxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+
+PC9kaXY+CgkJCTIwMTEtMDToh7MyMDExLTA2Jm5ic3A7Jm5ic3A7Jm5ic3A7
+Jm5ic3A7PGEgaHJlZj0iaHR0cDovL2hhbmJhb3Bvd2VyLmdyZWVuc2VydmVy
+LmNuIiB0YXJnZXQ9Il9ibGFuayI+5oKN6LG555S155O25YWs5Y+4572R56uZ
+PC9hPjxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAyLjPj
+gIFleHRqc+OAgWNrZGl0b3LjgIFqcXVlcnk8YnIvPgoJCQk8ZGl2IGNsYXNz
+PSJwYnIiPjwvZGl2PgoJCQkyMDEwLTA46IezMjAxMS0wNCZuYnNwOyZuYnNw
+OyZuYnNwOyZuYnNwO+a1juWNl+auteWKqOi9puajgOS/rueuoeeQhuezu+e7
+nzxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAz44CBZXh0
+anM8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTA2
+6IezMjAxMC0wOCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+a1qea1t+e9kee7
+nOmHh+i0reernuS7t+W5s+WPsOezu+e7nzxici8+CgkJCTxiPuaJgOeUqOaK
+gOacr++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRqczxi
+ci8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMTAtMDLoh7My
+MDEwLTA2Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A76Z2S5bKb5a6J55uR5bGA
+5Y2x6Zmp5rqQ6KeG6aKR55uR5o6n57O757ufPGJyLz4KCQkJPGI+5omA55So
+5oqA5pyv77yaPC9iPmphdmHjgIFleHRqc+OAgVZMQ+OAgXNwcmluZyBNVkPj
+gIFoaWJlcm5hdGU8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJ
+CQkyMDA5LTEy6IezMjAxMC0wMyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+W0
+guWxseWFmuagoeagoeWbreeuoeeQhuezu+e7nzxici8+CgkJCTxiPuaJgOeU
+qOaKgOacr++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRq
+czxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDktMDno
+h7MyMDEwLTAxJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75Lit5Zu95rW35rSL
+5aSn5a2m5pel5bi46Zu25pif54mp6LWE6YeH6LSt57O757ufPGJyLz4KCQkJ
+PGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxzIDIo5Y2H57qn5Li6cmFpbHMz
+KeOAgWV4dGpzPGJyLz4KCQk8L2Rpdj4KCgo8L2Rpdj4KPGRpdiBjbGFzcz0i
+YnIiPgo8L2Rpdj4KPGRpdiBpZD0iZm9vdGVyIj4KPC9kaXY+CjwvYm9keT4K
+CjwvaHRtbD4K
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 23:45:35 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 23:45:35 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 63ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 23:45:59 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 23:45:59 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 66ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 23:46:06 +0800 2011
+  Processing by Admin::IndexController#validate_user as 
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 23ms (Views: 4.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 23:46:06 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (7.0ms)
+Completed 200 OK in 88ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Wed Sep 07 23:46:15 +0800 2011
+  Processing by Admin::JobController#index as 
+Rendered admin/job/index.html.erb (0.0ms)
+Completed 200 OK in 289ms (Views: 288.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 23:46:16 +0800 2011
+  Processing by Admin::JobController#get_jobs as 
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 34ms (Views: 3.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Wed Sep 07 23:46:17 +0800 2011
+  Processing by Admin::JobController#new as 
+Rendered admin/job/new.html.erb (1.0ms)
+Completed 200 OK in 289ms (Views: 288.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Wed Sep 07 23:46:34 +0800 2011
+  Processing by Admin::JobController#create as 
+  Parameters: {"job"=>{"company_name"=>"1111", "subject"=>"1111", "email"=>"gaoshengyang2000@163.com"}}
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (80.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (10.0ms)[0m  describe `jobs`
+  [1m[36mAREL (17.0ms)[0m  [1mINSERT INTO `jobs` (`company_name`, `updated_at`, `email`, `subject`, `created_at`) VALUES ('1111', '2011-09-07 15:46:34', 'gaoshengyang2000@163.com', '1111', '2011-09-07 15:46:34')[0m
+  [1m[35mSQL (32.0ms)[0m  COMMIT
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to gaoshengyang2000@163.com (1159ms)
+Date: Wed, 07 Sep 2011 23:46:36 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e6791dcc1328_13f0345f18c269f8@kimi-PC.mail>
+Subject: 1111
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iaHR0cDov
+L3d3dy5raW1pZ2FvLm1lL2pvYi9jc3Mvc3R5bGUuY3NzIiByZWw9InN0eWxl
+c2hlZXQiIHR5cGU9InRleHQvY3NzIiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxk
+aXYgaWQ9ImhlYWQiPgoJPGgxPjExMTE8L2gxPi0tLTxoMT4xMTExPC9oMT4K
+PC9kaXY+CjxkaXYgY2xhc3M9ImJyIj4KPC9kaXY+CjxkaXYgaWQ9ImJvZHki
+PgogICAgICAgIDxoMT7pq5jljYfmtIvnmoTnroDljoY8L2gxPgoJPGgzPuWF
+s+S6juaIkTwvaDM+CgkJPGRpdiBpZD0iYWJvdXQiPgoJCQk8aW1nIHNyYz0i
+aHR0cDovL3d3dy5raW1pZ2FvLm1lL2pvYi9tZS5qcGciIGFsdD0ia2ltaSIg
+Lz4KCQkJUGVyc29uLm5ldyg8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNw
+OwoJCQk6bmFtZSA9PiAn6auY5Y2H5rSLLEtpbWknLDxici8+Jm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A7CgkJCTpkZXRhaWwgPT4gJzE5ODblubTnlJ/vvIzn
+lLfvvIzmnKrlqZonLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJ
+CTpwaG9uZSA9PiAnMTUyNjU0Mjk4OTInLDxici8+Jm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A7CgkJCTplbWFpbCA9PiAna2ltaWdhbzE5ODZAZ21haWwnLDxi
+ci8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpkcmVhbSA9PiAn6K6p
+5LqS6IGU572R5pu05Yqg57K+5b2p77yB77yBJyw8YnIvPiZuYnNwOyZuYnNw
+OyZuYnNwOyZuYnNwOwoJCQk6d2Vic2l0ZSA9PiAnPGEgaHJlZj0iaHR0cDov
+L3d3dy5raW1pZ2FvLm1lIiB0YXJnZXQ9Il9ibGFuayI+aHR0cDovL3d3dy5r
+aW1pZ2FvLm1lPC9hPicsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsK
+CQkJOmNvZGVfdXJsID0+ICc8YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20v
+S2ltaUdhbyIgdGFyZ2V0PSJfYmxhbmsiPmh0dHBzOi8vZ2l0aHViLmNvbS9L
+aW1pR2FvPC9hPicsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJ
+OmpvYl93YW50ID0+ICdSdWJ5IE9uIFJhaWxz5bel56iL5biIJyw8YnIvPiZu
+YnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6c2tpbGwgPT4gJ1J1YnksUmFp
+bHMsSmF2YSxNeVNRTCxBcGFjaGUsc3ZuLGdpdCxFeHRKUyxKUXVlcnksamF2
+YXNjcmlwdCxjc3MnLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJ
+CTpob2JieSA9PiAn5q2l6KGMLOeUteW9sSzlj7DnkIMs5peF6KGMLOaRhOW9
+sSc8YnIvPgoJCQkpPGJyLz4KCQk8L2Rpdj4KCTxoMyBjbGFzcz0iZ3JlIj7o
+gYzkuJrmoqbmg7M8L2gzPgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJCeS6kuiB
+lOe9keW3sui/m+WFpeS6uuS7rOeahOeUn+a0u+S4re+8jOS4jeiuuuaYr+S8
+oOe7n+S6kuiBlOe9kei/mOaYr+enu+WKqOS6kuiBlOe9kemDveS4juS6uuS7
+rOeahOWFs+ezu+i2iuadpei2iue0p+WvhuOAguW4jOacm+WcqOS4jeS5heS7
+peWQjuiDveWBmuS4gOS4quaUueWPmOS6uuS7rOeUn+a0u+i0qOmHj+eahOS6
+kuiBlOe9keW6lOeUqOOAggoJCTwvZGl2PgoJPGgzIGNsYXNzPSJyZWQiPuaK
+gOacr+eJuemVvzwvaDM+CgkJPGRpdiBpZD0iZGV0YWlsIj4KCQkJ54af5oKJ
+UnVieSBvbiBSYWlscyxqYXZhLGphdmFzY3JpcHQsaHRtbCxjc3PnrYnmioDm
+nK/jgII8YnIvPgoJCQnnhp/mgolOZXRCZWFucyxndmlt562J5byA5Y+R5bel
+5YW344CCCgkJCeeGn+aCiWV4dGpzLGpxdWVyeeetiWpz5qGG5p6244CCPGJy
+Lz4KCQkJ54af5oKJdWJ1bnR1LGNlbnRvcyx3aW5kb3dz5pON5L2c57O757uf
+44CCPGJyLz4KCQkJ54af5oKJYXBhY2hlLFJPUuWcqHVidW50deWSjGNlbnRv
+c+S4iueahOWuieijhemDqOe9suOAgjxici8+CgkJCeeGn+aCiVNWTixnaXTn
+iYjmnKzmjqfliLbns7vnu5/vvIzmnIlzdm7lnKhjZW50b3PkuIrlronoo4Xj
+gIHnu7TmiqTnu4/pqozjgII8YnIvPgoJCQnoh6rlraZhbmRyb2lk77yM5YGa
+6L+HYW5kcm9pZOeahOWwj+eoi+W6j+OAgu+8iOecn+S4jeWlveaEj+aAne+8
+iTxici8+CgkJCeenn+eUqOWbveWklueahHZwc++8jE9T5Li6dWJ1bnR177yM
+5Liq5Lq65Y2a5a6i5ZKM5Yeg5LiqUk9S572R56uZ6YOo572y5Zyo5LiK6Z2i
+77yM5Zug5q2k56ev57Sv5LqG5Lqb5a+5Uk9S55qE6YOo572y5ZKM5LyY5YyW
+55qE57uP6aqM44CCCgkJPC9kaXY+Cgk8aDMgY2xhc3M9InllbCI+6aG555uu
+57uP6aqMPC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwiPgoJCQkyMDExLTA46Iez
+MjAxMS0wOSZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOzxhIGhyZWY9Imh0dHA6
+Ly93d3cuc2ludW8xOS5jb20iIHRhcmdldD0iX2JsYW5rIj7kuJ3or7rnurrn
+u4flhazlj7jnvZHnq5k8L2E+PGJyLz4KCQkJPGI+5omA55So5oqA5pyv77ya
+PC9iPnJhaWxzIDPjgIFleHRqc+OAgWtpbmRlZGl0b3LjgIFqcXVlcnnjgIFn
+aXTjgIFnaXRodWI8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJ
+CQkyMDExLTA06IezMjAxMS0wNiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOzxh
+IGhyZWY9Imh0dHA6Ly9oYW5iYW9wb3dlci5ncmVlbnNlcnZlci5jbiIgdGFy
+Z2V0PSJfYmxhbmsiPuaCjeixueeUteeTtuWFrOWPuOe9keermTwvYT48YnIv
+PgoJCQk8Yj7miYDnlKjmioDmnK/vvJo8L2I+cmFpbHMgMi4z44CBZXh0anPj
+gIFja2RpdG9y44CBanF1ZXJ5PGJyLz4KCQkJPGRpdiBjbGFzcz0icGJyIj48
+L2Rpdj4KCQkJMjAxMC0wOOiHszIwMTEtMDQmbmJzcDsmbmJzcDsmbmJzcDsm
+bmJzcDvmtY7ljZfmrrXliqjovabmo4Dkv67nrqHnkIbns7vnu588YnIvPgoJ
+CQk8Yj7miYDnlKjmioDmnK/vvJo8L2I+cmFpbHMgM+OAgWV4dGpzPGJyLz4K
+CQkJPGRpdiBjbGFzcz0icGJyIj48L2Rpdj4KCQkJMjAxMC0wNuiHszIwMTAt
+MDgmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDvmtanmtbfnvZHnu5zph4fotK3n
+q57ku7flubPlj7Dns7vnu588YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/vvJo8
+L2I+cmFpbHMgMijljYfnuqfkuLpyYWlsczMp44CBZXh0anM8YnIvPgoJCQk8
+ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTAy6IezMjAxMC0wNiZu
+YnNwOyZuYnNwOyZuYnNwOyZuYnNwO+mdkuWym+WuieebkeWxgOWNsemZqea6
+kOinhumikeebkeaOp+ezu+e7nzxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8
+mjwvYj5qYXZh44CBZXh0anPjgIFWTEPjgIFzcHJpbmcgTVZD44CBaGliZXJu
+YXRlPGJyLz4KCQkJPGRpdiBjbGFzcz0icGJyIj48L2Rpdj4KCQkJMjAwOS0x
+MuiHszIwMTAtMDMmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDvltILlsbHlhZrm
+oKHmoKHlm63nrqHnkIbns7vnu588YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/v
+vJo8L2I+cmFpbHMgMijljYfnuqfkuLpyYWlsczMp44CBZXh0anM8YnIvPgoJ
+CQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDA5LTA56IezMjAxMC0w
+MSZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+S4reWbvea1t+a0i+Wkp+WtpuaX
+peW4uOmbtuaYn+eJqei1hOmHh+i0reezu+e7nzxici8+CgkJCTxiPuaJgOeU
+qOaKgOacr++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRq
+czxici8+CgkJPC9kaXY+CgoKPC9kaXY+CjxkaXYgY2xhc3M9ImJyIj4KPC9k
+aXY+CjxkaXYgaWQ9ImZvb3RlciI+CjwvZGl2Pgo8L2JvZHk+Cgo8L2h0bWw+
+Cg==
+  [1m[36mSQL (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Completed 200 OK in 3752ms (Views: 4.0ms | ActiveRecord: 140.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Wed Sep 07 23:46:38 +0800 2011
+  Processing by Admin::JobController#get_jobs as 
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 48ms (Views: 3.0ms | ActiveRecord: 2.0ms)
+Rendered job_mailer/job_email.html.erb (0.0ms)
+
+Sent mail to gaoshengyang2000@163.com (6076ms)
+Date: Wed, 07 Sep 2011 23:48:41 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e679259d6047_34f81c3278c10456@kimi-PC.mail>
+Subject: yingpin
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iaHR0cDov
+L3d3dy5raW1pZ2FvLm1lL2pvYi9jc3Mvc3R5bGUuY3NzIiByZWw9InN0eWxl
+c2hlZXQiIHR5cGU9InRleHQvY3NzIiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxk
+aXYgaWQ9ImhlYWQiPgoJPGgxPnlpbmdwaW48L2gxPi0tLTxoMT4xMTE8L2gx
+Pgo8L2Rpdj4KPGRpdiBjbGFzcz0iYnIiPgo8L2Rpdj4KPGRpdiBpZD0iYm9k
+eSI+CiAgICAgICAgPGgxPumrmOWNh+a0i+eahOeugOWOhjwvaDE+Cgk8aDM+
+5YWz5LqO5oiRPC9oMz4KCQk8ZGl2IGlkPSJhYm91dCI+CgkJCTxpbWcgc3Jj
+PSJodHRwOi8vd3d3LmtpbWlnYW8ubWUvam9iL21lLmpwZyIgYWx0PSJraW1p
+IiAvPgoJCQlQZXJzb24ubmV3KDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5i
+c3A7CgkJCTpuYW1lID0+ICfpq5jljYfmtIssS2ltaScsPGJyLz4mbmJzcDsm
+bmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRldGFpbCA9PiAnMTk4NuW5tOeUn++8
+jOeUt++8jOacquWpmicsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsK
+CQkJOnBob25lID0+ICcxNTI2NTQyOTg5MicsPGJyLz4mbmJzcDsmbmJzcDsm
+bmJzcDsmbmJzcDsKCQkJOmVtYWlsID0+ICdraW1pZ2FvMTk4NkBnbWFpbCcs
+PGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRyZWFtID0+ICfo
+rqnkupLogZTnvZHmm7TliqDnsr7lvanvvIHvvIEnLDxici8+Jm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A7CgkJCTp3ZWJzaXRlID0+ICc8YSBocmVmPSJodHRw
+Oi8vd3d3LmtpbWlnYW8ubWUiIHRhcmdldD0iX2JsYW5rIj5odHRwOi8vd3d3
+LmtpbWlnYW8ubWU8L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNw
+OwoJCQk6Y29kZV91cmwgPT4gJzxhIGhyZWY9Imh0dHBzOi8vZ2l0aHViLmNv
+bS9LaW1pR2FvIiB0YXJnZXQ9Il9ibGFuayI+aHR0cHM6Ly9naXRodWIuY29t
+L0tpbWlHYW88L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJ
+CQk6am9iX3dhbnQgPT4gJ1J1YnkgT24gUmFpbHPlt6XnqIvluIgnLDxici8+
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpza2lsbCA9PiAnUnVieSxS
+YWlscyxKYXZhLE15U1FMLEFwYWNoZSxzdm4sZ2l0LEV4dEpTLEpRdWVyeSxq
+YXZhc2NyaXB0LGNzcycsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsK
+CQkJOmhvYmJ5ID0+ICfmraXooYws55S15b2xLOWPsOeQgyzml4XooYws5pGE
+5b2xJzxici8+CgkJCSk8YnIvPgoJCTwvZGl2PgoJPGgzIGNsYXNzPSJncmUi
+PuiBjOS4muaipuaDszwvaDM+CgkJPGRpdiBpZD0iZGV0YWlsIj4KCQkJ5LqS
+6IGU572R5bey6L+b5YWl5Lq65Lus55qE55Sf5rS75Lit77yM5LiN6K665piv
+5Lyg57uf5LqS6IGU572R6L+Y5piv56e75Yqo5LqS6IGU572R6YO95LiO5Lq6
+5Lus55qE5YWz57O76LaK5p2l6LaK57Sn5a+G44CC5biM5pyb5Zyo5LiN5LmF
+5Lul5ZCO6IO95YGa5LiA5Liq5pS55Y+Y5Lq65Lus55Sf5rS76LSo6YeP55qE
+5LqS6IGU572R5bqU55So44CCCgkJPC9kaXY+Cgk8aDMgY2xhc3M9InJlZCI+
+5oqA5pyv54m56ZW/PC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwiPgoJCQnnhp/m
+golSdWJ5IG9uIFJhaWxzLGphdmEsamF2YXNjcmlwdCxodG1sLGNzc+etieaK
+gOacr+OAgjxici8+CgkJCeeGn+aCiU5ldEJlYW5zLGd2aW3nrYnlvIDlj5Hl
+t6XlhbfjgIIKCQkJ54af5oKJZXh0anMsanF1ZXJ5562JanPmoYbmnrbjgII8
+YnIvPgoJCQnnhp/mgol1YnVudHUsY2VudG9zLHdpbmRvd3Pmk43kvZzns7vn
+u5/jgII8YnIvPgoJCQnnhp/mgolhcGFjaGUsUk9S5ZyodWJ1bnR15ZKMY2Vu
+dG9z5LiK55qE5a6J6KOF6YOo572y44CCPGJyLz4KCQkJ54af5oKJU1ZOLGdp
+dOeJiOacrOaOp+WItuezu+e7n++8jOaciXN2buWcqGNlbnRvc+S4iuWuieij
+heOAgee7tOaKpOe7j+mqjOOAgjxici8+CgkJCeiHquWtpmFuZHJvaWTvvIzl
+gZrov4dhbmRyb2lk55qE5bCP56iL5bqP44CC77yI55yf5LiN5aW95oSP5oCd
+77yJPGJyLz4KCQkJ56ef55So5Zu95aSW55qEdnBz77yMT1PkuLp1YnVudHXv
+vIzkuKrkurrljZrlrqLlkozlh6DkuKpST1LnvZHnq5npg6jnvbLlnKjkuIrp
+naLvvIzlm6DmraTnp6/ntK/kuobkupvlr7lST1LnmoTpg6jnvbLlkozkvJjl
+jJbnmoTnu4/pqozjgIIKCQk8L2Rpdj4KCTxoMyBjbGFzcz0ieWVsIj7pobnn
+m67nu4/pqow8L2gzPgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJCTIwMTEtMDjo
+h7MyMDExLTA5Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PGEgaHJlZj0iaHR0
+cDovL3d3dy5zaW51bzE5LmNvbSIgdGFyZ2V0PSJfYmxhbmsiPuS4neivuue6
+uue7h+WFrOWPuOe9keermTwvYT48YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/v
+vJo8L2I+cmFpbHMgM+OAgWV4dGpz44CBa2luZGVkaXRvcuOAgWpxdWVyeeOA
+gWdpdOOAgWdpdGh1Yjxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+
+CgkJCTIwMTEtMDToh7MyMDExLTA2Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7
+PGEgaHJlZj0iaHR0cDovL2hhbmJhb3Bvd2VyLmdyZWVuc2VydmVyLmNuIiB0
+YXJnZXQ9Il9ibGFuayI+5oKN6LG555S155O25YWs5Y+4572R56uZPC9hPjxi
+ci8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAyLjPjgIFleHRq
+c+OAgWNrZGl0b3LjgIFqcXVlcnk8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIi
+PjwvZGl2PgoJCQkyMDEwLTA46IezMjAxMS0wNCZuYnNwOyZuYnNwOyZuYnNw
+OyZuYnNwO+a1juWNl+auteWKqOi9puajgOS/rueuoeeQhuezu+e7nzxici8+
+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAz44CBZXh0anM8YnIv
+PgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTA26IezMjAx
+MC0wOCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+a1qea1t+e9kee7nOmHh+i0
+reernuS7t+W5s+WPsOezu+e7nzxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8
+mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRqczxici8+CgkJ
+CTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMTAtMDLoh7MyMDEwLTA2
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A76Z2S5bKb5a6J55uR5bGA5Y2x6Zmp
+5rqQ6KeG6aKR55uR5o6n57O757ufPGJyLz4KCQkJPGI+5omA55So5oqA5pyv
+77yaPC9iPmphdmHjgIFleHRqc+OAgVZMQ+OAgXNwcmluZyBNVkPjgIFoaWJl
+cm5hdGU8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDA5
+LTEy6IezMjAxMC0wMyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+W0guWxseWF
+muagoeagoeWbreeuoeeQhuezu+e7nzxici8+CgkJCTxiPuaJgOeUqOaKgOac
+r++8mjwvYj5yYWlscyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRqczxici8+
+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDktMDnoh7MyMDEw
+LTAxJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75Lit5Zu95rW35rSL5aSn5a2m
+5pel5bi46Zu25pif54mp6LWE6YeH6LSt57O757ufPGJyLz4KCQkJPGI+5omA
+55So5oqA5pyv77yaPC9iPnJhaWxzIDIo5Y2H57qn5Li6cmFpbHMzKeOAgWV4
+dGpzPGJyLz4KCQk8L2Rpdj4KCgo8L2Rpdj4KPGRpdiBjbGFzcz0iYnIiPgo8
+L2Rpdj4KPGRpdiBpZD0iZm9vdGVyIj4KPC9kaXY+CjwvYm9keT4KCjwvaHRt
+bD4K

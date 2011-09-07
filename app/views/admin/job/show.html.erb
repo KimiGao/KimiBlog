@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>编辑Job</title>
+    <script>
+      Ext.onReady(function(){
+        jobId = <%= params[:id] %>;
+        var name = new Ext.form.TextField({
+          fieldLabel: '公司名',
+          name:'job[company_name]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var subject = new Ext.form.TextField({
+          fieldLabel: '主题',
+          name:'job[subject]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var email = new Ext.form.TextField({
+          fieldLabel: 'email',
+          name:'job[email]',
+          allowBlank: false,
+          anchor: '100%'
+        })
+
+        var okButton = new Ext.Button({
+          text: '确定',
+          handler: function(){
+            if(editJobForm.form.isValid()){
+              okButton.setDisabled(true);
+              editJobForm.form.submit({
+                method: 'put',
+                waitMsg: '正在保存信息...',
+                success: function(result,response){
+                  if(response.result.info == 'success'){
+                    editJobWin.destroy();
+                  }else{
+                    Ext.Msg.alert('提示',response.result.info);
+                    okButton.setDisabled(false)
+                  }
+                },
+                failure: function(result,response){
+                  Ext.Msg.alert('提示',result.responseText)
+                  okButton.setDisabled(false)
+                }
+              })
+            }else{
+              Ext.Msg.alert('提示','请填入必填项')
+            }
+          }
+        })
+
+        var cancelButton = new Ext.Button({
+          text: '取消',
+          handler: function(){
+            editJobWin.destroy();
+          }
+        })
+
+        var editJobForm = new Ext.form.FormPanel({
+          labelAlign: 'top',
+          url:'/admin/job/' + jobId ,
+          buttonAlign:'center',
+          bodyStyle: 'padding:5px',
+          labelWidth:100,
+          waitMsgTarget: true,
+          frame: true,
+          reader:new Ext.data.JsonReader({
+          },[
+            {name:'id'},
+            {name:'job[subject]',mapping:'subject'},
+            {name:'job[company_name]',mapping:'company_name'},
+            {name:'job[email]',mapping:'email'}
+          ]
+        ),
+          items:[{
+              layout:'column',
+              items:[{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [subject]
+                },{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [name]
+                },{
+                  columnWidth:1,
+                  layout: 'form',
+                  items: [email]
+                }]
+            }],
+          buttons:[okButton,cancelButton]
+        });
+
+        editJobForm.form.load({
+          url: '/admin/job/' + jobId+'/edit',
+          method: 'get',
+          success: function(form, action){
+          },
+          failure: function(form, action){
+            Ext.MessageBox.alert('提示信息', '信息加载失败');
+          }
+        });
+
+        editJobForm.render('edit_job_form');
+      })
+    </script>
+  </head>
+  <body>
+    <div id="edit_job_form"></div>
+  </body>
+</html>
