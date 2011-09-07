@@ -7908,3 +7908,305 @@ Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Tue Sep 06 18:37:46 +0800
   [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
 Rendered text template (0.0ms)
 Completed 200 OK in 65ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:00:50 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (49.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (83.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[35mTag Load (17.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (59.0ms)
+Rendered home/index.html.erb within layouts/home (180.0ms)
+Completed 200 OK in 529ms (Views: 201.0ms | ActiveRecord: 68.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:02:39 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[35mBlog Load (2.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC
+Rendered home/_blog.html.erb (20.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (0.0ms)
+Rendered home/_rmenu.html.erb (39.0ms)
+Rendered home/index.html.erb within layouts/home (96.0ms)
+Completed 200 OK in 145ms (Views: 126.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:03:18 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (22.0ms)
+Rendered home/_header.html.erb (1.0ms)
+  [1m[35mTag Load (1.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (47.0ms)
+Rendered home/index.html.erb within layouts/home (106.0ms)
+Completed 200 OK in 156ms (Views: 134.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:03:40 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC
+Rendered home/_blog.html.erb (19.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[36mTag Load (1.0ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (2.0ms)
+Rendered home/_rmenu.html.erb (43.0ms)
+Rendered home/index.html.erb within layouts/home (95.0ms)
+Completed 200 OK in 145ms (Views: 126.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:04:11 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (24.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[35mTag Load (1.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (97.0ms)
+Rendered home/index.html.erb within layouts/home (157.0ms)
+Completed 200 OK in 207ms (Views: 184.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:04:23 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[35mBlog Load (2.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC
+Rendered home/_blog.html.erb (24.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (103.0ms)
+Rendered home/index.html.erb within layouts/home (163.0ms)
+Completed 200 OK in 213ms (Views: 193.0ms | ActiveRecord: 3.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:05:57 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (35.0ms)
+Rendered home/_header.html.erb (1.0ms)
+  [1m[35mTag Load (1.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (40.0ms)
+Rendered home/index.html.erb within layouts/home (112.0ms)
+Completed 200 OK in 328ms (Views: 143.0ms | ActiveRecord: 3.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:16:03 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (44.0ms)
+Rendered home/_header.html.erb (1.0ms)
+  [1m[35mTag Load (1.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (52.0ms)
+Rendered home/index.html.erb within layouts/home (138.0ms)
+Completed 200 OK in 397ms (Views: 172.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/blogs?tag=webserver" for 127.0.0.1 at Wed Sep 07 10:16:26 +0800 2011
+  Processing by BlogsController#index as HTML
+  Parameters: {"tag"=>"webserver"}
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` WHERE (tag_name like '%webserver%') ORDER BY updated_at DESC
+Rendered blogs/_blog.html.erb (18.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[36mTag Load (1.0ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (43.0ms)
+Rendered blogs/index.html.erb within layouts/blogs (98.0ms)
+Completed 200 OK in 152ms (Views: 129.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:17:05 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (29.0ms)
+Rendered home/_header.html.erb (1.0ms)
+  [1m[35mTag Load (0.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (2.0ms)
+Rendered home/_rmenu.html.erb (53.0ms)
+Rendered home/index.html.erb within layouts/home (127.0ms)
+Completed 200 OK in 242ms (Views: 160.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 10:17:11 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Wed Sep 07 10:17:11 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 77ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 10:17:17 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"123"}
+  [1m[35mAdmin Load (2.0ms)[0m  SELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = '123') LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 20ms (Views: 14.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Wed Sep 07 10:17:23 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 24ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Sep 07 10:17:23 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (5.0ms)
+Completed 200 OK in 84ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs/tags_list" for 127.0.0.1 at Wed Sep 07 10:17:30 +0800 2011
+  Processing by Admin::BlogsController#tags_list as HTML
+Rendered admin/blogs/tags_list.html.erb (0.0ms)
+Completed 200 OK in 114ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_tags" for 127.0.0.1 at Wed Sep 07 10:17:30 +0800 2011
+  Processing by Admin::BlogsController#get_tags as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `tags`
+  [1m[36mTag Load (1.0ms)[0m  [1mSELECT `tags`.* FROM `tags` LIMIT 20 OFFSET 0[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 53ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/blogs" for 127.0.0.1 at Wed Sep 07 10:17:36 +0800 2011
+  Processing by Admin::BlogsController#index as HTML
+Rendered admin/blogs/index.html.erb (2.0ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 10:17:36 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM `blogs`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 66ms (Views: 3.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/admin/messages/get_messages_with_blog" for 127.0.0.1 at Wed Sep 07 10:17:37 +0800 2011
+  Processing by Admin::MessagesController#get_messages_with_blog as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `messages`
+  [1m[36mMessage Load (1.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (blog_id = 0) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 119ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/blogs/9" for 127.0.0.1 at Wed Sep 07 10:17:39 +0800 2011
+  Processing by Admin::BlogsController#show as HTML
+  Parameters: {"id"=>"9"}
+Rendered admin/blogs/show.html.erb (1.0ms)
+Completed 200 OK in 125ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs/9/edit?_dc=1315361859906" for 127.0.0.1 at Wed Sep 07 10:17:40 +0800 2011
+  Processing by Admin::BlogsController#edit as HTML
+  Parameters: {"id"=>"9", "_dc"=>"1315361859906"}
+  [1m[35mSQL (32.0ms)[0m  SHOW TABLES
+  [1m[36mBlog Load (0.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` WHERE `blogs`.`id` = 9 LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 97ms (Views: 3.0ms | ActiveRecord: 32.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 10:17:40 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `blogs`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 54ms (Views: 2.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/blogs/2" for 127.0.0.1 at Wed Sep 07 10:17:46 +0800 2011
+  Processing by Admin::BlogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered admin/blogs/show.html.erb (1.0ms)
+Completed 200 OK in 128ms (Views: 127.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/blogs/2/edit?_dc=1315361867227" for 127.0.0.1 at Wed Sep 07 10:17:47 +0800 2011
+  Processing by Admin::BlogsController#edit as HTML
+  Parameters: {"id"=>"2", "_dc"=>"1315361867227"}
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` WHERE `blogs`.`id` = 2 LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 120ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/admin/blogs/2" for 127.0.0.1 at Wed Sep 07 10:17:55 +0800 2011
+  Processing by Admin::BlogsController#update as HTML
+  Parameters: {"blog"=>{"title"=>"转载别人收集的服务器架构方面的文章", "tag_name"=>"webserver,website,服务器", "content"=>"<p>\n\t&nbsp;</p>\n<p style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-left:0px;padding-right:0px;padding-bottom:10px;\">\n\t<span style=\"font-size:18px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-family:微软雅黑;\">在逛豆瓣时，看着了这篇文章，作者收集的文章很全，特意转到自己的站点上，以防以后忘了，慢慢看！</span></span></span></p>\n<p style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-left:0px;padding-right:0px;padding-bottom:10px;\">\n\t<span style=\"font-size:18px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-family:微软雅黑;\">mark地址：<a href=\"http://www.douban.com/group/topic/14530790/\" rel=\"nofollow\" style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-family:Georgia, sans-serif;font-size:15px;font-weight:bold;color:#336699;text-decoration:none;cursor:pointer;\" target=\"_blank\">http://www.douban.com/group/topic/14530790/</a></span></span></span></p>"}, "id"=>"2"}
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` WHERE `blogs`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  BEGIN
+  [1m[36mAREL (49.0ms)[0m  [1mUPDATE `blogs` SET `updated_at` = '2011-09-07 02:17:55', `tag_name` = 'webserver,website,服务器', `content` = '<p>\n	&nbsp;</p>\n<p style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-left:0px;padding-right:0px;padding-bottom:10px;\">\n	<span style=\"font-size:18px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-family:微软雅黑;\">在逛豆瓣时，看着了这篇文章，作者收集的文章很全，特意转到自己的站点上，以防以后忘了，慢慢看！</span></span></span></p>\n<p style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-left:0px;padding-right:0px;padding-bottom:10px;\">\n	<span style=\"font-size:18px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;\"><span style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-family:微软雅黑;\">mark地址：<a href=\"http://www.douban.com/group/topic/14530790/\" rel=\"nofollow\" style=\"border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-style:initial;border-color:initial;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;font-family:Georgia, sans-serif;font-size:15px;font-weight:bold;color:#336699;text-decoration:none;cursor:pointer;\" target=\"_blank\">http://www.douban.com/group/topic/14530790/</a></span></span></span></p>' WHERE `blogs`.`id` = 2[0m
+  [1m[35mSQL (22.0ms)[0m  COMMIT
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT `tags`.* FROM `tags` WHERE `tags`.`tag_name` = 'webserver' LIMIT 1[0m
+  [1m[35mTag Load (1.0ms)[0m  SELECT `tags`.* FROM `tags` WHERE `tags`.`tag_name` = 'website' LIMIT 1
+  [1m[36mTag Load (1.0ms)[0m  [1mSELECT `tags`.* FROM `tags` WHERE `tags`.`tag_name` = '服务器' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (24.0ms)[0m  [1mdescribe `tags`[0m
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO `tags` (`tag_name`, `created_at`, `updated_at`) VALUES ('服务器', '2011-09-07 02:17:55', '2011-09-07 02:17:55')
+  [1m[36mSQL (30.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 275ms (Views: 2.0ms | ActiveRecord: 132.0ms)
+
+
+Started POST "/admin/blogs/get_blogs" for 127.0.0.1 at Wed Sep 07 10:17:55 +0800 2011
+  Processing by Admin::BlogsController#get_blogs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `blogs`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 58ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/blogs/tags_list" for 127.0.0.1 at Wed Sep 07 10:17:57 +0800 2011
+  Processing by Admin::BlogsController#tags_list as HTML
+Rendered admin/blogs/tags_list.html.erb (67.0ms)
+Completed 200 OK in 190ms (Views: 189.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/blogs/get_tags" for 127.0.0.1 at Wed Sep 07 10:17:58 +0800 2011
+  Processing by Admin::BlogsController#get_tags as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `tags`
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT `tags`.* FROM `tags` LIMIT 20 OFFSET 0[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 58ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Sep 07 10:18:02 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC
+Rendered home/_blog.html.erb (21.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (1.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (2.0ms)
+Rendered home/_rmenu.html.erb (52.0ms)
+Rendered home/index.html.erb within layouts/home (116.0ms)
+Completed 200 OK in 173ms (Views: 148.0ms | ActiveRecord: 2.0ms)
