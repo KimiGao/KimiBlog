@@ -9362,3 +9362,2694 @@ LTAxJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75Lit5Zu95rW35rSL5aSn5a2m
 dGpzPGJyLz4KCQk8L2Rpdj4KCgo8L2Rpdj4KPGRpdiBjbGFzcz0iYnIiPgo8
 L2Rpdj4KPGRpdiBpZD0iZm9vdGVyIj4KPC9kaXY+CjwvYm9keT4KCjwvaHRt
 bD4K
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/admin" for 127.0.0.1 at Thu Sep 08 00:07:28 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 0ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Thu Sep 08 00:07:34 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (3.0ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Thu Sep 08 00:07:47 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 190ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Thu Sep 08 00:07:47 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (5.0ms)
+Completed 200 OK in 72ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Thu Sep 08 00:07:50 +0800 2011
+  Processing by Admin::JobController#index as HTML
+Rendered admin/job/index.html.erb (0.0ms)
+Completed 200 OK in 105ms (Views: 104.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 00:07:51 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (0.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 169ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 00:07:52 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (1.0ms)
+Completed 200 OK in 110ms (Views: 110.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 00:08:03 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"222", "subject"=>"222", "email"=>"kimigao1986@gmail.com"}}
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (4.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (6.0ms)[0m  describe `jobs`
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO `jobs` (`company_name`, `updated_at`, `created_at`, `email`, `subject`) VALUES ('222', '2011-09-07 16:08:03', '2011-09-07 16:08:03', 'kimigao1986@gmail.com', '222')[0m
+  [1m[35mSQL (48.0ms)[0m  COMMIT
+Rendered job_mailer/job_email.html.erb (0.0ms)
+
+Sent mail to kimigao1986@gmail.com (107ms)
+Date: Thu, 08 Sep 2011 00:08:04 +0800
+From: kimigao1986@gmail.com
+To: kimigao1986@gmail.com
+Message-ID: <4e6796e4336a9_353034da2346955e@kimi-PC.mail>
+Subject: 222
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iaHR0cDov
+L3d3dy5raW1pZ2FvLm1lL2pvYi9jc3Mvc3R5bGUuY3NzIiByZWw9InN0eWxl
+c2hlZXQiIHR5cGU9InRleHQvY3NzIiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxk
+aXYgaWQ9ImhlYWQiPgoJPGgxPjIyMi0tLTIyMjwvaDE+CjwvZGl2Pgo8ZGl2
+IGNsYXNzPSJiciI+CjwvZGl2Pgo8ZGl2IGlkPSJib2R5Ij4KICAgICAgICA8
+aDE+6auY5Y2H5rSL55qE566A5Y6GPC9oMT4KCTxoMz7lhbPkuo7miJE8L2gz
+PgoJCTxkaXYgaWQ9ImFib3V0Ij4KCQkJPGltZyBzcmM9Imh0dHA6Ly93d3cu
+a2ltaWdhby5tZS9qb2IvbWUuanBnIiBhbHQ9ImtpbWkiIC8+CgkJCVBlcnNv
+bi5uZXcoPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOm5hbWUg
+PT4gJ+mrmOWNh+a0iyxLaW1pJyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZu
+YnNwOwoJCQk6ZGV0YWlsID0+ICcxOTg25bm055Sf77yM55S377yM5pyq5ama
+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6cGhvbmUgPT4g
+JzE1MjY1NDI5ODkyJyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJ
+CQk6ZW1haWwgPT4gJ2tpbWlnYW8xOTg2QGdtYWlsJyw8YnIvPiZuYnNwOyZu
+YnNwOyZuYnNwOyZuYnNwOwoJCQk6ZHJlYW0gPT4gJ+iuqeS6kuiBlOe9keab
+tOWKoOeyvuW9qe+8ge+8gScsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJz
+cDsKCQkJOndlYnNpdGUgPT4gJzxhIGhyZWY9Imh0dHA6Ly93d3cua2ltaWdh
+by5tZSIgdGFyZ2V0PSJfYmxhbmsiPmh0dHA6Ly93d3cua2ltaWdhby5tZTwv
+YT4nLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpjb2RlX3Vy
+bCA9PiAnPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL0tpbWlHYW8iIHRh
+cmdldD0iX2JsYW5rIj5odHRwczovL2dpdGh1Yi5jb20vS2ltaUdhbzwvYT4n
+LDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpqb2Jfd2FudCA9
+PiAnUnVieSBPbiBSYWlsc+W3peeoi+W4iCcsPGJyLz4mbmJzcDsmbmJzcDsm
+bmJzcDsmbmJzcDsKCQkJOnNraWxsID0+ICdSdWJ5LFJhaWxzLEphdmEsTXlT
+UUwsQXBhY2hlLHN2bixnaXQsRXh0SlMsSlF1ZXJ5LGphdmFzY3JpcHQsY3Nz
+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6aG9iYnkgPT4g
+J+atpeihjCznlLXlvbEs5Y+w55CDLOaXheihjCzmkYTlvbEnPGJyLz4KCQkJ
+KTxici8+CgkJPC9kaXY+Cgk8aDMgY2xhc3M9ImdyZSI+6IGM5Lia5qKm5oOz
+PC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwiPgoJCQnkupLogZTnvZHlt7Lov5vl
+haXkurrku6znmoTnlJ/mtLvkuK3vvIzkuI3orrrmmK/kvKDnu5/kupLogZTn
+vZHov5jmmK/np7vliqjkupLogZTnvZHpg73kuI7kurrku6znmoTlhbPns7vo
+tormnaXotorntKflr4bjgILluIzmnJvlnKjkuI3kuYXku6XlkI7og73lgZrk
+uIDkuKrmlLnlj5jkurrku6znlJ/mtLvotKjph4/nmoTkupLogZTnvZHlupTn
+lKjjgIIKCQk8L2Rpdj4KCTxoMyBjbGFzcz0icmVkIj7mioDmnK/nibnplb88
+L2gzPgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJCeeGn+aCiVJ1Ynkgb24gUmFp
+bHMsamF2YSxqYXZhc2NyaXB0LGh0bWwsY3Nz562J5oqA5pyv44CCPGJyLz4K
+CQkJ54af5oKJTmV0QmVhbnMsZ3ZpbeetieW8gOWPkeW3peWFt+OAggoJCQnn
+hp/mgolleHRqcyxqcXVlcnnnrYlqc+ahhuaetuOAgjxici8+CgkJCeeGn+aC
+iXVidW50dSxjZW50b3Msd2luZG93c+aTjeS9nOezu+e7n+OAgjxici8+CgkJ
+CeeGn+aCiWFwYWNoZSxST1LlnKh1YnVudHXlkoxjZW50b3PkuIrnmoTlrono
+o4Xpg6jnvbLjgII8YnIvPgoJCQnnhp/mgolTVk4sZ2l054mI5pys5o6n5Yi2
+57O757uf77yM5pyJc3Zu5ZyoY2VudG9z5LiK5a6J6KOF44CB57u05oqk57uP
+6aqM44CCPGJyLz4KCQkJ6Ieq5a2mYW5kcm9pZO+8jOWBmui/h2FuZHJvaWTn
+moTlsI/nqIvluo/jgILvvIjnnJ/kuI3lpb3mhI/mgJ3vvIk8YnIvPgoJCQnn
+p5/nlKjlm73lpJbnmoR2cHPvvIxPU+S4unVidW50de+8jOS4quS6uuWNmuWu
+ouWSjOWHoOS4qlJPUue9keermemDqOe9suWcqOS4iumdou+8jOWboOatpOen
+r+e0r+S6huS6m+WvuVJPUueahOmDqOe9suWSjOS8mOWMlueahOe7j+mqjOOA
+ggoJCTwvZGl2PgoJPGgzIGNsYXNzPSJ5ZWwiPumhueebrue7j+mqjDwvaDM+
+CgkJPGRpdiBpZD0iZGV0YWlsIj4KCQkJMjAxMS0wOOiHszIwMTEtMDkmbmJz
+cDsmbmJzcDsmbmJzcDsmbmJzcDs8YSBocmVmPSJodHRwOi8vd3d3LnNpbnVv
+MTkuY29tIiB0YXJnZXQ9Il9ibGFuayI+5Lid6K+657q657uH5YWs5Y+4572R
+56uZPC9hPjxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAz
+44CBZXh0anPjgIFraW5kZWRpdG9y44CBanF1ZXJ544CBZ2l044CBZ2l0aHVi
+PGJyLz4KCQkJPGRpdiBjbGFzcz0icGJyIj48L2Rpdj4KCQkJMjAxMS0wNOiH
+szIwMTEtMDYmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDs8YSBocmVmPSJodHRw
+Oi8vaGFuYmFvcG93ZXIuZ3JlZW5zZXJ2ZXIuY24iIHRhcmdldD0iX2JsYW5r
+Ij7mgo3osbnnlLXnk7blhazlj7jnvZHnq5k8L2E+PGJyLz4KCQkJPGI+5omA
+55So5oqA5pyv77yaPC9iPnJhaWxzIDIuM+OAgWV4dGpz44CBY2tkaXRvcuOA
+gWpxdWVyeTxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIw
+MTAtMDjoh7MyMDExLTA0Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75rWO5Y2X
+5q615Yqo6L2m5qOA5L+u566h55CG57O757ufPGJyLz4KCQkJPGI+5omA55So
+5oqA5pyv77yaPC9iPnJhaWxzIDPjgIFleHRqczxici8+CgkJCTxkaXYgY2xh
+c3M9InBiciI+PC9kaXY+CgkJCTIwMTAtMDboh7MyMDEwLTA4Jm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A75rWp5rW3572R57uc6YeH6LSt56ue5Lu35bmz5Y+w
+57O757ufPGJyLz4KCQkJPGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxzIDIo
+5Y2H57qn5Li6cmFpbHMzKeOAgWV4dGpzPGJyLz4KCQkJPGRpdiBjbGFzcz0i
+cGJyIj48L2Rpdj4KCQkJMjAxMC0wMuiHszIwMTAtMDYmbmJzcDsmbmJzcDsm
+bmJzcDsmbmJzcDvpnZLlspvlronnm5HlsYDljbHpmanmupDop4bpopHnm5Hm
+jqfns7vnu588YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/vvJo8L2I+amF2YeOA
+gWV4dGpz44CBVkxD44CBc3ByaW5nIE1WQ+OAgWhpYmVybmF0ZTxici8+CgkJ
+CTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDktMTLoh7MyMDEwLTAz
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75bSC5bGx5YWa5qCh5qCh5Zut566h
+55CG57O757ufPGJyLz4KCQkJPGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxz
+IDIo5Y2H57qn5Li6cmFpbHMzKeOAgWV4dGpzPGJyLz4KCQkJPGRpdiBjbGFz
+cz0icGJyIj48L2Rpdj4KCQkJMjAwOS0wOeiHszIwMTAtMDEmbmJzcDsmbmJz
+cDsmbmJzcDsmbmJzcDvkuK3lm73mtbfmtIvlpKflrabml6XluLjpm7bmmJ/n
+ianotYTph4fotK3ns7vnu588YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/vvJo8
+L2I+cmFpbHMgMijljYfnuqfkuLpyYWlsczMp44CBZXh0anM8YnIvPgoJCTwv
+ZGl2PgoKCjwvZGl2Pgo8ZGl2IGNsYXNzPSJiciI+CjwvZGl2Pgo8ZGl2IGlk
+PSJmb290ZXIiPgo8L2Rpdj4KPC9ib2R5PgoKPC9odG1sPgo=
+Completed   in 481ms
+
+ArgumentError (wrong authentication type html):
+  app/controllers/admin/job_controller.rb:13:in `create'
+
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (70.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (95.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/admin" for 127.0.0.1 at Thu Sep 08 00:11:00 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (4.0ms)
+Completed 200 OK in 72ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 08 11:16:05 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (29.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (59.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[35mTag Load (21.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (68.0ms)
+Rendered home/index.html.erb within layouts/home (183.0ms)
+Completed 200 OK in 501ms (Views: 215.0ms | ActiveRecord: 51.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Thu Sep 08 11:36:50 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at Thu Sep 08 11:36:50 +0800 2011
+  Processing by Admin::IndexController#login as HTML
+Rendered admin/index/login.html.erb (4.0ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/validate_user" for 127.0.0.1 at Thu Sep 08 11:36:59 +0800 2011
+  Processing by Admin::IndexController#validate_user as HTML
+  Parameters: {"login_name"=>"admin", "login_pwd"=>"gsy1986"}
+  [1m[35mAdmin Load (125.0ms)[0m  SELECT `admins`.* FROM `admins` WHERE (user_name = 'admin' AND password = 'gsy1986') LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 166ms (Views: 21.0ms | ActiveRecord: 125.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Thu Sep 08 11:37:00 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (5.0ms)
+Completed 200 OK in 94ms (Views: 90.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Thu Sep 08 11:37:05 +0800 2011
+  Processing by Admin::JobController#index as HTML
+Rendered admin/job/index.html.erb (0.0ms)
+Completed 200 OK in 103ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 11:37:06 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (49.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 80ms (Views: 2.0ms | ActiveRecord: 50.0ms)
+
+
+Started POST "/admin/job/destroy_list" for 127.0.0.1 at Thu Sep 08 11:37:09 +0800 2011
+  Processing by Admin::JobController#destroy_list as HTML
+  Parameters: {"id"=>"[1,2]"}
+  [1m[36mSQL (57.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (34.0ms)[0m  DELETE FROM `jobs` WHERE `jobs`.`id` = 1
+  [1m[36mSQL (31.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (1.0ms)[0m  DELETE FROM `jobs` WHERE `jobs`.`id` = 2
+  [1m[36mSQL (23.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 222ms (Views: 3.0ms | ActiveRecord: 148.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 11:37:10 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (0.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 29ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 12:11:34 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (0.0ms)
+Completed 200 OK in 108ms (Views: 108.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 12:11:43 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"222", "subject"=>"222", "email"=>"gaoshengyang2000@163.com"}}
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (6.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO `jobs` (`subject`, `company_name`, `updated_at`, `created_at`, `email`) VALUES ('222', '222', '2011-09-08 04:11:43', '2011-09-08 04:11:43', 'gaoshengyang2000@163.com')
+  [1m[36mSQL (70.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed   in 515ms
+
+NameError (undefined local variable or method `formar' for #<JobMailer:0x65fd198>):
+  app/mailers/job_mailer.rb:10:in `job_email'
+  app/mailers/job_mailer.rb:8:in `job_email'
+  app/controllers/admin/job_controller.rb:13:in `create'
+
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 12:11:58 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"222", "subject"=>"222", "email"=>"gaoshengyang2000@163.com"}}
+  [1m[35mSQL (1.0ms)[0m  BEGIN
+  [1m[36mSQL (5.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO `jobs` (`updated_at`, `subject`, `email`, `company_name`, `created_at`) VALUES ('2011-09-08 04:11:59', '222', 'gaoshengyang2000@163.com', '222', '2011-09-08 04:11:59')
+  [1m[36mSQL (40.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Rendered job_mailer/job_email.html.erb (0.0ms)
+
+Sent mail to gaoshengyang2000@163.com (13219ms)
+Date: Thu, 08 Sep 2011 12:11:59 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e68408fb053d_87431b662437812@kimi-PC.mail>
+Subject: 222
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e68408f54868_87431b6624375e6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e68408f54868_87431b6624375e6
+Date: Thu, 08 Sep 2011 12:11:59 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e68408f95b6f_87431b6624376d2@kimi-PC.mail>
+
+Hello 222
+
+----==_mimepart_4e68408f54868_87431b6624375e6
+Date: Thu, 08 Sep 2011 12:11:59 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-ID: <4e68408fa6ce3_87431b6624377f6@kimi-PC.mail>
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iaHR0cDov
+L3d3dy5raW1pZ2FvLm1lL2pvYi9jc3Mvc3R5bGUuY3NzIiByZWw9InN0eWxl
+c2hlZXQiIHR5cGU9InRleHQvY3NzIiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxk
+aXYgaWQ9ImhlYWQiPgoJPGgxPjIyMi0tLTIyMjwvaDE+CjwvZGl2Pgo8ZGl2
+IGNsYXNzPSJiciI+CjwvZGl2Pgo8ZGl2IGlkPSJib2R5Ij4KICAgICAgICA8
+aDE+6auY5Y2H5rSL55qE566A5Y6GPC9oMT4KCTxoMz7lhbPkuo7miJE8L2gz
+PgoJCTxkaXYgaWQ9ImFib3V0Ij4KCQkJPGltZyBzcmM9Imh0dHA6Ly93d3cu
+a2ltaWdhby5tZS9qb2IvbWUuanBnIiBhbHQ9ImtpbWkiIC8+CgkJCVBlcnNv
+bi5uZXcoPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOm5hbWUg
+PT4gJ+mrmOWNh+a0iyxLaW1pJyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZu
+YnNwOwoJCQk6ZGV0YWlsID0+ICcxOTg25bm055Sf77yM55S377yM5pyq5ama
+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6cGhvbmUgPT4g
+JzE1MjY1NDI5ODkyJyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJ
+CQk6ZW1haWwgPT4gJ2tpbWlnYW8xOTg2QGdtYWlsJyw8YnIvPiZuYnNwOyZu
+YnNwOyZuYnNwOyZuYnNwOwoJCQk6ZHJlYW0gPT4gJ+iuqeS6kuiBlOe9keab
+tOWKoOeyvuW9qe+8ge+8gScsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJz
+cDsKCQkJOndlYnNpdGUgPT4gJzxhIGhyZWY9Imh0dHA6Ly93d3cua2ltaWdh
+by5tZSIgdGFyZ2V0PSJfYmxhbmsiPmh0dHA6Ly93d3cua2ltaWdhby5tZTwv
+YT4nLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpjb2RlX3Vy
+bCA9PiAnPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL0tpbWlHYW8iIHRh
+cmdldD0iX2JsYW5rIj5odHRwczovL2dpdGh1Yi5jb20vS2ltaUdhbzwvYT4n
+LDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpqb2Jfd2FudCA9
+PiAnUnVieSBPbiBSYWlsc+W3peeoi+W4iCcsPGJyLz4mbmJzcDsmbmJzcDsm
+bmJzcDsmbmJzcDsKCQkJOnNraWxsID0+ICdSdWJ5LFJhaWxzLEphdmEsTXlT
+UUwsQXBhY2hlLHN2bixnaXQsRXh0SlMsSlF1ZXJ5LGphdmFzY3JpcHQsY3Nz
+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6aG9iYnkgPT4g
+J+atpeihjCznlLXlvbEs5Y+w55CDLOaXheihjCzmkYTlvbEnPGJyLz4KCQkJ
+KTxici8+CgkJPC9kaXY+Cgk8aDMgY2xhc3M9ImdyZSI+6IGM5Lia5qKm5oOz
+PC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwiPgoJCQnkupLogZTnvZHlt7Lov5vl
+haXkurrku6znmoTnlJ/mtLvkuK3vvIzkuI3orrrmmK/kvKDnu5/kupLogZTn
+vZHov5jmmK/np7vliqjkupLogZTnvZHpg73kuI7kurrku6znmoTlhbPns7vo
+tormnaXotorntKflr4bjgILluIzmnJvlnKjkuI3kuYXku6XlkI7og73lgZrk
+uIDkuKrmlLnlj5jkurrku6znlJ/mtLvotKjph4/nmoTkupLogZTnvZHlupTn
+lKjjgIIKCQk8L2Rpdj4KCTxoMyBjbGFzcz0icmVkIj7mioDmnK/nibnplb88
+L2gzPgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJCeeGn+aCiVJ1Ynkgb24gUmFp
+bHMsamF2YSxqYXZhc2NyaXB0LGh0bWwsY3Nz562J5oqA5pyv44CCPGJyLz4K
+CQkJ54af5oKJTmV0QmVhbnMsZ3ZpbeetieW8gOWPkeW3peWFt+OAggoJCQnn
+hp/mgolleHRqcyxqcXVlcnnnrYlqc+ahhuaetuOAgjxici8+CgkJCeeGn+aC
+iXVidW50dSxjZW50b3Msd2luZG93c+aTjeS9nOezu+e7n+OAgjxici8+CgkJ
+CeeGn+aCiWFwYWNoZSxST1LlnKh1YnVudHXlkoxjZW50b3PkuIrnmoTlrono
+o4Xpg6jnvbLjgII8YnIvPgoJCQnnhp/mgolTVk4sZ2l054mI5pys5o6n5Yi2
+57O757uf77yM5pyJc3Zu5ZyoY2VudG9z5LiK5a6J6KOF44CB57u05oqk57uP
+6aqM44CCPGJyLz4KCQkJ6Ieq5a2mYW5kcm9pZO+8jOWBmui/h2FuZHJvaWTn
+moTlsI/nqIvluo/jgILvvIjnnJ/kuI3lpb3mhI/mgJ3vvIk8YnIvPgoJCQnn
+p5/nlKjlm73lpJbnmoR2cHPvvIxPU+S4unVidW50de+8jOS4quS6uuWNmuWu
+ouWSjOWHoOS4qlJPUue9keermemDqOe9suWcqOS4iumdou+8jOWboOatpOen
+r+e0r+S6huS6m+WvuVJPUueahOmDqOe9suWSjOS8mOWMlueahOe7j+mqjOOA
+ggoJCTwvZGl2PgoJPGgzIGNsYXNzPSJ5ZWwiPumhueebrue7j+mqjDwvaDM+
+CgkJPGRpdiBpZD0iZGV0YWlsIj4KCQkJMjAxMS0wOOiHszIwMTEtMDkmbmJz
+cDsmbmJzcDsmbmJzcDsmbmJzcDs8YSBocmVmPSJodHRwOi8vd3d3LnNpbnVv
+MTkuY29tIiB0YXJnZXQ9Il9ibGFuayI+5Lid6K+657q657uH5YWs5Y+4572R
+56uZPC9hPjxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAz
+44CBZXh0anPjgIFraW5kZWRpdG9y44CBanF1ZXJ544CBZ2l044CBZ2l0aHVi
+PGJyLz4KCQkJPGRpdiBjbGFzcz0icGJyIj48L2Rpdj4KCQkJMjAxMS0wNOiH
+szIwMTEtMDYmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDs8YSBocmVmPSJodHRw
+Oi8vaGFuYmFvcG93ZXIuZ3JlZW5zZXJ2ZXIuY24iIHRhcmdldD0iX2JsYW5r
+Ij7mgo3osbnnlLXnk7blhazlj7jnvZHnq5k8L2E+PGJyLz4KCQkJPGI+5omA
+55So5oqA5pyv77yaPC9iPnJhaWxzIDIuM+OAgWV4dGpz44CBY2tkaXRvcuOA
+gWpxdWVyeTxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIw
+MTAtMDjoh7MyMDExLTA0Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75rWO5Y2X
+5q615Yqo6L2m5qOA5L+u566h55CG57O757ufPGJyLz4KCQkJPGI+5omA55So
+5oqA5pyv77yaPC9iPnJhaWxzIDPjgIFleHRqczxici8+CgkJCTxkaXYgY2xh
+c3M9InBiciI+PC9kaXY+CgkJCTIwMTAtMDboh7MyMDEwLTA4Jm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A75rWp5rW3572R57uc6YeH6LSt56ue5Lu35bmz5Y+w
+57O757ufPGJyLz4KCQkJPGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxzIDIo
+5Y2H57qn5Li6cmFpbHMzKeOAgWV4dGpzPGJyLz4KCQkJPGRpdiBjbGFzcz0i
+cGJyIj48L2Rpdj4KCQkJMjAxMC0wMuiHszIwMTAtMDYmbmJzcDsmbmJzcDsm
+bmJzcDsmbmJzcDvpnZLlspvlronnm5HlsYDljbHpmanmupDop4bpopHnm5Hm
+jqfns7vnu588YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/vvJo8L2I+amF2YeOA
+gWV4dGpz44CBVkxD44CBc3ByaW5nIE1WQ+OAgWhpYmVybmF0ZTxici8+CgkJ
+CTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDktMTLoh7MyMDEwLTAz
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75bSC5bGx5YWa5qCh5qCh5Zut566h
+55CG57O757ufPGJyLz4KCQkJPGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxz
+IDIo5Y2H57qn5Li6cmFpbHMzKeOAgWV4dGpzPGJyLz4KCQkJPGRpdiBjbGFz
+cz0icGJyIj48L2Rpdj4KCQkJMjAwOS0wOeiHszIwMTAtMDEmbmJzcDsmbmJz
+cDsmbmJzcDsmbmJzcDvkuK3lm73mtbfmtIvlpKflrabml6XluLjpm7bmmJ/n
+ianotYTph4fotK3ns7vnu588YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/vvJo8
+L2I+cmFpbHMgMijljYfnuqfkuLpyYWlsczMp44CBZXh0anM8YnIvPgoJCTwv
+ZGl2PgoKCjwvZGl2Pgo8ZGl2IGNsYXNzPSJiciI+CjwvZGl2Pgo8ZGl2IGlk
+PSJmb290ZXIiPgo8L2Rpdj4KPC9ib2R5PgoKPC9odG1sPgo=
+
+
+----==_mimepart_4e68408f54868_87431b6624375e6--
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 13554ms (Views: 3.0ms | ActiveRecord: 123.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 12:12:13 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 31ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/admin/job/destroy_list" for 127.0.0.1 at Thu Sep 08 12:16:33 +0800 2011
+  Processing by Admin::JobController#destroy_list as HTML
+  Parameters: {"id"=>"[3,4]"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 3 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (1.0ms)[0m  DELETE FROM `jobs` WHERE `jobs`.`id` = 3
+  [1m[36mSQL (71.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mJob Load (0.0ms)[0m  SELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 4 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (1.0ms)[0m  DELETE FROM `jobs` WHERE `jobs`.`id` = 4
+  [1m[36mSQL (42.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (1.0ms)
+Completed 200 OK in 160ms (Views: 3.0ms | ActiveRecord: 117.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 12:16:33 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 23ms (Views: 2.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 12:17:31 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (2.0ms)
+Completed 200 OK in 102ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 12:17:43 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"111", "subject"=>"1111", "email"=>"gaoshengyang2000@163.com"}}
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (6.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO `jobs` (`created_at`, `company_name`, `email`, `subject`, `updated_at`) VALUES ('2011-09-08 04:17:43', '111', 'gaoshengyang2000@163.com', '1111', '2011-09-08 04:17:43')
+  [1m[36mSQL (85.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Rendered job_mailer/job_email.html.erb (0.0ms)
+
+Sent mail to gaoshengyang2000@163.com (12872ms)
+Date: Thu, 08 Sep 2011 12:17:44 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e6841e82d654_87434140c038243@kimi-PC.mail>
+Subject: 1111
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e6841e828062_87434140c0379a2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e6841e828062_87434140c0379a2
+Date: Thu, 08 Sep 2011 12:17:44 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e6841e82b32b_87434140c038034@kimi-PC.mail>
+
+Hello 111
+
+----==_mimepart_4e6841e828062_87434140c0379a2
+Date: Thu, 08 Sep 2011 12:17:44 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-ID: <4e6841e82c6b3_87434140c03819d@kimi-PC.mail>
+
+77u/PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAx
+LjAgVHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3ho
+dG1sMS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxu
+cz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+Cgo8aGVhZD4KPG1l
+dGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRwLWVx
+dWl2PSJDb250ZW50LVR5cGUiIC8+CjxtZXRhIGNvbnRlbnQ9IklFPUVtdWxh
+dGVJRTciIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgLz4KPG1ldGEg
+Y29udGVudD0i566A5Y6GLOmrmOWNh+a0iyzpq5jljYfmtIvnmoTnroDljoYs
+cmFpbHMscnVieSzlt6XnqIvluIgiIG5hbWU9ImtleXdvcmRzIiAvPgo8bWV0
+YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs6auY5Y2H5rSL55qE5bel
+5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIgLz4KPG1ldGEgY29udGVu
+dD0i6auY5Y2H5rSL55qE566A5Y6GIiBuYW1lPSJhdXRob3IiIC8+Cjx0aXRs
+ZT7nroDljoYt6auY5Y2H5rSLPC90aXRsZT4KPGxpbmsgaHJlZj0iaHR0cDov
+L3d3dy5raW1pZ2FvLm1lL2pvYi9jc3Mvc3R5bGUuY3NzIiByZWw9InN0eWxl
+c2hlZXQiIHR5cGU9InRleHQvY3NzIiAvPgo8L2hlYWQ+Cgo8Ym9keT4KCjxk
+aXYgaWQ9ImhlYWQiPgoJPGgxPjExMTEtLS0xMTE8L2gxPgo8L2Rpdj4KPGRp
+diBjbGFzcz0iYnIiPgo8L2Rpdj4KPGRpdiBpZD0iYm9keSI+CiAgICAgICAg
+PGgxPumrmOWNh+a0i+eahOeugOWOhjwvaDE+Cgk8aDM+5YWz5LqO5oiRPC9o
+Mz4KCQk8ZGl2IGlkPSJhYm91dCI+CgkJCTxpbWcgc3JjPSJodHRwOi8vd3d3
+LmtpbWlnYW8ubWUvam9iL21lLmpwZyIgYWx0PSJraW1pIiAvPgoJCQlQZXJz
+b24ubmV3KDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpuYW1l
+ID0+ICfpq5jljYfmtIssS2ltaScsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsm
+bmJzcDsKCQkJOmRldGFpbCA9PiAnMTk4NuW5tOeUn++8jOeUt++8jOacquWp
+micsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOnBob25lID0+
+ICcxNTI2NTQyOTg5MicsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsK
+CQkJOmVtYWlsID0+ICdraW1pZ2FvMTk4NkBnbWFpbCcsPGJyLz4mbmJzcDsm
+bmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRyZWFtID0+ICforqnkupLogZTnvZHm
+m7TliqDnsr7lvanvvIHvvIEnLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5i
+c3A7CgkJCTp3ZWJzaXRlID0+ICc8YSBocmVmPSJodHRwOi8vd3d3LmtpbWln
+YW8ubWUiIHRhcmdldD0iX2JsYW5rIj5odHRwOi8vd3d3LmtpbWlnYW8ubWU8
+L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6Y29kZV91
+cmwgPT4gJzxhIGhyZWY9Imh0dHBzOi8vZ2l0aHViLmNvbS9LaW1pR2FvIiB0
+YXJnZXQ9Il9ibGFuayI+aHR0cHM6Ly9naXRodWIuY29tL0tpbWlHYW88L2E+
+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6am9iX3dhbnQg
+PT4gJ1J1YnkgT24gUmFpbHPlt6XnqIvluIgnLDxici8+Jm5ic3A7Jm5ic3A7
+Jm5ic3A7Jm5ic3A7CgkJCTpza2lsbCA9PiAnUnVieSxSYWlscyxKYXZhLE15
+U1FMLEFwYWNoZSxzdm4sZ2l0LEV4dEpTLEpRdWVyeSxqYXZhc2NyaXB0LGNz
+cycsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmhvYmJ5ID0+
+ICfmraXooYws55S15b2xLOWPsOeQgyzml4XooYws5pGE5b2xJzxici8+CgkJ
+CSk8YnIvPgoJCTwvZGl2PgoJPGgzIGNsYXNzPSJncmUiPuiBjOS4muaipuaD
+szwvaDM+CgkJPGRpdiBpZD0iZGV0YWlsIj4KCQkJ5LqS6IGU572R5bey6L+b
+5YWl5Lq65Lus55qE55Sf5rS75Lit77yM5LiN6K665piv5Lyg57uf5LqS6IGU
+572R6L+Y5piv56e75Yqo5LqS6IGU572R6YO95LiO5Lq65Lus55qE5YWz57O7
+6LaK5p2l6LaK57Sn5a+G44CC5biM5pyb5Zyo5LiN5LmF5Lul5ZCO6IO95YGa
+5LiA5Liq5pS55Y+Y5Lq65Lus55Sf5rS76LSo6YeP55qE5LqS6IGU572R5bqU
+55So44CCCgkJPC9kaXY+Cgk8aDMgY2xhc3M9InJlZCI+5oqA5pyv54m56ZW/
+PC9oMz4KCQk8ZGl2IGlkPSJkZXRhaWwiPgoJCQnnhp/mgolSdWJ5IG9uIFJh
+aWxzLGphdmEsamF2YXNjcmlwdCxodG1sLGNzc+etieaKgOacr+OAgjxici8+
+CgkJCeeGn+aCiU5ldEJlYW5zLGd2aW3nrYnlvIDlj5Hlt6XlhbfjgIIKCQkJ
+54af5oKJZXh0anMsanF1ZXJ5562JanPmoYbmnrbjgII8YnIvPgoJCQnnhp/m
+gol1YnVudHUsY2VudG9zLHdpbmRvd3Pmk43kvZzns7vnu5/jgII8YnIvPgoJ
+CQnnhp/mgolhcGFjaGUsUk9S5ZyodWJ1bnR15ZKMY2VudG9z5LiK55qE5a6J
+6KOF6YOo572y44CCPGJyLz4KCQkJ54af5oKJU1ZOLGdpdOeJiOacrOaOp+WI
+tuezu+e7n++8jOaciXN2buWcqGNlbnRvc+S4iuWuieijheOAgee7tOaKpOe7
+j+mqjOOAgjxici8+CgkJCeiHquWtpmFuZHJvaWTvvIzlgZrov4dhbmRyb2lk
+55qE5bCP56iL5bqP44CC77yI55yf5LiN5aW95oSP5oCd77yJPGJyLz4KCQkJ
+56ef55So5Zu95aSW55qEdnBz77yMT1PkuLp1YnVudHXvvIzkuKrkurrljZrl
+rqLlkozlh6DkuKpST1LnvZHnq5npg6jnvbLlnKjkuIrpnaLvvIzlm6DmraTn
+p6/ntK/kuobkupvlr7lST1LnmoTpg6jnvbLlkozkvJjljJbnmoTnu4/pqozj
+gIIKCQk8L2Rpdj4KCTxoMyBjbGFzcz0ieWVsIj7pobnnm67nu4/pqow8L2gz
+PgoJCTxkaXYgaWQ9ImRldGFpbCI+CgkJCTIwMTEtMDjoh7MyMDExLTA5Jm5i
+c3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PGEgaHJlZj0iaHR0cDovL3d3dy5zaW51
+bzE5LmNvbSIgdGFyZ2V0PSJfYmxhbmsiPuS4neivuue6uue7h+WFrOWPuOe9
+keermTwvYT48YnIvPgoJCQk8Yj7miYDnlKjmioDmnK/vvJo8L2I+cmFpbHMg
+M+OAgWV4dGpz44CBa2luZGVkaXRvcuOAgWpxdWVyeeOAgWdpdOOAgWdpdGh1
+Yjxici8+CgkJCTxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMTEtMDTo
+h7MyMDExLTA2Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PGEgaHJlZj0iaHR0
+cDovL2hhbmJhb3Bvd2VyLmdyZWVuc2VydmVyLmNuIiB0YXJnZXQ9Il9ibGFu
+ayI+5oKN6LG555S155O25YWs5Y+4572R56uZPC9hPjxici8+CgkJCTxiPuaJ
+gOeUqOaKgOacr++8mjwvYj5yYWlscyAyLjPjgIFleHRqc+OAgWNrZGl0b3Lj
+gIFqcXVlcnk8YnIvPgoJCQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQky
+MDEwLTA46IezMjAxMS0wNCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+a1juWN
+l+auteWKqOi9puajgOS/rueuoeeQhuezu+e7nzxici8+CgkJCTxiPuaJgOeU
+qOaKgOacr++8mjwvYj5yYWlscyAz44CBZXh0anM8YnIvPgoJCQk8ZGl2IGNs
+YXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTA26IezMjAxMC0wOCZuYnNwOyZu
+YnNwOyZuYnNwOyZuYnNwO+a1qea1t+e9kee7nOmHh+i0reernuS7t+W5s+WP
+sOezu+e7nzxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAy
+KOWNh+e6p+S4unJhaWxzMynjgIFleHRqczxici8+CgkJCTxkaXYgY2xhc3M9
+InBiciI+PC9kaXY+CgkJCTIwMTAtMDLoh7MyMDEwLTA2Jm5ic3A7Jm5ic3A7
+Jm5ic3A7Jm5ic3A76Z2S5bKb5a6J55uR5bGA5Y2x6Zmp5rqQ6KeG6aKR55uR
+5o6n57O757ufPGJyLz4KCQkJPGI+5omA55So5oqA5pyv77yaPC9iPmphdmHj
+gIFleHRqc+OAgVZMQ+OAgXNwcmluZyBNVkPjgIFoaWJlcm5hdGU8YnIvPgoJ
+CQk8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDA5LTEy6IezMjAxMC0w
+MyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+W0guWxseWFmuagoeagoeWbreeu
+oeeQhuezu+e7nzxici8+CgkJCTxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWls
+cyAyKOWNh+e6p+S4unJhaWxzMynjgIFleHRqczxici8+CgkJCTxkaXYgY2xh
+c3M9InBiciI+PC9kaXY+CgkJCTIwMDktMDnoh7MyMDEwLTAxJm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A75Lit5Zu95rW35rSL5aSn5a2m5pel5bi46Zu25pif
+54mp6LWE6YeH6LSt57O757ufPGJyLz4KCQkJPGI+5omA55So5oqA5pyv77ya
+PC9iPnJhaWxzIDIo5Y2H57qn5Li6cmFpbHMzKeOAgWV4dGpzPGJyLz4KCQk8
+L2Rpdj4KCgo8L2Rpdj4KPGRpdiBjbGFzcz0iYnIiPgo8L2Rpdj4KPGRpdiBp
+ZD0iZm9vdGVyIj4KPC9kaXY+CjwvYm9keT4KCjwvaHRtbD4K
+
+
+----==_mimepart_4e6841e828062_87434140c0379a2--
+  [1m[35mSQL (1.0ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 13083ms (Views: 3.0ms | ActiveRecord: 93.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 12:17:57 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 30ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 13:01:05 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (1.0ms)
+Completed 200 OK in 107ms (Views: 107.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 13:01:16 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"1111", "subject"=>"111", "email"=>"gaoshengyang2000@163.com"}}
+  [1m[35mSQL (1.0ms)[0m  BEGIN
+  [1m[36mSQL (6.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO `jobs` (`company_name`, `updated_at`, `created_at`, `subject`, `email`) VALUES ('1111', '2011-09-08 05:01:16', '2011-09-08 05:01:16', '111', 'gaoshengyang2000@163.com')
+  [1m[36mSQL (105.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to gaoshengyang2000@163.com (18123ms)
+Date: Thu, 08 Sep 2011 13:01:16 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e684c1cafa08_87434d6a9038627@kimi-PC.mail>
+Subject: 111
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e684c1caa7ff_87434d6a9038393";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e684c1caa7ff_87434d6a9038393
+Date: Thu, 08 Sep 2011 13:01:16 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e684c1cad6df_87434d6a90384c7@kimi-PC.mail>
+
+Hello 1111
+
+----==_mimepart_4e684c1caa7ff_87434d6a9038393
+Date: Thu, 08 Sep 2011 13:01:16 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-ID: <4e684c1caea68_87434d6a903854a@kimi-PC.mail>
+
+PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjAg
+VHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3hodG1s
+MS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxucz0i
+aHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+CgogIDxoZWFkPgogICAg
+PG1ldGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRw
+LWVxdWl2PSJDb250ZW50LVR5cGUiIC8+CiAgICA8bWV0YSBjb250ZW50PSJJ
+RT1FbXVsYXRlSUU3IiBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIC8+
+CiAgICA8bWV0YSBjb250ZW50PSLnroDljoYs6auY5Y2H5rSLLOmrmOWNh+a0
+i+eahOeugOWOhixyYWlscyxydWJ5LOW3peeoi+W4iCIgbmFtZT0ia2V5d29y
+ZHMiIC8+CiAgICA8bWV0YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs
+6auY5Y2H5rSL55qE5bel5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIg
+Lz4KICAgIDxtZXRhIGNvbnRlbnQ9IumrmOWNh+a0i+eahOeugOWOhiIgbmFt
+ZT0iYXV0aG9yIiAvPgogICAgPHRpdGxlPueugOWOhi3pq5jljYfmtIs8L3Rp
+dGxlPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAg77u/aHRt
+bCwgYm9keSwgZGl2LCBzcGFuLCBoMSwgaDIsIGgzLCBoNCwgaDUsIGg2LCBw
+ewogICAgICAgIGZvbnQtc2l6ZTogMTAwJTsKICAgICAgICB2ZXJ0aWNhbC1h
+bGlnbjogYmFzZWxpbmU7CiAgICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJl
+bnQ7CiAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lOwogICAgICB9CiAg
+ICAgIGJvZHkgewogICAgICAgIHRleHQtYWxpZ246IGxlZnQ7CiAgICAgICAg
+Zm9udC1mYW1pbHk6IOW+rui9r+mbhem7kSzlrovkvZMsIEFyaWFsLEhlbHZl
+dGljYSxzYW5zLXNlcmlmOwogICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsK
+ICAgICAgICBsaW5lLWhlaWdodDogMTsKICAgICAgICBmb250LXNpemU6MTJw
+eDsKICAgICAgfQogICAgICBhIHsKICAgICAgICBjb2xvcjojMDA5OUNDOwog
+ICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTsKICAgICAgfQogICAgICBh
+OmhvdmVyIHsKICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7CiAgICAg
+ICAgY29sb3I6ICNkNjY7CiAgICAgIH0KICAgICAgI2hlYWR7CiAgICAgICAg
+aGVpZ2h0OjU2cHg7CiAgICAgICAgcG9zaXRpb246cmVsYXRpdmU7CiAgICAg
+ICAgd2lkdGg6ODYwcHg7CiAgICAgICAgdGV4dC1hbGlnbjpjZW50ZXI7CiAg
+ICAgICAgbWFyZ2luOjAgYXV0bwogICAgICB9CiAgICAgICNoZWFkIGgxewog
+ICAgICAgIG1hcmdpbjozMHB4IGF1dG87CiAgICAgICAgZm9udC1mYW1pbHk6
+IOW+rui9r+mbhem7kSzlrovkvZMsIEFyaWFsLEhlbHZldGljYSxzYW5zLXNl
+cmlmOwogICAgICAgIGZvbnQtc2l6ZTogMjBweDsKICAgICAgfQoKICAgICAg
+LmJyewogICAgICAgIHdpZHRoOjEwMCU7CiAgICAgICAgaGVpZ2h0OjJweDsK
+ICAgICAgICBiYWNrZ3JvdW5kOiNlZWU7CiAgICAgICAgYm94LXNoYWRvdzow
+cHggMXB4IDJweCByZ2JhKDAsMCwwLDAuNik7CiAgICAgICAgLW1vei1ib3gt
+c2hhZG93OjBweCAxcHggMnB4IHJnYmEoMCwwLDAsMC42KTsKICAgICAgICAt
+d2Via2l0LWJveC1zaGFkb3c6MHB4IDFweCAycHggcmdiYSgwLDAsMCwwLjYp
+OwogICAgICB9CiAgICAgIC5wYnJ7CiAgICAgICAgd2lkdGg6ODAlOwogICAg
+ICAgIGhlaWdodDoxcHg7CiAgICAgICAgYmFja2dyb3VuZDojZWVlOwogICAg
+ICAgIGJveC1zaGFkb3c6MHB4IDFweCAycHggcmdiYSgwLDAsMCwwLjYpOwog
+ICAgICB9CiAgICAgICNib2R5ewogICAgICAgIHdpZHRoOjg2MHB4OwogICAg
+ICAgIG1hcmdpbjowIGF1dG87CiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVy
+OwogICAgICAgIHBhZGRpbmc6MCAwIDYwcHggMDsKICAgICAgfQogICAgICAj
+Ym9keSBoMXsKICAgICAgICBtYXJnaW46MzBweCBhdXRvOwogICAgICAgIGZv
+bnQtZmFtaWx5OiDlvq7ova/pm4Xpu5Es5a6L5L2TLCBBcmlhbCxIZWx2ZXRp
+Y2Esc2Fucy1zZXJpZjsKICAgICAgICBmb250LXNpemU6IDIwcHg7CiAgICAg
+IH0KCiAgICAgICNib2R5IGgzewogICAgICAgIGZvbnQtc2l6ZToxNnB4Owog
+ICAgICAgIGxpbmUtaGVpZ2h0OjMycHg7CiAgICAgICAgbWFyZ2luOjQ4cHgg
+MCAyNHB4IDBweDsKICAgICAgICBiYWNrZ3JvdW5kOiAjMTY5OEY2OwogICAg
+ICAgIGNvbG9yOiAjZmZmOwogICAgICAgIHRleHQtc2hhZG93OiAwcHggMXB4
+IDFweCAjMDAwOwogICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IC1tb3otbGlu
+ZWFyLWdyYWRpZW50KHRvcCwgIzNmYjZmYywgIzE2OThGNik7CiAgICAgICAg
+YmFja2dyb3VuZC1pbWFnZTogLXdlYmtpdC1ncmFkaWVudChsaW5lYXIsbGVm
+dCB0b3AsIGxlZnQgYm90dG9tLCBjb2xvci1zdG9wKDAsICMzZmI2ZmMpLGNv
+bG9yLXN0b3AoMSwgIzE2OThGNikpOwogICAgICAgIC1tb3otYm9yZGVyLXJh
+ZGl1czogMTJweDsKICAgICAgICAtd2Via2l0LWJvcmRlci1yYWRpdXM6IDEy
+cHg7CiAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDsKICAgICAgICBib3gt
+c2hhZG93OiAwcHggMXB4IDJweCAjMDAwOwogICAgICAgIC1tb3otYm94LXNo
+YWRvdzogMHB4IDFweCAycHggIzAwMDsKICAgICAgICAtd2Via2l0LWJveC1z
+aGFkb3c6IDBweCAxcHggMnB4ICMwMDA7CiAgICAgICAgcGFkZGluZzowIDAg
+MCAxNHB4OwogICAgICAgIHdpZHRoOjEwMCU7CiAgICAgICAgbGV0dGVyLXNw
+YWNpbmc6MnB4OwogICAgICAgIHBvc2l0aW9uOnJlbGF0aXZlCiAgICAgIH0K
+ICAgICAgI2JvZHkgaDMucmVkewogICAgICAgIGJhY2tncm91bmQ6ICM3NTAw
+MDA7CiAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogLW1vei1saW5lYXItZ3Jh
+ZGllbnQodG9wLCAjZWMyMDAwLCAjOTAxNDAxKTsKICAgICAgICBiYWNrZ3Jv
+dW5kLWltYWdlOiAtd2Via2l0LWdyYWRpZW50KGxpbmVhcixsZWZ0IHRvcCwg
+bGVmdCBib3R0b20sIGNvbG9yLXN0b3AoMCwgI2VjMjAwMCksY29sb3Itc3Rv
+cCgxLCAjOTAxNDAxKSk7CiAgICAgIH0KICAgICAgI2JvZHkgaDMueWVsewog
+ICAgICAgIGJhY2tncm91bmQ6ICM5NDc0MDA7CiAgICAgICAgYmFja2dyb3Vu
+ZC1pbWFnZTogLW1vei1saW5lYXItZ3JhZGllbnQodG9wLCAjZjJjNjI5LCAj
+OTQ3NDAwKTsKICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiAtd2Via2l0LWdy
+YWRpZW50KGxpbmVhcixsZWZ0IHRvcCwgbGVmdCBib3R0b20sIGNvbG9yLXN0
+b3AoMCwgI2YyYzYyOSksY29sb3Itc3RvcCgxLCAjOTQ3NDAwKSk7CiAgICAg
+IH0KICAgICAgI2JvZHkgaDMuZ3JlewogICAgICAgIGJhY2tncm91bmQ6ICMw
+MTg2MjA7CiAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogLW1vei1saW5lYXIt
+Z3JhZGllbnQodG9wLCAjMDFmYzNhLCAjMDE4NjIwKTsKICAgICAgICBiYWNr
+Z3JvdW5kLWltYWdlOiAtd2Via2l0LWdyYWRpZW50KGxpbmVhcixsZWZ0IHRv
+cCwgbGVmdCBib3R0b20sIGNvbG9yLXN0b3AoMCwgIzAxZmMzYSksY29sb3It
+c3RvcCgxLCAjMDE4NjIwKSk7CiAgICAgIH0KICAgICAgI2JvZHkgcHsKICAg
+ICAgICB0ZXh0LWluZGVudDoyZW07CiAgICAgICAgZm9udC1zaXplOjE0cHg7
+CiAgICAgICAgbGV0dGVyLXNwYWNpbmc6MXB4OwogICAgICAgIGxpbmUtaGVp
+Z2h0OjMycHg7CiAgICAgICAgY29sb3I6IzQ0NAogICAgICB9CgogICAgICBo
+MyAubW9yZXsKICAgICAgICBjb2xvcjojZmZmOwogICAgICAgIGZvbnQtc2l6
+ZToxMnB4OwogICAgICAgIHdpZHRoOjQ2MHB4OwogICAgICAgIGRpc3BsYXk6
+aW5saW5lLWJsb2NrOwogICAgICAgIHRleHQtYWxpZ246cmlnaHQ7CiAgICAg
+ICAgcG9zaXRpb246YWJzb2x1dGU7CiAgICAgICAgcGFkZGluZzowIDIwcHgg
+MCAwOwogICAgICAgIHJpZ2h0OjA7CiAgICAgICAgdG9wOjBweDsKICAgICAg
+ICBoZWlnaHQ6MzJweDsKICAgICAgICBsaW5lLWhlaWdodDozMnB4OwogICAg
+ICB9CgogICAgICAjZm9vdGVyewogICAgICAgIHdpZHRoOjk2MHB4OwogICAg
+ICAgIG1hcmdpbjowIGF1dG87CiAgICAgICAgaGVpZ2h0OjgwcHg7CiAgICAg
+IH0KICAgICAgI2Zvb3RlciBwewogICAgICAgIGxpbmUtaGVpZ2h0OjMycHg7
+CiAgICAgICAgdGV4dC1hbGlnbjpjZW50ZXIKICAgICAgfQogICAgICAjYWJv
+dXR7CiAgICAgICAgZm9udC1mYW1pbHk6IOW+rui9r+mbhem7kSzlrovkvZMs
+IEFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmOwogICAgICAgIGZvbnQtc2l6
+ZTogMjBweDsKICAgICAgICBsaW5lLWhlaWdodDogMjsKICAgICAgICB0ZXh0
+LWFsaWduOiBsZWZ0OwogICAgICAgIG1hcmdpbjogMCBhdXRvOwogICAgICAg
+IHdpZHRoOiA4MDBweDsKICAgICAgfQogICAgICAjYWJvdXQgaW1newogICAg
+ICAgIGZsb2F0OiByaWdodDsKICAgICAgICBtYXJnaW4tcmlnaHQ6IDE4MHB4
+OwogICAgICB9CgogICAgICAjZGV0YWlsewogICAgICAgIGZvbnQtZmFtaWx5
+OiDlvq7ova/pm4Xpu5Es5a6L5L2TLCBBcmlhbCxIZWx2ZXRpY2Esc2Fucy1z
+ZXJpZjsKICAgICAgICBmb250LXNpemU6IDIwcHg7CiAgICAgICAgbGluZS1o
+ZWlnaHQ6IDI7CiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDsKICAgICAgICBt
+YXJnaW46IDAgYXV0bzsKICAgICAgICBtaW4taGVpZ2h0OiA1MHB4OwogICAg
+ICAgIHdpZHRoOiA4MDBweDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2hl
+YWQ+CgogIDxib2R5PgoKICAgIDxkaXYgaWQ9ImhlYWQiPgogICAgICA8aDE+
+MTExLS0tMTExMTwvaDE+CiAgICA8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImJy
+Ij4KICAgIDwvZGl2PgogICAgPGRpdiBpZD0iYm9keSI+CiAgICAgIDxoMT7p
+q5jljYfmtIvnmoTnroDljoY8L2gxPgogICAgICA8aDM+5YWz5LqO5oiRPC9o
+Mz4KICAgICAgPGRpdiBpZD0iYWJvdXQiPgogICAgICAgIDxpbWcgc3JjPSJo
+dHRwOi8vd3d3LmtpbWlnYW8ubWUvam9iL21lLmpwZyIgYWx0PSJraW1pIiAv
+PgoJCQlQZXJzb24ubmV3KDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7
+CgkJCTpuYW1lID0+ICfpq5jljYfmtIssS2ltaScsPGJyLz4mbmJzcDsmbmJz
+cDsmbmJzcDsmbmJzcDsKCQkJOmRldGFpbCA9PiAnMTk4NuW5tOeUn++8jOeU
+t++8jOacquWpmicsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJ
+OnBob25lID0+ICcxNTI2NTQyOTg5MicsPGJyLz4mbmJzcDsmbmJzcDsmbmJz
+cDsmbmJzcDsKCQkJOmVtYWlsID0+ICdraW1pZ2FvMTk4NkBnbWFpbCcsPGJy
+Lz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRyZWFtID0+ICforqnk
+upLogZTnvZHmm7TliqDnsr7lvanvvIHvvIEnLDxici8+Jm5ic3A7Jm5ic3A7
+Jm5ic3A7Jm5ic3A7CgkJCTp3ZWJzaXRlID0+ICc8YSBocmVmPSJodHRwOi8v
+d3d3LmtpbWlnYW8ubWUiIHRhcmdldD0iX2JsYW5rIj5odHRwOi8vd3d3Lmtp
+bWlnYW8ubWU8L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJ
+CQk6Y29kZV91cmwgPT4gJzxhIGhyZWY9Imh0dHBzOi8vZ2l0aHViLmNvbS9L
+aW1pR2FvIiB0YXJnZXQ9Il9ibGFuayI+aHR0cHM6Ly9naXRodWIuY29tL0tp
+bWlHYW88L2E+Jyw8YnIvPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6
+am9iX3dhbnQgPT4gJ1J1YnkgT24gUmFpbHPlt6XnqIvluIgnLDxici8+Jm5i
+c3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpza2lsbCA9PiAnUnVieSxSYWls
+cyxKYXZhLE15U1FMLEFwYWNoZSxzdm4sZ2l0LEV4dEpTLEpRdWVyeSxqYXZh
+c2NyaXB0LGNzcycsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJ
+OmhvYmJ5ID0+ICfmraXooYws55S15b2xLOWPsOeQgyzml4XooYws5pGE5b2x
+Jzxici8+CgkJCSk8YnIvPgogICAgICA8L2Rpdj4KICAgICAgPGgzIGNsYXNz
+PSJncmUiPuiBjOS4muaipuaDszwvaDM+CiAgICAgIDxkaXYgaWQ9ImRldGFp
+bCI+CgkJCeS6kuiBlOe9keW3sui/m+WFpeS6uuS7rOeahOeUn+a0u+S4re+8
+jOS4jeiuuuaYr+S8oOe7n+S6kuiBlOe9kei/mOaYr+enu+WKqOS6kuiBlOe9
+kemDveS4juS6uuS7rOeahOWFs+ezu+i2iuadpei2iue0p+WvhuOAguW4jOac
+m+WcqOS4jeS5heS7peWQjuiDveWBmuS4gOS4quaUueWPmOS6uuS7rOeUn+a0
+u+i0qOmHj+eahOS6kuiBlOe9keW6lOeUqOOAggogICAgICA8L2Rpdj4KICAg
+ICAgPGgzIGNsYXNzPSJyZWQiPuaKgOacr+eJuemVvzwvaDM+CiAgICAgIDxk
+aXYgaWQ9ImRldGFpbCI+CgkJCeeGn+aCiVJ1Ynkgb24gUmFpbHMsamF2YSxq
+YXZhc2NyaXB0LGh0bWwsY3Nz562J5oqA5pyv44CCPGJyLz4KCQkJ54af5oKJ
+TmV0QmVhbnMsZ3ZpbeetieW8gOWPkeW3peWFt+OAggoJCQnnhp/mgolleHRq
+cyxqcXVlcnnnrYlqc+ahhuaetuOAgjxici8+CgkJCeeGn+aCiXVidW50dSxj
+ZW50b3Msd2luZG93c+aTjeS9nOezu+e7n+OAgjxici8+CgkJCeeGn+aCiWFw
+YWNoZSxST1LlnKh1YnVudHXlkoxjZW50b3PkuIrnmoTlronoo4Xpg6jnvbLj
+gII8YnIvPgoJCQnnhp/mgolTVk4sZ2l054mI5pys5o6n5Yi257O757uf77yM
+5pyJc3Zu5ZyoY2VudG9z5LiK5a6J6KOF44CB57u05oqk57uP6aqM44CCPGJy
+Lz4KCQkJ6Ieq5a2mYW5kcm9pZO+8jOWBmui/h2FuZHJvaWTnmoTlsI/nqIvl
+uo/jgILvvIjnnJ/kuI3lpb3mhI/mgJ3vvIk8YnIvPgoJCQnnp5/nlKjlm73l
+pJbnmoR2cHPvvIxPU+S4unVidW50de+8jOS4quS6uuWNmuWuouWSjOWHoOS4
+qlJPUue9keermemDqOe9suWcqOS4iumdou+8jOWboOatpOenr+e0r+S6huS6
+m+WvuVJPUueahOmDqOe9suWSjOS8mOWMlueahOe7j+mqjOOAggogICAgICA8
+L2Rpdj4KICAgICAgPGgzIGNsYXNzPSJ5ZWwiPumhueebrue7j+mqjDwvaDM+
+CiAgICAgIDxkaXYgaWQ9ImRldGFpbCI+CgkJCTIwMTEtMDjoh7MyMDExLTA5
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PGEgaHJlZj0iaHR0cDovL3d3dy5z
+aW51bzE5LmNvbSIgdGFyZ2V0PSJfYmxhbmsiPuS4neivuue6uue7h+WFrOWP
+uOe9keermTwvYT48YnIvPgogICAgICAgIDxiPuaJgOeUqOaKgOacr++8mjwv
+Yj5yYWlscyAz44CBZXh0anPjgIFraW5kZWRpdG9y44CBanF1ZXJ544CBZ2l0
+44CBZ2l0aHViPGJyLz4KICAgICAgICA8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2
+PgoJCQkyMDExLTA06IezMjAxMS0wNiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNw
+OzxhIGhyZWY9Imh0dHA6Ly9oYW5iYW9wb3dlci5ncmVlbnNlcnZlci5jbiIg
+dGFyZ2V0PSJfYmxhbmsiPuaCjeixueeUteeTtuWFrOWPuOe9keermTwvYT48
+YnIvPgogICAgICAgIDxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAyLjPj
+gIFleHRqc+OAgWNrZGl0b3LjgIFqcXVlcnk8YnIvPgogICAgICAgIDxkaXYg
+Y2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMTAtMDjoh7MyMDExLTA0Jm5ic3A7
+Jm5ic3A7Jm5ic3A7Jm5ic3A75rWO5Y2X5q615Yqo6L2m5qOA5L+u566h55CG
+57O757ufPGJyLz4KICAgICAgICA8Yj7miYDnlKjmioDmnK/vvJo8L2I+cmFp
+bHMgM+OAgWV4dGpzPGJyLz4KICAgICAgICA8ZGl2IGNsYXNzPSJwYnIiPjwv
+ZGl2PgoJCQkyMDEwLTA26IezMjAxMC0wOCZuYnNwOyZuYnNwOyZuYnNwOyZu
+YnNwO+a1qea1t+e9kee7nOmHh+i0reernuS7t+W5s+WPsOezu+e7nzxici8+
+CiAgICAgICAgPGI+5omA55So5oqA5pyv77yaPC9iPnJhaWxzIDIo5Y2H57qn
+5Li6cmFpbHMzKeOAgWV4dGpzPGJyLz4KICAgICAgICA8ZGl2IGNsYXNzPSJw
+YnIiPjwvZGl2PgoJCQkyMDEwLTAy6IezMjAxMC0wNiZuYnNwOyZuYnNwOyZu
+YnNwOyZuYnNwO+mdkuWym+WuieebkeWxgOWNsemZqea6kOinhumikeebkeaO
+p+ezu+e7nzxici8+CiAgICAgICAgPGI+5omA55So5oqA5pyv77yaPC9iPmph
+dmHjgIFleHRqc+OAgVZMQ+OAgXNwcmluZyBNVkPjgIFoaWJlcm5hdGU8YnIv
+PgogICAgICAgIDxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDktMTLo
+h7MyMDEwLTAzJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75bSC5bGx5YWa5qCh
+5qCh5Zut566h55CG57O757ufPGJyLz4KICAgICAgICA8Yj7miYDnlKjmioDm
+nK/vvJo8L2I+cmFpbHMgMijljYfnuqfkuLpyYWlsczMp44CBZXh0anM8YnIv
+PgogICAgICAgIDxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIwMDktMDno
+h7MyMDEwLTAxJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75Lit5Zu95rW35rSL
+5aSn5a2m5pel5bi46Zu25pif54mp6LWE6YeH6LSt57O757ufPGJyLz4KICAg
+ICAgICA8Yj7miYDnlKjmioDmnK/vvJo8L2I+cmFpbHMgMijljYfnuqfkuLpy
+YWlsczMp44CBZXh0anM8YnIvPgogICAgICA8L2Rpdj4KCgogICAgPC9kaXY+
+CiAgICA8ZGl2IGNsYXNzPSJiciI+CiAgICA8L2Rpdj4KICAgIDxkaXYgaWQ9
+ImZvb3RlciI+CiAgICA8L2Rpdj4KICA8L2JvZHk+Cgo8L2h0bWw+Cg==
+
+
+----==_mimepart_4e684c1caa7ff_87434d6a9038393--
+  [1m[35mSQL (1.0ms)[0m  BEGIN
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 18371ms (Views: 4.0ms | ActiveRecord: 113.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 13:01:35 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 31ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 13:07:21 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (0.0ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 13:07:38 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"3333", "subject"=>"222", "email"=>"gaoshengyang2000@163.com"}}
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (5.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO `jobs` (`created_at`, `email`, `company_name`, `subject`, `updated_at`) VALUES ('2011-09-08 05:07:38', 'gaoshengyang2000@163.com', '3333', '222', '2011-09-08 05:07:38')
+  [1m[36mSQL (40.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to gaoshengyang2000@163.com (62638ms)
+Date: Thu, 08 Sep 2011 13:07:39 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e684d9b7233_874330bf343903@kimi-PC.mail>
+Subject: 222
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e684d9b1472_874330bf343878a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e684d9b1472_874330bf343878a
+Date: Thu, 08 Sep 2011 13:07:39 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e684d9b4b22_874330bf343882c@kimi-PC.mail>
+
+Hello 3333
+
+----==_mimepart_4e684d9b1472_874330bf343878a
+Date: Thu, 08 Sep 2011 13:07:39 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-ID: <4e684d9b5eab_874330bf34389f5@kimi-PC.mail>
+
+PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjAg
+VHJhbnNpdGlvbmFsLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL1RSL3hodG1s
+MS9EVEQveGh0bWwxLXRyYW5zaXRpb25hbC5kdGQiPgo8aHRtbCB4bWxucz0i
+aHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+CgogIDxoZWFkPgogICAg
+PG1ldGEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiBodHRw
+LWVxdWl2PSJDb250ZW50LVR5cGUiIC8+CiAgICA8bWV0YSBjb250ZW50PSJJ
+RT1FbXVsYXRlSUU3IiBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIC8+
+CiAgICA8bWV0YSBjb250ZW50PSLnroDljoYs6auY5Y2H5rSLLOmrmOWNh+a0
+i+eahOeugOWOhixyYWlscyxydWJ5LOW3peeoi+W4iCIgbmFtZT0ia2V5d29y
+ZHMiIC8+CiAgICA8bWV0YSBjb250ZW50PSLpq5jljYfmtIvnmoTnroDljoYs
+6auY5Y2H5rSL55qE5bel5L2c566A5Y6GIiBuYW1lPSJkZXNjcmlwdGlvbiIg
+Lz4KICAgIDxtZXRhIGNvbnRlbnQ9IumrmOWNh+a0i+eahOeugOWOhiIgbmFt
+ZT0iYXV0aG9yIiAvPgogICAgPHRpdGxlPueugOWOhi3pq5jljYfmtIs8L3Rp
+dGxlPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAg77u/aHRt
+bCwgYm9keSwgZGl2LCBzcGFuLCBoMSwgaDIsIGgzLCBoNCwgaDUsIGg2LCBw
+ewogICAgICAgIGZvbnQtc2l6ZTogMTAwJTsKICAgICAgICB2ZXJ0aWNhbC1h
+bGlnbjogYmFzZWxpbmU7CiAgICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJl
+bnQ7CiAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lOwogICAgICB9CiAg
+ICAgIGJvZHkgewogICAgICAgIHRleHQtYWxpZ246IGxlZnQ7CiAgICAgICAg
+Zm9udC1mYW1pbHk6IOW+rui9r+mbhem7kSzlrovkvZMsIEFyaWFsLEhlbHZl
+dGljYSxzYW5zLXNlcmlmOwogICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsK
+ICAgICAgICBsaW5lLWhlaWdodDogMTsKICAgICAgICBmb250LXNpemU6MTJw
+eDsKICAgICAgfQogICAgICBhIHsKICAgICAgICBjb2xvcjojMDA5OUNDOwog
+ICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTsKICAgICAgfQogICAgICBh
+OmhvdmVyIHsKICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7CiAgICAg
+ICAgY29sb3I6ICNkNjY7CiAgICAgIH0KICAgICAgI2hlYWR7CiAgICAgICAg
+aGVpZ2h0OjU2cHg7CiAgICAgICAgcG9zaXRpb246cmVsYXRpdmU7CiAgICAg
+ICAgd2lkdGg6ODYwcHg7CiAgICAgICAgdGV4dC1hbGlnbjpjZW50ZXI7CiAg
+ICAgICAgbWFyZ2luOjAgYXV0bwogICAgICB9CiAgICAgICNoZWFkIGgxewog
+ICAgICAgIG1hcmdpbjozMHB4IGF1dG87CiAgICAgICAgZm9udC1mYW1pbHk6
+IOW+rui9r+mbhem7kSzlrovkvZMsIEFyaWFsLEhlbHZldGljYSxzYW5zLXNl
+cmlmOwogICAgICAgIGZvbnQtc2l6ZTogMjBweDsKICAgICAgfQoKICAgICAg
+LmJyewogICAgICAgIHdpZHRoOjEwMCU7CiAgICAgICAgaGVpZ2h0OjJweDsK
+ICAgICAgICBiYWNrZ3JvdW5kOiNlZWU7CiAgICAgICAgYm94LXNoYWRvdzow
+cHggMXB4IDJweCByZ2JhKDAsMCwwLDAuNik7CiAgICAgICAgLW1vei1ib3gt
+c2hhZG93OjBweCAxcHggMnB4IHJnYmEoMCwwLDAsMC42KTsKICAgICAgICAt
+d2Via2l0LWJveC1zaGFkb3c6MHB4IDFweCAycHggcmdiYSgwLDAsMCwwLjYp
+OwogICAgICB9CiAgICAgIC5wYnJ7CiAgICAgICAgd2lkdGg6ODAlOwogICAg
+ICAgIGhlaWdodDoxcHg7CiAgICAgICAgYmFja2dyb3VuZDojZWVlOwogICAg
+ICAgIGJveC1zaGFkb3c6MHB4IDFweCAycHggcmdiYSgwLDAsMCwwLjYpOwog
+ICAgICB9CiAgICAgICNib2R5ewogICAgICAgIHdpZHRoOjg2MHB4OwogICAg
+ICAgIG1hcmdpbjowIGF1dG87CiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVy
+OwogICAgICAgIHBhZGRpbmc6MCAwIDYwcHggMDsKICAgICAgfQogICAgICAj
+Ym9keSBoMXsKICAgICAgICBtYXJnaW46MzBweCBhdXRvOwogICAgICAgIGZv
+bnQtZmFtaWx5OiDlvq7ova/pm4Xpu5Es5a6L5L2TLCBBcmlhbCxIZWx2ZXRp
+Y2Esc2Fucy1zZXJpZjsKICAgICAgICBmb250LXNpemU6IDIwcHg7CiAgICAg
+IH0KCiAgICAgICNib2R5IGgzewogICAgICAgIGZvbnQtc2l6ZToxNnB4Owog
+ICAgICAgIGxpbmUtaGVpZ2h0OjMycHg7CiAgICAgICAgbWFyZ2luOjQ4cHgg
+MCAyNHB4IDBweDsKICAgICAgICBiYWNrZ3JvdW5kOiAjMTY5OEY2OwogICAg
+ICAgIGNvbG9yOiAjZmZmOwogICAgICAgIHRleHQtc2hhZG93OiAwcHggMXB4
+IDFweCAjMDAwOwogICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IC1tb3otbGlu
+ZWFyLWdyYWRpZW50KHRvcCwgIzNmYjZmYywgIzE2OThGNik7CiAgICAgICAg
+YmFja2dyb3VuZC1pbWFnZTogLXdlYmtpdC1ncmFkaWVudChsaW5lYXIsbGVm
+dCB0b3AsIGxlZnQgYm90dG9tLCBjb2xvci1zdG9wKDAsICMzZmI2ZmMpLGNv
+bG9yLXN0b3AoMSwgIzE2OThGNikpOwogICAgICAgIC1tb3otYm9yZGVyLXJh
+ZGl1czogMTJweDsKICAgICAgICAtd2Via2l0LWJvcmRlci1yYWRpdXM6IDEy
+cHg7CiAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDsKICAgICAgICBib3gt
+c2hhZG93OiAwcHggMXB4IDJweCAjMDAwOwogICAgICAgIC1tb3otYm94LXNo
+YWRvdzogMHB4IDFweCAycHggIzAwMDsKICAgICAgICAtd2Via2l0LWJveC1z
+aGFkb3c6IDBweCAxcHggMnB4ICMwMDA7CiAgICAgICAgcGFkZGluZzowIDAg
+MCAxNHB4OwogICAgICAgIHdpZHRoOjEwMCU7CiAgICAgICAgbGV0dGVyLXNw
+YWNpbmc6MnB4OwogICAgICAgIHBvc2l0aW9uOnJlbGF0aXZlCiAgICAgIH0K
+ICAgICAgI2JvZHkgaDMucmVkewogICAgICAgIGJhY2tncm91bmQ6ICM3NTAw
+MDA7CiAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogLW1vei1saW5lYXItZ3Jh
+ZGllbnQodG9wLCAjZWMyMDAwLCAjOTAxNDAxKTsKICAgICAgICBiYWNrZ3Jv
+dW5kLWltYWdlOiAtd2Via2l0LWdyYWRpZW50KGxpbmVhcixsZWZ0IHRvcCwg
+bGVmdCBib3R0b20sIGNvbG9yLXN0b3AoMCwgI2VjMjAwMCksY29sb3Itc3Rv
+cCgxLCAjOTAxNDAxKSk7CiAgICAgIH0KICAgICAgI2JvZHkgaDMueWVsewog
+ICAgICAgIGJhY2tncm91bmQ6ICM5NDc0MDA7CiAgICAgICAgYmFja2dyb3Vu
+ZC1pbWFnZTogLW1vei1saW5lYXItZ3JhZGllbnQodG9wLCAjZjJjNjI5LCAj
+OTQ3NDAwKTsKICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiAtd2Via2l0LWdy
+YWRpZW50KGxpbmVhcixsZWZ0IHRvcCwgbGVmdCBib3R0b20sIGNvbG9yLXN0
+b3AoMCwgI2YyYzYyOSksY29sb3Itc3RvcCgxLCAjOTQ3NDAwKSk7CiAgICAg
+IH0KICAgICAgI2JvZHkgaDMuZ3JlewogICAgICAgIGJhY2tncm91bmQ6ICMw
+MTg2MjA7CiAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogLW1vei1saW5lYXIt
+Z3JhZGllbnQodG9wLCAjMDFmYzNhLCAjMDE4NjIwKTsKICAgICAgICBiYWNr
+Z3JvdW5kLWltYWdlOiAtd2Via2l0LWdyYWRpZW50KGxpbmVhcixsZWZ0IHRv
+cCwgbGVmdCBib3R0b20sIGNvbG9yLXN0b3AoMCwgIzAxZmMzYSksY29sb3It
+c3RvcCgxLCAjMDE4NjIwKSk7CiAgICAgIH0KICAgICAgI2JvZHkgcHsKICAg
+ICAgICB0ZXh0LWluZGVudDoyZW07CiAgICAgICAgZm9udC1zaXplOjE0cHg7
+CiAgICAgICAgbGV0dGVyLXNwYWNpbmc6MXB4OwogICAgICAgIGxpbmUtaGVp
+Z2h0OjMycHg7CiAgICAgICAgY29sb3I6IzQ0NAogICAgICB9CgogICAgICBo
+MyAubW9yZXsKICAgICAgICBjb2xvcjojZmZmOwogICAgICAgIGZvbnQtc2l6
+ZToxMnB4OwogICAgICAgIHdpZHRoOjQ2MHB4OwogICAgICAgIGRpc3BsYXk6
+aW5saW5lLWJsb2NrOwogICAgICAgIHRleHQtYWxpZ246cmlnaHQ7CiAgICAg
+ICAgcG9zaXRpb246YWJzb2x1dGU7CiAgICAgICAgcGFkZGluZzowIDIwcHgg
+MCAwOwogICAgICAgIHJpZ2h0OjA7CiAgICAgICAgdG9wOjBweDsKICAgICAg
+ICBoZWlnaHQ6MzJweDsKICAgICAgICBsaW5lLWhlaWdodDozMnB4OwogICAg
+ICB9CgogICAgICAjZm9vdGVyewogICAgICAgIHdpZHRoOjk2MHB4OwogICAg
+ICAgIG1hcmdpbjowIGF1dG87CiAgICAgICAgaGVpZ2h0OjgwcHg7CiAgICAg
+IH0KICAgICAgI2Zvb3RlciBwewogICAgICAgIGxpbmUtaGVpZ2h0OjMycHg7
+CiAgICAgICAgdGV4dC1hbGlnbjpjZW50ZXIKICAgICAgfQogICAgICAjYWJv
+dXR7CiAgICAgICAgZm9udC1mYW1pbHk6IOW+rui9r+mbhem7kSzlrovkvZMs
+IEFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmOwogICAgICAgIGZvbnQtc2l6
+ZTogMjBweDsKICAgICAgICBsaW5lLWhlaWdodDogMjsKICAgICAgICB0ZXh0
+LWFsaWduOiBsZWZ0OwogICAgICAgIG1hcmdpbjogMCBhdXRvOwogICAgICAg
+IHdpZHRoOiA4MDBweDsKICAgICAgfQogICAgICAjYWJvdXQgaW1newogICAg
+ICAgIGZsb2F0OiByaWdodDsKICAgICAgICBtYXJnaW4tcmlnaHQ6IDE4MHB4
+OwogICAgICB9CgogICAgICAjZGV0YWlsewogICAgICAgIGZvbnQtZmFtaWx5
+OiDlvq7ova/pm4Xpu5Es5a6L5L2TLCBBcmlhbCxIZWx2ZXRpY2Esc2Fucy1z
+ZXJpZjsKICAgICAgICBmb250LXNpemU6IDIwcHg7CiAgICAgICAgbGluZS1o
+ZWlnaHQ6IDI7CiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDsKICAgICAgICBt
+YXJnaW46IDAgYXV0bzsKICAgICAgICBtaW4taGVpZ2h0OiA1MHB4OwogICAg
+ICAgIHdpZHRoOiA4MDBweDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2hl
+YWQ+CgogIDxib2R5PgoKICAgIDxkaXYgaWQ9ImhlYWQiPgogICAgICA8aDE+
+MjIyLS0tMzMzMzwvaDE+CiAgICA8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImJy
+Ij4KICAgIDwvZGl2PgogICAgPGRpdiBpZD0iYm9keSI+CiAgICAgIDxoMT7p
+q5jljYfmtIvnmoTnroDljoYoPGEgaHJlZj0iaHR0cDovL3d3dy5raW1pZ2Fv
+Lm1lIiB0YXJnZXQ9Il9ibGFuayI+5Zyo57q/566A5Y6GPC9hPik8L2gxPgog
+ICAgICA8aDM+5YWz5LqO5oiRPC9oMz4KICAgICAgPGRpdiBpZD0iYWJvdXQi
+PgogICAgICAgIDxpbWcgc3JjPSJodHRwOi8vd3d3LmtpbWlnYW8ubWUvam9i
+L21lLmpwZyIgYWx0PSJraW1pIiAvPgoJCQlQZXJzb24ubmV3KDxici8+Jm5i
+c3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTpuYW1lID0+ICfpq5jljYfmtIss
+S2ltaScsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmRldGFp
+bCA9PiAnMTk4NuW5tOeUn++8jOeUt++8jOacquWpmicsPGJyLz4mbmJzcDsm
+bmJzcDsmbmJzcDsmbmJzcDsKCQkJOnBob25lID0+ICcxNTI2NTQyOTg5Mics
+PGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsKCQkJOmVtYWlsID0+ICdr
+aW1pZ2FvMTk4NkBnbWFpbCcsPGJyLz4mbmJzcDsmbmJzcDsmbmJzcDsmbmJz
+cDsKCQkJOmRyZWFtID0+ICforqnkupLogZTnvZHmm7TliqDnsr7lvanvvIHv
+vIEnLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJCTp3ZWJzaXRl
+ID0+ICc8YSBocmVmPSJodHRwOi8vd3d3LmtpbWlnYW8ubWUiIHRhcmdldD0i
+X2JsYW5rIj5odHRwOi8vd3d3LmtpbWlnYW8ubWU8L2E+Jyw8YnIvPiZuYnNw
+OyZuYnNwOyZuYnNwOyZuYnNwOwoJCQk6Y29kZV91cmwgPT4gJzxhIGhyZWY9
+Imh0dHBzOi8vZ2l0aHViLmNvbS9LaW1pR2FvIiB0YXJnZXQ9Il9ibGFuayI+
+aHR0cHM6Ly9naXRodWIuY29tL0tpbWlHYW88L2E+Jyw8YnIvPiZuYnNwOyZu
+YnNwOyZuYnNwOyZuYnNwOwoJCQk6am9iX3dhbnQgPT4gJ1J1YnkgT24gUmFp
+bHPlt6XnqIvluIgnLDxici8+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7CgkJ
+CTpza2lsbCA9PiAnUnVieSxSYWlscyxKYXZhLE15U1FMLEFwYWNoZSxzdm4s
+Z2l0LEV4dEpTLEpRdWVyeSxqYXZhc2NyaXB0LGNzcycsPGJyLz4mbmJzcDsm
+bmJzcDsmbmJzcDsmbmJzcDsKCQkJOmhvYmJ5ID0+ICfmraXooYws55S15b2x
+LOWPsOeQgyzml4XooYws5pGE5b2xJzxici8+CgkJCSk8YnIvPgogICAgICA8
+L2Rpdj4KICAgICAgPGgzIGNsYXNzPSJncmUiPuiBjOS4muaipuaDszwvaDM+
+CiAgICAgIDxkaXYgaWQ9ImRldGFpbCI+CgkJCeS6kuiBlOe9keW3sui/m+WF
+peS6uuS7rOeahOeUn+a0u+S4re+8jOS4jeiuuuaYr+S8oOe7n+S6kuiBlOe9
+kei/mOaYr+enu+WKqOS6kuiBlOe9kemDveS4juS6uuS7rOeahOWFs+ezu+i2
+iuadpei2iue0p+WvhuOAguW4jOacm+WcqOS4jeS5heS7peWQjuiDveWBmuS4
+gOS4quaUueWPmOS6uuS7rOeUn+a0u+i0qOmHj+eahOS6kuiBlOe9keW6lOeU
+qOOAggogICAgICA8L2Rpdj4KICAgICAgPGgzIGNsYXNzPSJyZWQiPuaKgOac
+r+eJuemVvzwvaDM+CiAgICAgIDxkaXYgaWQ9ImRldGFpbCI+CgkJCeeGn+aC
+iVJ1Ynkgb24gUmFpbHMsamF2YSxqYXZhc2NyaXB0LGh0bWwsY3Nz562J5oqA
+5pyv44CCPGJyLz4KCQkJ54af5oKJTmV0QmVhbnMsZ3ZpbeetieW8gOWPkeW3
+peWFt+OAggoJCQnnhp/mgolleHRqcyxqcXVlcnnnrYlqc+ahhuaetuOAgjxi
+ci8+CgkJCeeGn+aCiXVidW50dSxjZW50b3Msd2luZG93c+aTjeS9nOezu+e7
+n+OAgjxici8+CgkJCeeGn+aCiWFwYWNoZSxST1LlnKh1YnVudHXlkoxjZW50
+b3PkuIrnmoTlronoo4Xpg6jnvbLjgII8YnIvPgoJCQnnhp/mgolTVk4sZ2l0
+54mI5pys5o6n5Yi257O757uf77yM5pyJc3Zu5ZyoY2VudG9z5LiK5a6J6KOF
+44CB57u05oqk57uP6aqM44CCPGJyLz4KCQkJ6Ieq5a2mYW5kcm9pZO+8jOWB
+mui/h2FuZHJvaWTnmoTlsI/nqIvluo/jgILvvIjnnJ/kuI3lpb3mhI/mgJ3v
+vIk8YnIvPgoJCQnnp5/nlKjlm73lpJbnmoR2cHPvvIxPU+S4unVidW50de+8
+jOS4quS6uuWNmuWuouWSjOWHoOS4qlJPUue9keermemDqOe9suWcqOS4iumd
+ou+8jOWboOatpOenr+e0r+S6huS6m+WvuVJPUueahOmDqOe9suWSjOS8mOWM
+lueahOe7j+mqjOOAggogICAgICA8L2Rpdj4KICAgICAgPGgzIGNsYXNzPSJ5
+ZWwiPumhueebrue7j+mqjDwvaDM+CiAgICAgIDxkaXYgaWQ9ImRldGFpbCI+
+CgkJCTIwMTEtMDjoh7MyMDExLTA5Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7
+PGEgaHJlZj0iaHR0cDovL3d3dy5zaW51bzE5LmNvbSIgdGFyZ2V0PSJfYmxh
+bmsiPuS4neivuue6uue7h+WFrOWPuOe9keermTwvYT48YnIvPgogICAgICAg
+IDxiPuaJgOeUqOaKgOacr++8mjwvYj5yYWlscyAz44CBZXh0anPjgIFraW5k
+ZWRpdG9y44CBanF1ZXJ544CBZ2l044CBZ2l0aHViPGJyLz4KICAgICAgICA8
+ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDExLTA06IezMjAxMS0wNiZu
+YnNwOyZuYnNwOyZuYnNwOyZuYnNwOzxhIGhyZWY9Imh0dHA6Ly9oYW5iYW9w
+b3dlci5ncmVlbnNlcnZlci5jbiIgdGFyZ2V0PSJfYmxhbmsiPuaCjeixueeU
+teeTtuWFrOWPuOe9keermTwvYT48YnIvPgogICAgICAgIDxiPuaJgOeUqOaK
+gOacr++8mjwvYj5yYWlscyAyLjPjgIFleHRqc+OAgWNrZGl0b3LjgIFqcXVl
+cnk8YnIvPgogICAgICAgIDxkaXYgY2xhc3M9InBiciI+PC9kaXY+CgkJCTIw
+MTAtMDjoh7MyMDExLTA0Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A75rWO5Y2X
+5q615Yqo6L2m5qOA5L+u566h55CG57O757ufPGJyLz4KICAgICAgICA8Yj7m
+iYDnlKjmioDmnK/vvJo8L2I+cmFpbHMgM+OAgWV4dGpzPGJyLz4KICAgICAg
+ICA8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTA26IezMjAxMC0w
+OCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+a1qea1t+e9kee7nOmHh+i0reer
+nuS7t+W5s+WPsOezu+e7nzxici8+CiAgICAgICAgPGI+5omA55So5oqA5pyv
+77yaPC9iPnJhaWxzIDIo5Y2H57qn5Li6cmFpbHMzKeOAgWV4dGpzPGJyLz4K
+ICAgICAgICA8ZGl2IGNsYXNzPSJwYnIiPjwvZGl2PgoJCQkyMDEwLTAy6Iez
+MjAxMC0wNiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO+mdkuWym+WuieebkeWx
+gOWNsemZqea6kOinhumikeebkeaOp+ezu+e7nzxici8+CiAgICAgICAgPGI+
+5omA55So5oqA5pyv77yaPC9iPmphdmHjgIFleHRqc+OAgVZMQ+OAgXNwcmlu
+ZyBNVkPjgIFoaWJlcm5hdGU8YnIvPgogICAgICAgIDxkaXYgY2xhc3M9InBi
+ciI+PC9kaXY+CgkJCTIwMDktMTLoh7MyMDEwLTAzJm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A75bSC5bGx5YWa5qCh5qCh5Zut566h55CG57O757ufPGJyLz4K
+ICAgICAgICA8Yj7miYDnlKjmioDmnK/vvJo8L2I+cmFpbHMgMijljYfnuqfk
+uLpyYWlsczMp44CBZXh0anM8YnIvPgogICAgICAgIDxkaXYgY2xhc3M9InBi
+ciI+PC9kaXY+CgkJCTIwMDktMDnoh7MyMDEwLTAxJm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A75Lit5Zu95rW35rSL5aSn5a2m5pel5bi46Zu25pif54mp6LWE
+6YeH6LSt57O757ufPGJyLz4KICAgICAgICA8Yj7miYDnlKjmioDmnK/vvJo8
+L2I+cmFpbHMgMijljYfnuqfkuLpyYWlsczMp44CBZXh0anM8YnIvPgogICAg
+ICA8L2Rpdj4KCgogICAgPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJiciI+CiAg
+ICA8L2Rpdj4KICAgIDxkaXYgaWQ9ImZvb3RlciI+CiAgICA8L2Rpdj4KICA8
+L2JvZHk+Cgo8L2h0bWw+Cg==
+
+
+----==_mimepart_4e684d9b1472_874330bf343878a--
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 62801ms (Views: 1.0ms | ActiveRecord: 47.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 13:24:50 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"3333", "subject"=>"222", "email"=>"gaoshengyang2000@163.com"}}
+  [1m[35mSQL (1.0ms)[0m  BEGIN
+  [1m[36mSQL (7.0ms)[0m  [1mdescribe `jobs`[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO `jobs` (`company_name`, `subject`, `updated_at`, `email`, `created_at`) VALUES ('3333', '222', '2011-09-08 05:24:51', 'gaoshengyang2000@163.com', '2011-09-08 05:24:51')
+  [1m[36mSQL (111.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to gaoshengyang2000@163.com (35056ms)
+Date: Thu, 08 Sep 2011 13:24:51 +0800
+From: kimigao1986@gmail.com
+To: gaoshengyang2000@163.com
+Message-ID: <4e6851a34528c_87434e9c84394a@kimi-PC.mail>
+Subject: 222
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e6851a33f4cb_87434e9c8439182";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e6851a33f4cb_87434e9c8439182
+Date: Thu, 08 Sep 2011 13:24:51 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e6851a342b7c_87434e9c84392bd@kimi-PC.mail>
+
+Hello 3333
+
+----==_mimepart_4e6851a33f4cb_87434e9c8439182
+Date: Thu, 08 Sep 2011 13:24:51 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4e6851a343f04_87434e9c8439335@kimi-PC.mail>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://ww=
+w.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Ty=
+pe" />
+    <title>=E7=AE=80=E5=8E=86-=E9=AB=98=E5=8D=87=E6=B4=8B</title>
+    <style type=3D"text/css">
+      =EF=BB=BFhtml, body, div, span, h1, h2, h3, h4, h5, h6, p{
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        text-decoration: none;
+      }
+      body {
+        text-align: left;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        position: relative;
+        line-height: 1;
+        font-size:12px;
+      }
+      a {
+        color:#0099CC;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #d66;
+      }
+      #head{
+        height:56px;
+        position:relative;
+        width:860px;
+        text-align:center;
+        margin:0 auto
+      }
+      #head h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      .br{
+        width:100%;
+        height:2px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -moz-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      .pbr{
+        width:80%;
+        height:1px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      #body{
+        width:860px;
+        margin:0 auto;
+        text-align: center;
+        padding:0 0 60px 0;
+      }
+      #body h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      #body h3{
+        font-size:16px;
+        line-height:32px;
+        margin:48px 0 24px 0px;
+        background: #1698F6;
+        color: #fff;
+        text-shadow: 0px 1px 1px #000;
+        background-image: -moz-linear-gradient(top, #3fb6fc, #1698F6);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #3fb6fc),color-stop(1, #1698F6));
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        box-shadow: 0px 1px 2px #000;
+        -moz-box-shadow: 0px 1px 2px #000;
+        -webkit-box-shadow: 0px 1px 2px #000;
+        padding:0 0 0 14px;
+        width:100%;
+        letter-spacing:2px;
+        position:relative
+      }
+      #body h3.red{
+        background: #750000;
+        background-image: -moz-linear-gradient(top, #ec2000, #901401);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #ec2000),color-stop(1, #901401));
+      }
+      #body h3.yel{
+        background: #947400;
+        background-image: -moz-linear-gradient(top, #f2c629, #947400);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #f2c629),color-stop(1, #947400));
+      }
+      #body h3.gre{
+        background: #018620;
+        background-image: -moz-linear-gradient(top, #01fc3a, #018620);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #01fc3a),color-stop(1, #018620));
+      }
+      #body p{
+        text-indent:2em;
+        font-size:14px;
+        letter-spacing:1px;
+        line-height:32px;
+        color:#444
+      }
+
+      h3 .more{
+        color:#fff;
+        font-size:12px;
+        width:460px;
+        display:inline-block;
+        text-align:right;
+        position:absolute;
+        padding:0 20px 0 0;
+        right:0;
+        top:0px;
+        height:32px;
+        line-height:32px;
+      }
+
+      #footer{
+        width:960px;
+        margin:0 auto;
+        height:80px;
+      }
+      #footer p{
+        line-height:32px;
+        text-align:center
+      }
+      #about{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        width: 800px;
+      }
+      #about img{
+        float: right;
+        margin-right: 180px;
+      }
+
+      #detail{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        min-height: 50px;
+        width: 800px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id=3D"head">
+      <h1>222---3333</h1>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"body">
+      <h1>=E9=AB=98=E5=8D=87=E6=B4=8B=E7=9A=84=E7=AE=80=E5=8E=86(<a href=3D=
+"http://www.kimigao.me/job" target=3D"_blank">=E5=9C=A8=E7=BA=BF=E7=AE=80=
+=E5=8E=86</a>)</h1>
+      <h3>=E5=85=B3=E4=BA=8E=E6=88=91</h3>
+      <div id=3D"about">
+        <img src=3D"http://www.kimigao.me/job/me.jpg" alt=3D"kimi" />
+			Person.new(<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:name =3D> '=E9=AB=98=E5=8D=87=E6=B4=8B,Kimi',<br/>&nbsp;&nbsp;&nbsp;&=
+nbsp;
+			:detail =3D> '1986=E5=B9=B4=E7=94=9F=EF=BC=8C=E7=94=B7=EF=BC=8C=E6=9C=AA=
+=E5=A9=9A',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:phone =3D> '15265429892',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:email =3D> 'kimigao1986@gmail',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:dream =3D> '=E8=AE=A9=E4=BA=92=E8=81=94=E7=BD=91=E6=9B=B4=E5=8A=A0=E7=
+=B2=BE=E5=BD=A9=EF=BC=81=EF=BC=81',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:website =3D> '<a href=3D"http://www.kimigao.me" target=3D"_blank">htt=
+p://www.kimigao.me</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:code_url =3D> '<a href=3D"https://github.com/KimiGao" target=3D"_blan=
+k">https://github.com/KimiGao</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:job_want =3D> 'Ruby On Rails=E5=B7=A5=E7=A8=8B=E5=B8=88',<br/>&nbsp;&=
+nbsp;&nbsp;&nbsp;
+			:skill =3D> 'Ruby,Rails,Java,MySQL,Apache,svn,git,ExtJS,JQuery,javascr=
+ipt,css',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:hobby =3D> '=E6=AD=A5=E8=A1=8C,=E7=94=B5=E5=BD=B1,=E5=8F=B0=E7=90=83,=
+=E6=97=85=E8=A1=8C,=E6=91=84=E5=BD=B1'<br/>
+			)<br/>
+      </div>
+      <h3 class=3D"gre">=E8=81=8C=E4=B8=9A=E6=A2=A6=E6=83=B3</h3>
+      <div id=3D"detail">
+			=E4=BA=92=E8=81=94=E7=BD=91=E5=B7=B2=E8=BF=9B=E5=85=A5=E4=BA=BA=E4=BB=AC=
+=E7=9A=84=E7=94=9F=E6=B4=BB=E4=B8=AD=EF=BC=8C=E4=B8=8D=E8=AE=BA=E6=98=AF=E4=
+=BC=A0=E7=BB=9F=E4=BA=92=E8=81=94=E7=BD=91=E8=BF=98=E6=98=AF=E7=A7=BB=E5=8A=
+=A8=E4=BA=92=E8=81=94=E7=BD=91=E9=83=BD=E4=B8=8E=E4=BA=BA=E4=BB=AC=E7=9A=84=
+=E5=85=B3=E7=B3=BB=E8=B6=8A=E6=9D=A5=E8=B6=8A=E7=B4=A7=E5=AF=86=E3=80=82=E5=
+=B8=8C=E6=9C=9B=E5=9C=A8=E4=B8=8D=E4=B9=85=E4=BB=A5=E5=90=8E=E8=83=BD=E5=81=
+=9A=E4=B8=80=E4=B8=AA=E6=94=B9=E5=8F=98=E4=BA=BA=E4=BB=AC=E7=94=9F=E6=B4=BB=
+=E8=B4=A8=E9=87=8F=E7=9A=84=E4=BA=92=E8=81=94=E7=BD=91=E5=BA=94=E7=94=A8=E3=
+=80=82
+      </div>
+      <h3 class=3D"red">=E6=8A=80=E6=9C=AF=E7=89=B9=E9=95=BF</h3>
+      <div id=3D"detail">
+			=E7=86=9F=E6=82=89Ruby on Rails,java,javascript,html,css=E7=AD=89=E6=8A=
+=80=E6=9C=AF=E3=80=82<br/>
+			=E7=86=9F=E6=82=89NetBeans,gvim=E7=AD=89=E5=BC=80=E5=8F=91=E5=B7=A5=E5=
+=85=B7=E3=80=82
+			=E7=86=9F=E6=82=89extjs,jquery=E7=AD=89js=E6=A1=86=E6=9E=B6=E3=80=82<b=
+r/>
+			=E7=86=9F=E6=82=89ubuntu,centos,windows=E6=93=8D=E4=BD=9C=E7=B3=BB=E7=BB=
+=9F=E3=80=82<br/>
+			=E7=86=9F=E6=82=89apache,ROR=E5=9C=A8ubuntu=E5=92=8Ccentos=E4=B8=8A=E7=
+=9A=84=E5=AE=89=E8=A3=85=E9=83=A8=E7=BD=B2=E3=80=82<br/>
+			=E7=86=9F=E6=82=89SVN,git=E7=89=88=E6=9C=AC=E6=8E=A7=E5=88=B6=E7=B3=BB=
+=E7=BB=9F=EF=BC=8C=E6=9C=89svn=E5=9C=A8centos=E4=B8=8A=E5=AE=89=E8=A3=85=E3=
+=80=81=E7=BB=B4=E6=8A=A4=E7=BB=8F=E9=AA=8C=E3=80=82<br/>
+			=E8=87=AA=E5=AD=A6android=EF=BC=8C=E5=81=9A=E8=BF=87android=E7=9A=84=E5=
+=B0=8F=E7=A8=8B=E5=BA=8F=E3=80=82=EF=BC=88=E4=B8=8D=E5=A5=BD=E6=84=8F=E6=80=
+=9D=EF=BC=89<br/>
+			=E7=A7=9F=E7=94=A8=E5=9B=BD=E5=A4=96=E7=9A=84vps=EF=BC=8COS=E4=B8=BAub=
+untu=EF=BC=8C=E4=B8=AA=E4=BA=BA=E5=8D=9A=E5=AE=A2=E5=92=8C=E5=87=A0=E4=B8=
+=AAROR=E7=BD=91=E7=AB=99=E9=83=A8=E7=BD=B2=E5=9C=A8=E4=B8=8A=E9=9D=A2=EF=BC=
+=8C=E5=9B=A0=E6=AD=A4=E7=A7=AF=E7=B4=AF=E4=BA=86=E4=BA=9B=E5=AF=B9ROR=E7=9A=
+=84=E9=83=A8=E7=BD=B2=E5=92=8C=E4=BC=98=E5=8C=96=E7=9A=84=E7=BB=8F=E9=AA=8C=
+=E3=80=82
+      </div>
+      <h3 class=3D"yel">=E9=A1=B9=E7=9B=AE=E7=BB=8F=E9=AA=8C</h3>
+      <div id=3D"detail">
+	2011-08=E8=87=B32011-09&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://www.sin=
+uo19.com" target=3D"_blank">=E4=B8=9D=E8=AF=BA=E7=BA=BA=E7=BB=87=E5=85=AC=
+=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        =E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9Arails 3=E3=80=81extj=
+s=E3=80=81kindeditor=E3=80=81jquery=E3=80=81git=E3=80=81github<br/>
+        <div class=3D"pbr"></div>
+	011-04=E8=87=B32011-06&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://hanbaopo=
+wer.greenserver.cn" target=3D"_blank">=E6=82=8D=E8=B1=B9=E7=94=B5=E7=93=B6=
+=E5=85=AC=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2.3=E3=80=
+=81extjs=E3=80=81ckditor=E3=80=81jquery<br/>
+        <div class=3D"pbr"></div>
+	2010-08=E8=87=B32011-04&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=8E=E5=8D=97=E6=AE=B5=
+=E5=8A=A8=E8=BD=A6=E6=A3=80=E4=BF=AE=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<=
+br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 3=E3=80=
+=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-06=E8=87=B32010-08&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=A9=E6=B5=B7=E7=BD=91=
+=E7=BB=9C=E9=87=87=E8=B4=AD=E7=AB=9E=E4=BB=B7=E5=B9=B3=E5=8F=B0=E7=B3=BB=E7=
+=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-02=E8=87=B32010-06&nbsp;&nbsp;&nbsp;&nbsp;=E9=9D=92=E5=B2=9B=E5=AE=89=
+=E7=9B=91=E5=B1=80=E5=8D=B1=E9=99=A9=E6=BA=90=E8=A7=86=E9=A2=91=E7=9B=91=E6=
+=8E=A7=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>java=E3=80=81=
+extjs=E3=80=81VLC=E3=80=81spring MVC=E3=80=81hibernate<br/>
+        <div class=3D"pbr"></div>
+	2009-12=E8=87=B32010-03&nbsp;&nbsp;&nbsp;&nbsp;=E5=B4=82=E5=B1=B1=E5=85=9A=
+=E6=A0=A1=E6=A0=A1=E5=9B=AD=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2009-09=E8=87=B32010-01&nbsp;&nbsp;&nbsp;&nbsp;=E4=B8=AD=E5=9B=BD=E6=B5=B7=
+=E6=B4=8B=E5=A4=A7=E5=AD=A6=E6=97=A5=E5=B8=B8=E9=9B=B6=E6=98=9F=E7=89=A9=E8=
+=B5=84=E9=87=87=E8=B4=AD=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+      </div>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"footer">
+    </div>
+  </body>
+
+</html>
+
+
+----==_mimepart_4e6851a33f4cb_87434e9c8439182--
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 35302ms (Views: 2.0ms | ActiveRecord: 120.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 13:33:30 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (0.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 29ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 08 14:06:02 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (44.0ms)
+Rendered home/_header.html.erb (1.0ms)
+  [1m[35mTag Load (0.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (41.0ms)
+Rendered home/index.html.erb within layouts/home (120.0ms)
+Completed 200 OK in 340ms (Views: 148.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Thu Sep 08 14:53:41 +0800 2011
+  Processing by Admin::IndexController#index as HTML
+Rendered admin/index/index.html.erb (5.0ms)
+Completed 200 OK in 70ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/job" for 127.0.0.1 at Thu Sep 08 15:01:21 +0800 2011
+  Processing by Admin::JobController#index as HTML
+Rendered admin/job/index.html.erb (1.0ms)
+Completed 200 OK in 109ms (Views: 108.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 15:01:21 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[35mJob Load (1.0ms)[0m  SELECT `jobs`.* FROM `jobs`
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM `jobs`[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 46ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/admin/job/destroy_list" for 127.0.0.1 at Thu Sep 08 15:01:26 +0800 2011
+  Processing by Admin::JobController#destroy_list as HTML
+  Parameters: {"id"=>"[5,6,7,8]"}
+  [1m[35mSQL (6.0ms)[0m  SHOW TABLES
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM `jobs` WHERE `jobs`.`id` = 5[0m
+  [1m[35mSQL (79.0ms)[0m  COMMIT
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 6 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  BEGIN
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM `jobs` WHERE `jobs`.`id` = 6[0m
+  [1m[35mSQL (21.0ms)[0m  COMMIT
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 7 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (1.0ms)[0m  [1mDELETE FROM `jobs` WHERE `jobs`.`id` = 7[0m
+  [1m[35mSQL (27.0ms)[0m  COMMIT
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 8 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (1.0ms)[0m  [1mDELETE FROM `jobs` WHERE `jobs`.`id` = 8[0m
+  [1m[35mSQL (28.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Completed 200 OK in 212ms (Views: 1.0ms | ActiveRecord: 165.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 15:01:26 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 15:01:27 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (0.0ms)
+Completed 200 OK in 110ms (Views: 109.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 15:02:17 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"Kimi网", "subject"=>"应聘ROR工程师", "email"=>"kimigao1986@gmail.com"}}
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  describe `jobs`
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO `jobs` (`email`, `subject`, `updated_at`, `company_name`, `created_at`) VALUES ('kimigao1986@gmail.com', '应聘ROR工程师', '2011-09-08 07:02:17', 'Kimi网', '2011-09-08 07:02:17')[0m
+  [1m[35mSQL (81.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to kimigao1986@gmail.com (22141ms)
+Date: Thu, 08 Sep 2011 15:02:18 +0800
+From: kimigao1986@gmail.com
+To: kimigao1986@gmail.com
+Message-ID: <4e68687a4f84c_302834adce4379b4@kimi-PC.mail>
+Subject: =?UTF-8?Q?=E5=BA=94=E8=81=98ROR=E5=B7=A5=E7=A8=8B=E5=B8=88?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e68687a33325_302834adce43767a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e68687a33325_302834adce43767a
+Date: Thu, 08 Sep 2011 15:02:18 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-ID: <4e68687a40619_302834adce43777e@kimi-PC.mail>
+
+SGVsbG8gS2ltaee9kQ==
+
+
+----==_mimepart_4e68687a33325_302834adce43767a
+Date: Thu, 08 Sep 2011 15:02:18 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4e68687a492bb_302834adce437839@kimi-PC.mail>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://ww=
+w.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Ty=
+pe" />
+    <title>=E7=AE=80=E5=8E=86-=E9=AB=98=E5=8D=87=E6=B4=8B</title>
+    <style type=3D"text/css">
+      =EF=BB=BFhtml, body, div, span, h1, h2, h3, h4, h5, h6, p{
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        text-decoration: none;
+      }
+      body {
+        text-align: left;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        position: relative;
+        line-height: 1;
+        font-size:12px;
+      }
+      a {
+        color:#0099CC;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #d66;
+      }
+      #head{
+        height:56px;
+        position:relative;
+        width:860px;
+        text-align:center;
+        margin:0 auto
+      }
+      #head h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      .br{
+        width:100%;
+        height:2px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -moz-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      .pbr{
+        width:80%;
+        height:1px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      #body{
+        width:860px;
+        margin:0 auto;
+        text-align: center;
+        padding:0 0 60px 0;
+      }
+      #body h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      #body h3{
+        font-size:16px;
+        line-height:32px;
+        margin:48px 0 24px 0px;
+        background: #1698F6;
+        color: #fff;
+        text-shadow: 0px 1px 1px #000;
+        background-image: -moz-linear-gradient(top, #3fb6fc, #1698F6);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #3fb6fc),color-stop(1, #1698F6));
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        box-shadow: 0px 1px 2px #000;
+        -moz-box-shadow: 0px 1px 2px #000;
+        -webkit-box-shadow: 0px 1px 2px #000;
+        padding:0 0 0 14px;
+        width:100%;
+        letter-spacing:2px;
+        position:relative
+      }
+      #body h3.red{
+        background: #750000;
+        background-image: -moz-linear-gradient(top, #ec2000, #901401);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #ec2000),color-stop(1, #901401));
+      }
+      #body h3.yel{
+        background: #947400;
+        background-image: -moz-linear-gradient(top, #f2c629, #947400);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #f2c629),color-stop(1, #947400));
+      }
+      #body h3.gre{
+        background: #018620;
+        background-image: -moz-linear-gradient(top, #01fc3a, #018620);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #01fc3a),color-stop(1, #018620));
+      }
+      #body p{
+        text-indent:2em;
+        font-size:14px;
+        letter-spacing:1px;
+        line-height:32px;
+        color:#444
+      }
+
+      h3 .more{
+        color:#fff;
+        font-size:12px;
+        width:460px;
+        display:inline-block;
+        text-align:right;
+        position:absolute;
+        padding:0 20px 0 0;
+        right:0;
+        top:0px;
+        height:32px;
+        line-height:32px;
+      }
+
+      #footer{
+        width:960px;
+        margin:0 auto;
+        height:80px;
+      }
+      #footer p{
+        line-height:32px;
+        text-align:center
+      }
+      #about{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        width: 800px;
+      }
+      #about img{
+        float: right;
+        margin-right: 180px;
+      }
+
+      #detail{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        min-height: 50px;
+        width: 800px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id=3D"head">
+      <h1>=E5=BA=94=E8=81=98ROR=E5=B7=A5=E7=A8=8B=E5=B8=88---Kimi=E7=BD=91=
+</h1>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"body">
+      <h1>=E9=AB=98=E5=8D=87=E6=B4=8B=E7=9A=84=E7=AE=80=E5=8E=86(<a href=3D=
+"http://www.kimigao.me/job" target=3D"_blank">=E5=9C=A8=E7=BA=BF=E7=AE=80=
+=E5=8E=86</a>)</h1>
+      <h3>=E5=85=B3=E4=BA=8E=E6=88=91</h3>
+      <div id=3D"about">
+        <img src=3D"http://www.kimigao.me/job/me.jpg" alt=3D"kimi" />
+			Person.new(<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:name =3D> '=E9=AB=98=E5=8D=87=E6=B4=8B,Kimi',<br/>&nbsp;&nbsp;&nbsp;&=
+nbsp;
+			:detail =3D> '1986=E5=B9=B4=E7=94=9F=EF=BC=8C=E7=94=B7=EF=BC=8C=E6=9C=AA=
+=E5=A9=9A',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:phone =3D> '15265429892',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:email =3D> 'kimigao1986@gmail',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:dream =3D> '=E8=AE=A9=E4=BA=92=E8=81=94=E7=BD=91=E6=9B=B4=E5=8A=A0=E7=
+=B2=BE=E5=BD=A9=EF=BC=81=EF=BC=81',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:website =3D> '<a href=3D"http://www.kimigao.me" target=3D"_blank">htt=
+p://www.kimigao.me</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:code_url =3D> '<a href=3D"https://github.com/KimiGao" target=3D"_blan=
+k">https://github.com/KimiGao</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:job_want =3D> 'Ruby On Rails=E5=B7=A5=E7=A8=8B=E5=B8=88',<br/>&nbsp;&=
+nbsp;&nbsp;&nbsp;
+			:skill =3D> 'Ruby,Rails,Java,MySQL,Apache,svn,git,ExtJS,JQuery,javascr=
+ipt,css',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:hobby =3D> '=E6=AD=A5=E8=A1=8C,=E7=94=B5=E5=BD=B1,=E5=8F=B0=E7=90=83,=
+=E6=97=85=E8=A1=8C,=E6=91=84=E5=BD=B1'<br/>
+			)<br/>
+      </div>
+      <h3 class=3D"gre">=E8=81=8C=E4=B8=9A=E6=A2=A6=E6=83=B3</h3>
+      <div id=3D"detail">
+			=E4=BA=92=E8=81=94=E7=BD=91=E5=B7=B2=E8=BF=9B=E5=85=A5=E4=BA=BA=E4=BB=AC=
+=E7=9A=84=E7=94=9F=E6=B4=BB=E4=B8=AD=EF=BC=8C=E4=B8=8D=E8=AE=BA=E6=98=AF=E4=
+=BC=A0=E7=BB=9F=E4=BA=92=E8=81=94=E7=BD=91=E8=BF=98=E6=98=AF=E7=A7=BB=E5=8A=
+=A8=E4=BA=92=E8=81=94=E7=BD=91=E9=83=BD=E4=B8=8E=E4=BA=BA=E4=BB=AC=E7=9A=84=
+=E5=85=B3=E7=B3=BB=E8=B6=8A=E6=9D=A5=E8=B6=8A=E7=B4=A7=E5=AF=86=E3=80=82=E5=
+=B8=8C=E6=9C=9B=E5=9C=A8=E4=B8=8D=E4=B9=85=E4=BB=A5=E5=90=8E=E8=83=BD=E5=81=
+=9A=E4=B8=80=E4=B8=AA=E6=94=B9=E5=8F=98=E4=BA=BA=E4=BB=AC=E7=94=9F=E6=B4=BB=
+=E8=B4=A8=E9=87=8F=E7=9A=84=E4=BA=92=E8=81=94=E7=BD=91=E5=BA=94=E7=94=A8=E3=
+=80=82
+      </div>
+      <h3 class=3D"red">=E6=8A=80=E6=9C=AF=E7=89=B9=E9=95=BF</h3>
+      <div id=3D"detail">
+			=E7=86=9F=E6=82=89Ruby on Rails,java,javascript,html,css=E7=AD=89=E6=8A=
+=80=E6=9C=AF=E3=80=82<br/>
+			=E7=86=9F=E6=82=89NetBeans,gvim=E7=AD=89=E5=BC=80=E5=8F=91=E5=B7=A5=E5=
+=85=B7=E3=80=82
+			=E7=86=9F=E6=82=89extjs,jquery=E7=AD=89js=E6=A1=86=E6=9E=B6=E3=80=82<b=
+r/>
+			=E7=86=9F=E6=82=89ubuntu,centos,windows=E6=93=8D=E4=BD=9C=E7=B3=BB=E7=BB=
+=9F=E3=80=82<br/>
+			=E7=86=9F=E6=82=89apache,ROR=E5=9C=A8ubuntu=E5=92=8Ccentos=E4=B8=8A=E7=
+=9A=84=E5=AE=89=E8=A3=85=E9=83=A8=E7=BD=B2=E3=80=82<br/>
+			=E7=86=9F=E6=82=89SVN,git=E7=89=88=E6=9C=AC=E6=8E=A7=E5=88=B6=E7=B3=BB=
+=E7=BB=9F=EF=BC=8C=E6=9C=89svn=E5=9C=A8centos=E4=B8=8A=E5=AE=89=E8=A3=85=E3=
+=80=81=E7=BB=B4=E6=8A=A4=E7=BB=8F=E9=AA=8C=E3=80=82<br/>
+			=E8=87=AA=E5=AD=A6android=EF=BC=8C=E5=81=9A=E8=BF=87android=E7=9A=84=E5=
+=B0=8F=E7=A8=8B=E5=BA=8F=E3=80=82=EF=BC=88=E4=B8=8D=E5=A5=BD=E6=84=8F=E6=80=
+=9D=EF=BC=89<br/>
+			=E7=A7=9F=E7=94=A8=E5=9B=BD=E5=A4=96=E7=9A=84vps=EF=BC=8COS=E4=B8=BAub=
+untu=EF=BC=8C=E4=B8=AA=E4=BA=BA=E5=8D=9A=E5=AE=A2=E5=92=8C=E5=87=A0=E4=B8=
+=AAROR=E7=BD=91=E7=AB=99=E9=83=A8=E7=BD=B2=E5=9C=A8=E4=B8=8A=E9=9D=A2=EF=BC=
+=8C=E5=9B=A0=E6=AD=A4=E7=A7=AF=E7=B4=AF=E4=BA=86=E4=BA=9B=E5=AF=B9ROR=E7=9A=
+=84=E9=83=A8=E7=BD=B2=E5=92=8C=E4=BC=98=E5=8C=96=E7=9A=84=E7=BB=8F=E9=AA=8C=
+=E3=80=82
+      </div>
+      <h3 class=3D"yel">=E9=A1=B9=E7=9B=AE=E7=BB=8F=E9=AA=8C</h3>
+      <div id=3D"detail">
+	2011-08=E8=87=B32011-09&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://www.sin=
+uo19.com" target=3D"_blank">=E4=B8=9D=E8=AF=BA=E7=BA=BA=E7=BB=87=E5=85=AC=
+=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        =E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9Arails 3=E3=80=81extj=
+s=E3=80=81kindeditor=E3=80=81jquery=E3=80=81git=E3=80=81github<br/>
+        <div class=3D"pbr"></div>
+	011-04=E8=87=B32011-06&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://hanbaopo=
+wer.greenserver.cn" target=3D"_blank">=E6=82=8D=E8=B1=B9=E7=94=B5=E7=93=B6=
+=E5=85=AC=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2.3=E3=80=
+=81extjs=E3=80=81ckditor=E3=80=81jquery<br/>
+        <div class=3D"pbr"></div>
+	2010-08=E8=87=B32011-04&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=8E=E5=8D=97=E6=AE=B5=
+=E5=8A=A8=E8=BD=A6=E6=A3=80=E4=BF=AE=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<=
+br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 3=E3=80=
+=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-06=E8=87=B32010-08&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=A9=E6=B5=B7=E7=BD=91=
+=E7=BB=9C=E9=87=87=E8=B4=AD=E7=AB=9E=E4=BB=B7=E5=B9=B3=E5=8F=B0=E7=B3=BB=E7=
+=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-02=E8=87=B32010-06&nbsp;&nbsp;&nbsp;&nbsp;=E9=9D=92=E5=B2=9B=E5=AE=89=
+=E7=9B=91=E5=B1=80=E5=8D=B1=E9=99=A9=E6=BA=90=E8=A7=86=E9=A2=91=E7=9B=91=E6=
+=8E=A7=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>java=E3=80=81=
+extjs=E3=80=81VLC=E3=80=81spring MVC=E3=80=81hibernate<br/>
+        <div class=3D"pbr"></div>
+	2009-12=E8=87=B32010-03&nbsp;&nbsp;&nbsp;&nbsp;=E5=B4=82=E5=B1=B1=E5=85=9A=
+=E6=A0=A1=E6=A0=A1=E5=9B=AD=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2009-09=E8=87=B32010-01&nbsp;&nbsp;&nbsp;&nbsp;=E4=B8=AD=E5=9B=BD=E6=B5=B7=
+=E6=B4=8B=E5=A4=A7=E5=AD=A6=E6=97=A5=E5=B8=B8=E9=9B=B6=E6=98=9F=E7=89=A9=E8=
+=B5=84=E9=87=87=E8=B4=AD=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+      </div>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"footer">
+    </div>
+  </body>
+
+</html>
+
+
+----==_mimepart_4e68687a33325_302834adce43767a--
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Completed 200 OK in 22526ms (Views: 1.0ms | ActiveRecord: 87.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 15:02:40 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 29ms (Views: 1.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 15:06:28 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (1.0ms)
+Completed 200 OK in 103ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 15:07:02 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"浩海", "subject"=>"应聘ROR工程师", "email"=>"kimigao1986@gmail.com"}}
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  describe `jobs`
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO `jobs` (`subject`, `updated_at`, `created_at`, `email`, `company_name`) VALUES ('应聘ROR工程师', '2011-09-08 07:07:02', '2011-09-08 07:07:02', 'kimigao1986@gmail.com', '浩海')[0m
+  [1m[35mSQL (96.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Rendered job_mailer/job_email.html.erb (1.0ms)
+
+Sent mail to kimigao1986@gmail.com (14907ms)
+Date: Thu, 08 Sep 2011 15:07:02 +0800
+From: kimigao1986@gmail.com
+To: kimigao1986@gmail.com
+Message-ID: <4e686996bf66a_302833fd1403831f@kimi-PC.mail>
+Subject: =?UTF-8?Q?=E5=BA=94=E8=81=98ROR=E5=B7=A5=E7=A8=8B=E5=B8=88?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e686996ba079_302833fd1403803c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e686996ba079_302833fd1403803c
+Date: Thu, 08 Sep 2011 15:07:02 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-ID: <4e686996bd72a_302833fd1403812d@kimi-PC.mail>
+
+SGVsbG8g5rWp5rW3
+
+
+----==_mimepart_4e686996ba079_302833fd1403803c
+Date: Thu, 08 Sep 2011 15:07:02 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4e686996be6ca_302833fd1403826e@kimi-PC.mail>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://ww=
+w.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Ty=
+pe" />
+    <title>=E7=AE=80=E5=8E=86-=E9=AB=98=E5=8D=87=E6=B4=8B</title>
+    <style type=3D"text/css">
+      =EF=BB=BFhtml, body, div, span, h1, h2, h3, h4, h5, h6, p{
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        text-decoration: none;
+      }
+      body {
+        text-align: left;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        position: relative;
+        line-height: 1;
+        font-size:12px;
+      }
+      a {
+        color:#0099CC;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #d66;
+      }
+      #head{
+        height:56px;
+        position:relative;
+        width:860px;
+        text-align:center;
+        margin:0 auto
+      }
+      #head h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      .br{
+        width:100%;
+        height:2px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -moz-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      .pbr{
+        width:80%;
+        height:1px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      #body{
+        width:860px;
+        margin:0 auto;
+        text-align: center;
+        padding:0 0 60px 0;
+      }
+      #body h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      #body h3{
+        font-size:16px;
+        line-height:32px;
+        margin:48px 0 24px 0px;
+        background: #1698F6;
+        color: #fff;
+        text-shadow: 0px 1px 1px #000;
+        background-image: -moz-linear-gradient(top, #3fb6fc, #1698F6);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #3fb6fc),color-stop(1, #1698F6));
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        box-shadow: 0px 1px 2px #000;
+        -moz-box-shadow: 0px 1px 2px #000;
+        -webkit-box-shadow: 0px 1px 2px #000;
+        padding:0 0 0 14px;
+        width:100%;
+        letter-spacing:2px;
+        position:relative
+      }
+      #body h3.red{
+        background: #750000;
+        background-image: -moz-linear-gradient(top, #ec2000, #901401);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #ec2000),color-stop(1, #901401));
+      }
+      #body h3.yel{
+        background: #947400;
+        background-image: -moz-linear-gradient(top, #f2c629, #947400);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #f2c629),color-stop(1, #947400));
+      }
+      #body h3.gre{
+        background: #018620;
+        background-image: -moz-linear-gradient(top, #01fc3a, #018620);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #01fc3a),color-stop(1, #018620));
+      }
+      #body p{
+        text-indent:2em;
+        font-size:14px;
+        letter-spacing:1px;
+        line-height:32px;
+        color:#444
+      }
+
+      h3 .more{
+        color:#fff;
+        font-size:12px;
+        width:460px;
+        display:inline-block;
+        text-align:right;
+        position:absolute;
+        padding:0 20px 0 0;
+        right:0;
+        top:0px;
+        height:32px;
+        line-height:32px;
+      }
+
+      #footer{
+        width:960px;
+        margin:0 auto;
+        height:80px;
+      }
+      #footer p{
+        line-height:32px;
+        text-align:center
+      }
+      #about{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        width: 800px;
+      }
+      #about img{
+        float: right;
+        margin-right: 180px;
+      }
+
+      #detail{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        min-height: 50px;
+        width: 800px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id=3D"head">
+      <h1>=E5=BA=94=E8=81=98ROR=E5=B7=A5=E7=A8=8B=E5=B8=88---=E6=B5=A9=E6=
+=B5=B7</h1>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"body">
+      <h1>=E9=AB=98=E5=8D=87=E6=B4=8B=E7=9A=84=E7=AE=80=E5=8E=86(<a href=3D=
+"http://www.kimigao.me/job" target=3D"_blank">=E5=9C=A8=E7=BA=BF=E7=AE=80=
+=E5=8E=86</a>)</h1>
+      <h3>=E5=85=B3=E4=BA=8E=E6=88=91</h3>
+      <div id=3D"about">
+        <img src=3D"http://www.kimigao.me/job/me.jpg" alt=3D"kimi" />
+			Person.new(<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:name =3D> '=E9=AB=98=E5=8D=87=E6=B4=8B,Kimi',<br/>&nbsp;&nbsp;&nbsp;&=
+nbsp;
+			:detail =3D> '1986=E5=B9=B4=E7=94=9F=EF=BC=8C=E7=94=B7=EF=BC=8C=E6=9C=AA=
+=E5=A9=9A',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:phone =3D> '15265429892',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:email =3D> 'kimigao1986@gmail',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:dream =3D> '=E8=AE=A9=E4=BA=92=E8=81=94=E7=BD=91=E6=9B=B4=E5=8A=A0=E7=
+=B2=BE=E5=BD=A9=EF=BC=81=EF=BC=81',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:website =3D> '<a href=3D"http://www.kimigao.me" target=3D"_blank">htt=
+p://www.kimigao.me</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:code_url =3D> '<a href=3D"https://github.com/KimiGao" target=3D"_blan=
+k">https://github.com/KimiGao</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:job_want =3D> 'Ruby On Rails=E5=B7=A5=E7=A8=8B=E5=B8=88',<br/>&nbsp;&=
+nbsp;&nbsp;&nbsp;
+			:skill =3D> 'Ruby,Rails,Java,MySQL,Apache,svn,git,ExtJS,JQuery,javascr=
+ipt,css',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:hobby =3D> '=E6=AD=A5=E8=A1=8C,=E7=94=B5=E5=BD=B1,=E5=8F=B0=E7=90=83,=
+=E6=97=85=E8=A1=8C,=E6=91=84=E5=BD=B1'<br/>
+			)<br/>
+      </div>
+      <h3 class=3D"gre">=E8=81=8C=E4=B8=9A=E6=A2=A6=E6=83=B3</h3>
+      <div id=3D"detail">
+			=E4=BA=92=E8=81=94=E7=BD=91=E5=B7=B2=E8=BF=9B=E5=85=A5=E4=BA=BA=E4=BB=AC=
+=E7=9A=84=E7=94=9F=E6=B4=BB=E4=B8=AD=EF=BC=8C=E4=B8=8D=E8=AE=BA=E6=98=AF=E4=
+=BC=A0=E7=BB=9F=E4=BA=92=E8=81=94=E7=BD=91=E8=BF=98=E6=98=AF=E7=A7=BB=E5=8A=
+=A8=E4=BA=92=E8=81=94=E7=BD=91=E9=83=BD=E4=B8=8E=E4=BA=BA=E4=BB=AC=E7=9A=84=
+=E5=85=B3=E7=B3=BB=E8=B6=8A=E6=9D=A5=E8=B6=8A=E7=B4=A7=E5=AF=86=E3=80=82=E5=
+=B8=8C=E6=9C=9B=E5=9C=A8=E4=B8=8D=E4=B9=85=E4=BB=A5=E5=90=8E=E8=83=BD=E5=81=
+=9A=E4=B8=80=E4=B8=AA=E6=94=B9=E5=8F=98=E4=BA=BA=E4=BB=AC=E7=94=9F=E6=B4=BB=
+=E8=B4=A8=E9=87=8F=E7=9A=84=E4=BA=92=E8=81=94=E7=BD=91=E5=BA=94=E7=94=A8=E3=
+=80=82
+      </div>
+      <h3 class=3D"red">=E6=8A=80=E6=9C=AF=E7=89=B9=E9=95=BF</h3>
+      <div id=3D"detail">
+			=E7=86=9F=E6=82=89Ruby on Rails,java,javascript,html,css=E7=AD=89=E6=8A=
+=80=E6=9C=AF=E3=80=82<br/>
+			=E7=86=9F=E6=82=89NetBeans,gvim=E7=AD=89=E5=BC=80=E5=8F=91=E5=B7=A5=E5=
+=85=B7=E3=80=82
+			=E7=86=9F=E6=82=89extjs,jquery=E7=AD=89js=E6=A1=86=E6=9E=B6=E3=80=82<b=
+r/>
+			=E7=86=9F=E6=82=89ubuntu,centos,windows=E6=93=8D=E4=BD=9C=E7=B3=BB=E7=BB=
+=9F=E3=80=82<br/>
+			=E7=86=9F=E6=82=89apache,ROR=E5=9C=A8ubuntu=E5=92=8Ccentos=E4=B8=8A=E7=
+=9A=84=E5=AE=89=E8=A3=85=E9=83=A8=E7=BD=B2=E3=80=82<br/>
+			=E7=86=9F=E6=82=89SVN,git=E7=89=88=E6=9C=AC=E6=8E=A7=E5=88=B6=E7=B3=BB=
+=E7=BB=9F=EF=BC=8C=E6=9C=89svn=E5=9C=A8centos=E4=B8=8A=E5=AE=89=E8=A3=85=E3=
+=80=81=E7=BB=B4=E6=8A=A4=E7=BB=8F=E9=AA=8C=E3=80=82<br/>
+			=E8=87=AA=E5=AD=A6android=EF=BC=8C=E5=81=9A=E8=BF=87android=E7=9A=84=E5=
+=B0=8F=E7=A8=8B=E5=BA=8F=E3=80=82=EF=BC=88=E4=B8=8D=E5=A5=BD=E6=84=8F=E6=80=
+=9D=EF=BC=89<br/>
+			=E7=A7=9F=E7=94=A8=E5=9B=BD=E5=A4=96=E7=9A=84vps=EF=BC=8COS=E4=B8=BAub=
+untu=EF=BC=8C=E4=B8=AA=E4=BA=BA=E5=8D=9A=E5=AE=A2=E5=92=8C=E5=87=A0=E4=B8=
+=AAROR=E7=BD=91=E7=AB=99=E9=83=A8=E7=BD=B2=E5=9C=A8=E4=B8=8A=E9=9D=A2=EF=BC=
+=8C=E5=9B=A0=E6=AD=A4=E7=A7=AF=E7=B4=AF=E4=BA=86=E4=BA=9B=E5=AF=B9ROR=E7=9A=
+=84=E9=83=A8=E7=BD=B2=E5=92=8C=E4=BC=98=E5=8C=96=E7=9A=84=E7=BB=8F=E9=AA=8C=
+=E3=80=82
+      </div>
+      <h3 class=3D"yel">=E9=A1=B9=E7=9B=AE=E7=BB=8F=E9=AA=8C</h3>
+      <div id=3D"detail">
+	2011-08=E8=87=B32011-09&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://www.sin=
+uo19.com" target=3D"_blank">=E4=B8=9D=E8=AF=BA=E7=BA=BA=E7=BB=87=E5=85=AC=
+=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        =E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9Arails 3=E3=80=81extj=
+s=E3=80=81kindeditor=E3=80=81jquery=E3=80=81git=E3=80=81github<br/>
+        <div class=3D"pbr"></div>
+	011-04=E8=87=B32011-06&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://hanbaopo=
+wer.greenserver.cn" target=3D"_blank">=E6=82=8D=E8=B1=B9=E7=94=B5=E7=93=B6=
+=E5=85=AC=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2.3=E3=80=
+=81extjs=E3=80=81ckditor=E3=80=81jquery<br/>
+        <div class=3D"pbr"></div>
+	2010-08=E8=87=B32011-04&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=8E=E5=8D=97=E6=AE=B5=
+=E5=8A=A8=E8=BD=A6=E6=A3=80=E4=BF=AE=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<=
+br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 3=E3=80=
+=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-06=E8=87=B32010-08&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=A9=E6=B5=B7=E7=BD=91=
+=E7=BB=9C=E9=87=87=E8=B4=AD=E7=AB=9E=E4=BB=B7=E5=B9=B3=E5=8F=B0=E7=B3=BB=E7=
+=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-02=E8=87=B32010-06&nbsp;&nbsp;&nbsp;&nbsp;=E9=9D=92=E5=B2=9B=E5=AE=89=
+=E7=9B=91=E5=B1=80=E5=8D=B1=E9=99=A9=E6=BA=90=E8=A7=86=E9=A2=91=E7=9B=91=E6=
+=8E=A7=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>java=E3=80=81=
+extjs=E3=80=81VLC=E3=80=81spring MVC=E3=80=81hibernate<br/>
+        <div class=3D"pbr"></div>
+	2009-12=E8=87=B32010-03&nbsp;&nbsp;&nbsp;&nbsp;=E5=B4=82=E5=B1=B1=E5=85=9A=
+=E6=A0=A1=E6=A0=A1=E5=9B=AD=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2009-09=E8=87=B32010-01&nbsp;&nbsp;&nbsp;&nbsp;=E4=B8=AD=E5=9B=BD=E6=B5=B7=
+=E6=B4=8B=E5=A4=A7=E5=AD=A6=E6=97=A5=E5=B8=B8=E9=9B=B6=E6=98=9F=E7=89=A9=E8=
+=B5=84=E9=87=87=E8=B4=AD=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+      </div>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"footer">
+    </div>
+  </body>
+
+</html>
+
+
+----==_mimepart_4e686996ba079_302833fd1403803c--
+  [1m[36mSQL (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Completed 200 OK in 15159ms (Views: 3.0ms | ActiveRecord: 103.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 15:07:18 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (1.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 30ms (Views: 1.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/admin/job/destroy_list" for 127.0.0.1 at Thu Sep 08 15:09:10 +0800 2011
+  Processing by Admin::JobController#destroy_list as HTML
+  Parameters: {"id"=>"[9,10]"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 9 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (1.0ms)[0m  [1mDELETE FROM `jobs` WHERE `jobs`.`id` = 9[0m
+  [1m[35mSQL (35.0ms)[0m  COMMIT
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 10 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM `jobs` WHERE `jobs`.`id` = 10[0m
+  [1m[35mSQL (19.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Completed 200 OK in 98ms (Views: 1.0ms | ActiveRecord: 55.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 15:09:10 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 26ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/job/new" for 127.0.0.1 at Thu Sep 08 15:09:12 +0800 2011
+  Processing by Admin::JobController#new as HTML
+Rendered admin/job/new.html.erb (65.0ms)
+Completed 200 OK in 178ms (Views: 177.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/job" for 127.0.0.1 at Thu Sep 08 15:09:32 +0800 2011
+  Processing by Admin::JobController#create as HTML
+  Parameters: {"job"=>{"company_name"=>"浩海", "subject"=>"ROR工程师", "email"=>"kimigao1986@gmail.com"}}
+  [1m[36mSQL (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  describe `jobs`
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO `jobs` (`updated_at`, `company_name`, `created_at`, `subject`, `email`) VALUES ('2011-09-08 07:09:33', '浩海', '2011-09-08 07:09:33', 'ROR工程师', 'kimigao1986@gmail.com')[0m
+  [1m[35mSQL (80.0ms)[0m  COMMIT
+Rendered job_mailer/job_email.text.erb (0.0ms)
+Rendered job_mailer/job_email.html.erb (2.0ms)
+
+Sent mail to kimigao1986@gmail.com (18375ms)
+Date: Thu, 08 Sep 2011 15:09:33 +0800
+From: kimigao1986@gmail.com
+To: kimigao1986@gmail.com
+Message-ID: <4e686a2d53e26_3028346149c3872@kimi-PC.mail>
+Subject: =?UTF-8?Q?ROR=E5=B7=A5=E7=A8=8B=E5=B8=88?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e686a2d4e44c_3028346149c3842a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e686a2d4e44c_3028346149c3842a
+Date: Thu, 08 Sep 2011 15:09:33 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-ID: <4e686a2d51afd_3028346149c3856@kimi-PC.mail>
+
+Uk9S5bel56iL5biILS0t5rWp5rW3Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAg
+ICAgICAgICAgICAgICAgICAgICAg6auY5Y2H5rSL55qE566A5Y6GCgogICAg
+ICAgICAgICAg5Zyo57q/566A5Y6G77yaaHR0cDovL3d3dy5raW1pZ2FvLm1l
+L2pvYgrkuIDjgIHlhbPkuo7miJEKUGVyc29uLm5ldygKICAgICA6bmFtZSA9
+PiAn6auY5Y2H5rSLLEtpbWknLAogICAgIDpkZXRhaWwgPT4gJzE5ODblubTn
+lJ/vvIznlLfvvIzmnKrlqZonLAogICAgIDpwaG9uZSA9PiAnMTUyNjU0Mjk4
+OTInLAogICAgIDplbWFpbCA9PiAna2ltaWdhbzE5ODZAZ21haWwnLAogICAg
+IDpkcmVhbSA9PiAn6K6p5LqS6IGU572R5pu05Yqg57K+5b2p77yB77yBJywK
+ICAgICA6d2Vic2l0ZSA9PiAnaHR0cDovL3d3dy5raW1pZ2FvLm1lJywKICAg
+ICA6Y29kZV91cmwgPT4gJ2h0dHBzOi8vZ2l0aHViLmNvbS9LaW1pR2FvJywK
+ICAgICA6am9iX3dhbnQgPT4gJ1J1YnkgT24gUmFpbHPlt6XnqIvluIgnLAog
+ICAgIDpza2lsbCA9PiAnUnVieSxSYWlscyxKYXZhLE15U1FMLEFwYWNoZSxz
+dm4sZ2l0LEV4dEpTLEpRdWVyeSxqYXZhc2NyaXB0LGNzcycsCiAgICAgOmhv
+YmJ5ID0+ICfmraXooYws55S15b2xLOWPsOeQgyzml4XooYws5pGE5b2xJwop
+CgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tCgrkuozjgIHogYzkuJrmoqbmg7MK5LqS
+6IGU572R5bey6L+b5YWl5Lq65Lus55qE55Sf5rS75Lit77yM5LiN6K665piv
+5Lyg57uf5LqS6IGU572R6L+Y5piv56e75Yqo5LqS6IGU572R6YO95LiO5Lq6
+5Lus55qE5YWz57O76LaK5p2l6LaK57Sn5a+G44CCCuW4jOacm+WcqOS4jeS5
+heS7peWQjuiDveWBmuS4gOS4quaUueWPmOS6uuS7rOeUn+a0u+i0qOmHj+ea
+hOS6kuiBlOe9keW6lOeUqOOAggoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoK5LiJ
+44CB5oqA5pyv54m56ZW/CueGn+aCiVJ1Ynkgb24gUmFpbHMsamF2YSxqYXZh
+c2NyaXB0LGh0bWwsY3Nz562J5oqA5pyv44CCCueGn+aCiU5ldEJlYW5zLGd2
+aW3nrYnlvIDlj5Hlt6XlhbfjgIIg54af5oKJZXh0anMsanF1ZXJ5562JanPm
+oYbmnrbjgIIK54af5oKJdWJ1bnR1LGNlbnRvcyx3aW5kb3dz5pON5L2c57O7
+57uf44CCCueGn+aCiWFwYWNoZSxST1LlnKh1YnVudHXlkoxjZW50b3PkuIrn
+moTlronoo4Xpg6jnvbLjgIIK54af5oKJU1ZOLGdpdOeJiOacrOaOp+WItuez
+u+e7n++8jOaciXN2buWcqGNlbnRvc+S4iuWuieijheOAgee7tOaKpOe7j+mq
+jOOAggroh6rlraZhbmRyb2lk77yM5YGa6L+HYW5kcm9pZOeahOWwj+eoi+W6
+j+OAgu+8iOecn+S4jeWlveaEj+aAne+8iQrnp5/nlKjlm73lpJbnmoR2cHPv
+vIxPU+S4unVidW50de+8jOS4quS6uuWNmuWuouWSjOWHoOS4qlJPUue9keer
+memDqOe9suWcqOS4iumdou+8jOWboOatpOenr+e0r+S6huS6m+WvuVJPUuea
+hOmDqOe9suWSjOS8mOWMlueahOe7j+mqjOOAggoKLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLQoK5Zub44CB6aG555uu57uP6aqMCjHjgIEyMDExLTA46IezMjAxMS0w
+OSAgICDkuJ3or7rnurrnu4flhazlj7jnvZHnq5kKICDmiYDnlKjmioDmnK/v
+vJpyYWlscyAz44CBZXh0anPjgIFraW5kZWRpdG9y44CBanF1ZXJ544CBZ2l0
+44CBZ2l0aHViCgoy44CBMjAxMS0wNOiHszIwMTEtMDYgICAg5oKN6LG555S1
+55O25YWs5Y+4572R56uZCiAg5omA55So5oqA5pyv77yacmFpbHMgMi4z44CB
+ZXh0anPjgIFja2RpdG9y44CBanF1ZXJ5Cgoz44CBMjAxMC0wOOiHszIwMTEt
+MDQgICAg5rWO5Y2X5q615Yqo6L2m5qOA5L+u566h55CG57O757ufCiAg5omA
+55So5oqA5pyv77yacmFpbHMgM+OAgWV4dGpzCgo044CBMjAxMC0wNuiHszIw
+MTAtMDggICAg5rWp5rW3572R57uc6YeH6LSt56ue5Lu35bmz5Y+w57O757uf
+CiAg5omA55So5oqA5pyv77yacmFpbHMgMijljYfnuqfkuLpyYWlsczMp44CB
+ZXh0anMKCjXjgIEyMDEwLTAy6IezMjAxMC0wNiAgICDpnZLlspvlronnm5Hl
+sYDljbHpmanmupDop4bpopHnm5Hmjqfns7vnu58KICDmiYDnlKjmioDmnK/v
+vJpqYXZh44CBZXh0anPjgIFWTEPjgIFzcHJpbmcgTVZD44CBaGliZXJuYXRl
+Cgo244CBMjAwOS0xMuiHszIwMTAtMDMgICAg5bSC5bGx5YWa5qCh5qCh5Zut
+566h55CG57O757ufCiAg5omA55So5oqA5pyv77yacmFpbHMgMijljYfnuqfk
+uLpyYWlsczMp44CBZXh0anMKICAKN+OAgTIwMDktMDnoh7MyMDEwLTAxICAg
+IOS4reWbvea1t+a0i+Wkp+WtpuaXpeW4uOmbtuaYn+eJqei1hOmHh+i0reez
+u+e7nwogIOaJgOeUqOaKgOacr++8mnJhaWxzIDIo5Y2H57qn5Li6cmFpbHMz
+KeOAgWV4dGpzCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+
+
+----==_mimepart_4e686a2d4e44c_3028346149c3842a
+Date: Thu, 08 Sep 2011 15:09:33 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4e686a2d52e85_3028346149c386d5@kimi-PC.mail>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://ww=
+w.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Ty=
+pe" />
+    <title>=E7=AE=80=E5=8E=86-=E9=AB=98=E5=8D=87=E6=B4=8B</title>
+    <style type=3D"text/css">
+      =EF=BB=BFhtml, body, div, span, h1, h2, h3, h4, h5, h6, p{
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        text-decoration: none;
+      }
+      body {
+        text-align: left;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        position: relative;
+        line-height: 1;
+        font-size:12px;
+      }
+      a {
+        color:#0099CC;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #d66;
+      }
+      #head{
+        height:56px;
+        position:relative;
+        width:860px;
+        text-align:center;
+        margin:0 auto
+      }
+      #head h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      .br{
+        width:100%;
+        height:2px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -moz-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      .pbr{
+        width:80%;
+        height:1px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      #body{
+        width:860px;
+        margin:0 auto;
+        text-align: center;
+        padding:0 0 60px 0;
+      }
+      #body h1{
+        margin:30px auto;
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      #body h3{
+        font-size:16px;
+        line-height:32px;
+        margin:48px 0 24px 0px;
+        background: #1698F6;
+        color: #fff;
+        text-shadow: 0px 1px 1px #000;
+        background-image: -moz-linear-gradient(top, #3fb6fc, #1698F6);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #3fb6fc),color-stop(1, #1698F6));
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        box-shadow: 0px 1px 2px #000;
+        -moz-box-shadow: 0px 1px 2px #000;
+        -webkit-box-shadow: 0px 1px 2px #000;
+        padding:0 0 0 14px;
+        width:100%;
+        letter-spacing:2px;
+        position:relative
+      }
+      #body h3.red{
+        background: #750000;
+        background-image: -moz-linear-gradient(top, #ec2000, #901401);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #ec2000),color-stop(1, #901401));
+      }
+      #body h3.yel{
+        background: #947400;
+        background-image: -moz-linear-gradient(top, #f2c629, #947400);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #f2c629),color-stop(1, #947400));
+      }
+      #body h3.gre{
+        background: #018620;
+        background-image: -moz-linear-gradient(top, #01fc3a, #018620);
+        background-image: -webkit-gradient(linear,left top, left bottom, =
+color-stop(0, #01fc3a),color-stop(1, #018620));
+      }
+      #body p{
+        text-indent:2em;
+        font-size:14px;
+        letter-spacing:1px;
+        line-height:32px;
+        color:#444
+      }
+
+      h3 .more{
+        color:#fff;
+        font-size:12px;
+        width:460px;
+        display:inline-block;
+        text-align:right;
+        position:absolute;
+        padding:0 20px 0 0;
+        right:0;
+        top:0px;
+        height:32px;
+        line-height:32px;
+      }
+
+      #footer{
+        width:960px;
+        margin:0 auto;
+        height:80px;
+      }
+      #footer p{
+        line-height:32px;
+        text-align:center
+      }
+      #about{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        width: 800px;
+      }
+      #about img{
+        float: right;
+        margin-right: 180px;
+      }
+
+      #detail{
+        font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=E5=AE=8B=E4=BD=
+=93, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        min-height: 50px;
+        width: 800px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id=3D"head">
+      <h1>ROR=E5=B7=A5=E7=A8=8B=E5=B8=88---=E6=B5=A9=E6=B5=B7</h1>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"body">
+      <h1>=E9=AB=98=E5=8D=87=E6=B4=8B=E7=9A=84=E7=AE=80=E5=8E=86(<a href=3D=
+"http://www.kimigao.me/job" target=3D"_blank">=E5=9C=A8=E7=BA=BF=E7=AE=80=
+=E5=8E=86</a>)</h1>
+      <h3>=E5=85=B3=E4=BA=8E=E6=88=91</h3>
+      <div id=3D"about">
+        <img src=3D"http://www.kimigao.me/job/me.jpg" alt=3D"kimi" />
+			Person.new(<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:name =3D> '=E9=AB=98=E5=8D=87=E6=B4=8B,Kimi',<br/>&nbsp;&nbsp;&nbsp;&=
+nbsp;
+			:detail =3D> '1986=E5=B9=B4=E7=94=9F=EF=BC=8C=E7=94=B7=EF=BC=8C=E6=9C=AA=
+=E5=A9=9A',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:phone =3D> '15265429892',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:email =3D> 'kimigao1986@gmail',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:dream =3D> '=E8=AE=A9=E4=BA=92=E8=81=94=E7=BD=91=E6=9B=B4=E5=8A=A0=E7=
+=B2=BE=E5=BD=A9=EF=BC=81=EF=BC=81',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:website =3D> '<a href=3D"http://www.kimigao.me" target=3D"_blank">htt=
+p://www.kimigao.me</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:code_url =3D> '<a href=3D"https://github.com/KimiGao" target=3D"_blan=
+k">https://github.com/KimiGao</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:job_want =3D> 'Ruby On Rails=E5=B7=A5=E7=A8=8B=E5=B8=88',<br/>&nbsp;&=
+nbsp;&nbsp;&nbsp;
+			:skill =3D> 'Ruby,Rails,Java,MySQL,Apache,svn,git,ExtJS,JQuery,javascr=
+ipt,css',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:hobby =3D> '=E6=AD=A5=E8=A1=8C,=E7=94=B5=E5=BD=B1,=E5=8F=B0=E7=90=83,=
+=E6=97=85=E8=A1=8C,=E6=91=84=E5=BD=B1'<br/>
+			)<br/>
+      </div>
+      <h3 class=3D"gre">=E8=81=8C=E4=B8=9A=E6=A2=A6=E6=83=B3</h3>
+      <div id=3D"detail">
+			=E4=BA=92=E8=81=94=E7=BD=91=E5=B7=B2=E8=BF=9B=E5=85=A5=E4=BA=BA=E4=BB=AC=
+=E7=9A=84=E7=94=9F=E6=B4=BB=E4=B8=AD=EF=BC=8C=E4=B8=8D=E8=AE=BA=E6=98=AF=E4=
+=BC=A0=E7=BB=9F=E4=BA=92=E8=81=94=E7=BD=91=E8=BF=98=E6=98=AF=E7=A7=BB=E5=8A=
+=A8=E4=BA=92=E8=81=94=E7=BD=91=E9=83=BD=E4=B8=8E=E4=BA=BA=E4=BB=AC=E7=9A=84=
+=E5=85=B3=E7=B3=BB=E8=B6=8A=E6=9D=A5=E8=B6=8A=E7=B4=A7=E5=AF=86=E3=80=82=E5=
+=B8=8C=E6=9C=9B=E5=9C=A8=E4=B8=8D=E4=B9=85=E4=BB=A5=E5=90=8E=E8=83=BD=E5=81=
+=9A=E4=B8=80=E4=B8=AA=E6=94=B9=E5=8F=98=E4=BA=BA=E4=BB=AC=E7=94=9F=E6=B4=BB=
+=E8=B4=A8=E9=87=8F=E7=9A=84=E4=BA=92=E8=81=94=E7=BD=91=E5=BA=94=E7=94=A8=E3=
+=80=82
+      </div>
+      <h3 class=3D"red">=E6=8A=80=E6=9C=AF=E7=89=B9=E9=95=BF</h3>
+      <div id=3D"detail">
+			=E7=86=9F=E6=82=89Ruby on Rails,java,javascript,html,css=E7=AD=89=E6=8A=
+=80=E6=9C=AF=E3=80=82<br/>
+			=E7=86=9F=E6=82=89NetBeans,gvim=E7=AD=89=E5=BC=80=E5=8F=91=E5=B7=A5=E5=
+=85=B7=E3=80=82
+			=E7=86=9F=E6=82=89extjs,jquery=E7=AD=89js=E6=A1=86=E6=9E=B6=E3=80=82<b=
+r/>
+			=E7=86=9F=E6=82=89ubuntu,centos,windows=E6=93=8D=E4=BD=9C=E7=B3=BB=E7=BB=
+=9F=E3=80=82<br/>
+			=E7=86=9F=E6=82=89apache,ROR=E5=9C=A8ubuntu=E5=92=8Ccentos=E4=B8=8A=E7=
+=9A=84=E5=AE=89=E8=A3=85=E9=83=A8=E7=BD=B2=E3=80=82<br/>
+			=E7=86=9F=E6=82=89SVN,git=E7=89=88=E6=9C=AC=E6=8E=A7=E5=88=B6=E7=B3=BB=
+=E7=BB=9F=EF=BC=8C=E6=9C=89svn=E5=9C=A8centos=E4=B8=8A=E5=AE=89=E8=A3=85=E3=
+=80=81=E7=BB=B4=E6=8A=A4=E7=BB=8F=E9=AA=8C=E3=80=82<br/>
+			=E8=87=AA=E5=AD=A6android=EF=BC=8C=E5=81=9A=E8=BF=87android=E7=9A=84=E5=
+=B0=8F=E7=A8=8B=E5=BA=8F=E3=80=82=EF=BC=88=E4=B8=8D=E5=A5=BD=E6=84=8F=E6=80=
+=9D=EF=BC=89<br/>
+			=E7=A7=9F=E7=94=A8=E5=9B=BD=E5=A4=96=E7=9A=84vps=EF=BC=8COS=E4=B8=BAub=
+untu=EF=BC=8C=E4=B8=AA=E4=BA=BA=E5=8D=9A=E5=AE=A2=E5=92=8C=E5=87=A0=E4=B8=
+=AAROR=E7=BD=91=E7=AB=99=E9=83=A8=E7=BD=B2=E5=9C=A8=E4=B8=8A=E9=9D=A2=EF=BC=
+=8C=E5=9B=A0=E6=AD=A4=E7=A7=AF=E7=B4=AF=E4=BA=86=E4=BA=9B=E5=AF=B9ROR=E7=9A=
+=84=E9=83=A8=E7=BD=B2=E5=92=8C=E4=BC=98=E5=8C=96=E7=9A=84=E7=BB=8F=E9=AA=8C=
+=E3=80=82
+      </div>
+      <h3 class=3D"yel">=E9=A1=B9=E7=9B=AE=E7=BB=8F=E9=AA=8C</h3>
+      <div id=3D"detail">
+	2011-08=E8=87=B32011-09&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://www.sin=
+uo19.com" target=3D"_blank">=E4=B8=9D=E8=AF=BA=E7=BA=BA=E7=BB=87=E5=85=AC=
+=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        =E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9Arails 3=E3=80=81extj=
+s=E3=80=81kindeditor=E3=80=81jquery=E3=80=81git=E3=80=81github<br/>
+        <div class=3D"pbr"></div>
+	011-04=E8=87=B32011-06&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://hanbaopo=
+wer.greenserver.cn" target=3D"_blank">=E6=82=8D=E8=B1=B9=E7=94=B5=E7=93=B6=
+=E5=85=AC=E5=8F=B8=E7=BD=91=E7=AB=99</a><br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2.3=E3=80=
+=81extjs=E3=80=81ckditor=E3=80=81jquery<br/>
+        <div class=3D"pbr"></div>
+	2010-08=E8=87=B32011-04&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=8E=E5=8D=97=E6=AE=B5=
+=E5=8A=A8=E8=BD=A6=E6=A3=80=E4=BF=AE=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<=
+br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 3=E3=80=
+=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-06=E8=87=B32010-08&nbsp;&nbsp;&nbsp;&nbsp;=E6=B5=A9=E6=B5=B7=E7=BD=91=
+=E7=BB=9C=E9=87=87=E8=B4=AD=E7=AB=9E=E4=BB=B7=E5=B9=B3=E5=8F=B0=E7=B3=BB=E7=
+=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2010-02=E8=87=B32010-06&nbsp;&nbsp;&nbsp;&nbsp;=E9=9D=92=E5=B2=9B=E5=AE=89=
+=E7=9B=91=E5=B1=80=E5=8D=B1=E9=99=A9=E6=BA=90=E8=A7=86=E9=A2=91=E7=9B=91=E6=
+=8E=A7=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>java=E3=80=81=
+extjs=E3=80=81VLC=E3=80=81spring MVC=E3=80=81hibernate<br/>
+        <div class=3D"pbr"></div>
+	2009-12=E8=87=B32010-03&nbsp;&nbsp;&nbsp;&nbsp;=E5=B4=82=E5=B1=B1=E5=85=9A=
+=E6=A0=A1=E6=A0=A1=E5=9B=AD=E7=AE=A1=E7=90=86=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+        <div class=3D"pbr"></div>
+	2009-09=E8=87=B32010-01&nbsp;&nbsp;&nbsp;&nbsp;=E4=B8=AD=E5=9B=BD=E6=B5=B7=
+=E6=B4=8B=E5=A4=A7=E5=AD=A6=E6=97=A5=E5=B8=B8=E9=9B=B6=E6=98=9F=E7=89=A9=E8=
+=B5=84=E9=87=87=E8=B4=AD=E7=B3=BB=E7=BB=9F<br/>
+        <b>=E6=89=80=E7=94=A8=E6=8A=80=E6=9C=AF=EF=BC=9A</b>rails 2(=E5=8D=
+=87=E7=BA=A7=E4=B8=BArails3)=E3=80=81extjs<br/>
+      </div>
+    </div>
+    <div class=3D"br">
+    </div>
+    <div id=3D"footer">
+    </div>
+  </body>
+
+</html>
+
+
+----==_mimepart_4e686a2d4e44c_3028346149c3842a--
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+Rendered text template (0.0ms)
+Completed 200 OK in 18616ms (Views: 2.0ms | ActiveRecord: 88.0ms)
+
+
+Started POST "/admin/job/get_jobs" for 127.0.0.1 at Thu Sep 08 15:09:52 +0800 2011
+  Processing by Admin::JobController#get_jobs as HTML
+  Parameters: {"start"=>"0", "limit"=>"20"}
+  [1m[36mJob Load (0.0ms)[0m  [1mSELECT `jobs`.* FROM `jobs`[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM `jobs`
+Rendered text template (0.0ms)
+Completed 200 OK in 28ms (Views: 1.0ms | ActiveRecord: 1.0ms)

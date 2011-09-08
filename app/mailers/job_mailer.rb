@@ -4,7 +4,9 @@ class JobMailer < ActionMailer::Base
 
   def job_email(job)
     @job = job
-    @url = "http://www.kimigao.me/job"
-    mail(:to => job.email,:subject => job.subject)
+    mail(:to => job.email,:subject => job.subject) do |format|
+      format.text
+      format.html
+    end
   end
 end

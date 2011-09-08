@@ -1,32 +1,8 @@
-﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
+﻿html, body, div, span, h1, h2, h3, h4, h5, h6, p{
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
     text-decoration: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none;
-}
-:focus {
-    outline: 0;
-}
-ins {
-    text-decoration: none;
-}
-del {
-    text-decoration: line-through;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
 }
 body {
     text-align: left;
@@ -37,6 +13,7 @@ body {
 }
 a {
     color:#0099CC;
+    text-decoration: none;
 }
 a:hover {
     text-decoration: none;
@@ -123,21 +100,7 @@ a:hover {
     line-height:32px;
     color:#444
 }
-.list{
-    display:none;
-}
-.list li{
-    height:32px;
-    line-height:32px;
-    font-size:14px;
-    color:#444;
-}
-.list li span{
-    width:160px;
-    color:#CC0066;
-    display:inline-block;
-    text-indent:2em
-}
+
 h3 .more{
     color:#fff;
     font-size:12px;
@@ -151,10 +114,7 @@ h3 .more{
     height:32px;
     line-height:32px;
 }
-h3 .more:hover{
-    color:#000;
-    text-shadow: 0px 1px 0px #fff;
-}
+
 #footer{
     width:960px;
     margin:0 auto;
@@ -163,11 +123,6 @@ h3 .more:hover{
 #footer p{
     line-height:32px;
     text-align:center
-}
-#student,#work,#skill,#hobby{
-    height:300px;
-    width:900px;
-    position:relative
 }
 #about{
     font-family: 微软雅黑,宋体, Arial,Helvetica,sans-serif;
