@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>简历-高升洋</title>
+    <style type="text/css">
+      ﻿html, body, div, span, h1, h2, h3, h4, h5, h6, p{
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        text-decoration: none;
+      }
+      body {
+        text-align: left;
+        font-family: 微软雅黑,宋体, Arial,Helvetica,sans-serif;
+        position: relative;
+        line-height: 1;
+        font-size:12px;
+      }
+      a {
+        color:#0099CC;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #d66;
+      }
+      #head{
+        height:56px;
+        position:relative;
+        width:860px;
+        text-align:center;
+        margin:0 auto
+      }
+      #head h1{
+        margin:30px auto;
+        font-family: 微软雅黑,宋体, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      .br{
+        width:100%;
+        height:2px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -moz-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+        -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      .pbr{
+        width:80%;
+        height:1px;
+        background:#eee;
+        box-shadow:0px 1px 2px rgba(0,0,0,0.6);
+      }
+      #body{
+        width:860px;
+        margin:0 auto;
+        text-align: center;
+        padding:0 0 60px 0;
+      }
+      #body h1{
+        margin:30px auto;
+        font-family: 微软雅黑,宋体, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+      }
+
+      #body h3{
+        font-size:16px;
+        line-height:32px;
+        margin:48px 0 24px 0px;
+        background: #1698F6;
+        color: #fff;
+        text-shadow: 0px 1px 1px #000;
+        background-image: -moz-linear-gradient(top, #3fb6fc, #1698F6);
+        background-image: -webkit-gradient(linear,left top, left bottom, color-stop(0, #3fb6fc),color-stop(1, #1698F6));
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        box-shadow: 0px 1px 2px #000;
+        -moz-box-shadow: 0px 1px 2px #000;
+        -webkit-box-shadow: 0px 1px 2px #000;
+        padding:0 0 0 14px;
+        width:100%;
+        letter-spacing:2px;
+        position:relative
+      }
+      #body h3.red{
+        background: #750000;
+        background-image: -moz-linear-gradient(top, #ec2000, #901401);
+        background-image: -webkit-gradient(linear,left top, left bottom, color-stop(0, #ec2000),color-stop(1, #901401));
+      }
+      #body h3.yel{
+        background: #947400;
+        background-image: -moz-linear-gradient(top, #f2c629, #947400);
+        background-image: -webkit-gradient(linear,left top, left bottom, color-stop(0, #f2c629),color-stop(1, #947400));
+      }
+      #body h3.gre{
+        background: #018620;
+        background-image: -moz-linear-gradient(top, #01fc3a, #018620);
+        background-image: -webkit-gradient(linear,left top, left bottom, color-stop(0, #01fc3a),color-stop(1, #018620));
+      }
+      #body p{
+        text-indent:2em;
+        font-size:14px;
+        letter-spacing:1px;
+        line-height:32px;
+        color:#444
+      }
+
+      h3 .more{
+        color:#fff;
+        font-size:12px;
+        width:460px;
+        display:inline-block;
+        text-align:right;
+        position:absolute;
+        padding:0 20px 0 0;
+        right:0;
+        top:0px;
+        height:32px;
+        line-height:32px;
+      }
+
+      #footer{
+        width:960px;
+        margin:0 auto;
+        height:80px;
+      }
+      #footer p{
+        line-height:32px;
+        text-align:center
+      }
+      #about{
+        font-family: 微软雅黑,宋体, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        width: 800px;
+      }
+      #about img{
+        float: right;
+        margin-right: 180px;
+      }
+
+      #detail{
+        font-family: 微软雅黑,宋体, Arial,Helvetica,sans-serif;
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+        margin: 0 auto;
+        min-height: 50px;
+        width: 800px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="head">
+      <h1><%= @job.subject %>---<%= @job.company_name %></h1>
+    </div>
+    <div class="br">
+    </div>
+    <div id="body">
+      <h1>高升洋的简历(<a href="http://www.kimigao.me/job" target="_blank">在线简历</a>)</h1>
+      <h3>关于我</h3>
+      <div id="about">
+        <img src="http://www.kimigao.me/job/me.jpg" alt="kimi" />
+			Person.new(<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:name => '高升洋,Kimi',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:detail => '1986年生，男，未婚',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:phone => '15265429892',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:email => 'kimigao1986@gmail',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:dream => '让互联网更加精彩！！',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:website => '<a href="http://www.kimigao.me" target="_blank">http://www.kimigao.me</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:code_url => '<a href="https://github.com/KimiGao" target="_blank">https://github.com/KimiGao</a>',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:job_want => 'Ruby On Rails工程师',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:skill => 'Ruby,Rails,Java,MySQL,Apache,svn,git,ExtJS,JQuery,javascript,css',<br/>&nbsp;&nbsp;&nbsp;&nbsp;
+			:hobby => '步行,电影,台球,旅行,摄影'<br/>
+			)<br/>
+      </div>
+      <h3 class="gre">职业梦想</h3>
+      <div id="detail">
+			互联网已进入人们的生活中，不论是传统互联网还是移动互联网都与人们的关系越来越紧密。希望在不久以后能做一个改变人们生活质量的互联网应用。
+      </div>
+      <h3 class="red">技术特长</h3>
+      <div id="detail">
+			熟悉Ruby on Rails,java,javascript,html,css等技术。<br/>
+			熟悉NetBeans,gvim等开发工具。
+			熟悉extjs,jquery等js框架。<br/>
+			熟悉ubuntu,centos,windows操作系统。<br/>
+			熟悉apache,ROR在ubuntu和centos上的安装部署。<br/>
+			熟悉SVN,git版本控制系统，有svn在centos上安装、维护经验。<br/>
+			自学android，做过android的小程序。（不好意思）<br/>
+			租用国外的vps，OS为ubuntu，个人博客和几个ROR网站部署在上面，因此积累了些对ROR的部署和优化的经验。
+      </div>
+      <h3 class="yel">项目经验</h3>
+      <div id="detail">
+	2011-08至2011-09&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.sinuo19.com" target="_blank">丝诺纺织公司网站</a><br/>
+        所用技术：rails 3、extjs、kindeditor、jquery、git、github<br/>
+        <div class="pbr"></div>
+	011-04至2011-06&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://hanbaopower.greenserver.cn" target="_blank">悍豹电瓶公司网站</a><br/>
+        <b>所用技术：</b>rails 2.3、extjs、ckditor、jquery<br/>
+        <div class="pbr"></div>
+	2010-08至2011-04&nbsp;&nbsp;&nbsp;&nbsp;济南段动车检修管理系统<br/>
+        <b>所用技术：</b>rails 3、extjs<br/>
+        <div class="pbr"></div>
+	2010-06至2010-08&nbsp;&nbsp;&nbsp;&nbsp;浩海网络采购竞价平台系统<br/>
+        <b>所用技术：</b>rails 2(升级为rails3)、extjs<br/>
+        <div class="pbr"></div>
+	2010-02至2010-06&nbsp;&nbsp;&nbsp;&nbsp;青岛安监局危险源视频监控系统<br/>
+        <b>所用技术：</b>java、extjs、VLC、spring MVC、hibernate<br/>
+        <div class="pbr"></div>
+	2009-12至2010-03&nbsp;&nbsp;&nbsp;&nbsp;崂山党校校园管理系统<br/>
+        <b>所用技术：</b>rails 2(升级为rails3)、extjs<br/>
+        <div class="pbr"></div>
+	2009-09至2010-01&nbsp;&nbsp;&nbsp;&nbsp;中国海洋大学日常零星物资采购系统<br/>
+        <b>所用技术：</b>rails 2(升级为rails3)、extjs<br/>
+      </div>
+    </div>
+    <div class="br">
+    </div>
+    <div id="footer">
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+
+    <title>管理员管理</title>
+    <script type="text/javascript">
+      var editJobWin;
+      var newJobWin;
+      var jobId;
+      Ext.onReady(function(){
+
+        var jobDS = new Ext.data.Store({
+          paramNames: {
+            start: "start",
+            limit: "limit"
+          },
+          baseParams: {
+            start: 0,
+            limit: pageSize
+          },
+          proxy: new Ext.data.HttpProxy({
+            url: '/admin/job/get_jobs'
+          }),
+          reader: new Ext.data.JsonReader({
+            totalProperty: 'totalProperty',
+            root: 'root'
+          }, [
+            {name: 'id'},
+            {name: 'subject'},
+            {name: 'company_name'},
+            {name: 'email'},
+            {name: 'created_at'}
+          ])
+        });
+        var jobSM = new Ext.grid.CheckboxSelectionModel();
+        var jobCM = new Ext.grid.ColumnModel([
+          new Ext.grid.RowNumberer(),jobSM,
+          {header: '主题',dataIndex: 'subject',width:300},
+          {header: '公司名称',dataIndex: 'company_name',width:300},
+          {header: '邮箱',dataIndex: 'email',width:300},
+          {header: '申请时间',dataIndex: 'created_at',width:120,renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')}
+        ]);
+
+        var addJobButton = new Ext.Button({
+          text: '发送简历',
+          width: 50,
+          iconCls: 'addItem',
+          handler: function(){
+            newJobWin = new Ext.Window({
+              width: 317,
+              height: 250,
+              closeAction: 'destroy',
+              modal: true,
+              title: '发送简历',
+              autoLoad: {
+                url: '/admin/job/new',
+                scripts: true
+              }
+            });
+            newJobWin.on('destroy',function(){
+              jobDS.reload();
+            });
+            newJobWin.resizable = false;
+            newJobWin.show();
+          }
+        })
+
+        var editJobButton = new Ext.Button({
+          text: '编辑Job',
+          width: 50,
+          iconCls: 'editItem',
+          handler: function(){
+            var records = jobGrid.getSelectionModel().getSelections();
+            if(records.length == 0){
+              Ext.MessageBox.alert('提示信息','请选择要编辑的数据');
+            }else{
+              jobId = records[0].get('id');
+              editJobWin = new Ext.Window({
+                title: '编辑Job',
+                width: 317,
+                height: 250,
+                closeAction: 'destroy',
+                modal: true,
+                autoLoad: {
+                  url: '/admin/job/'+jobId,
+                  scripts: true
+                }
+              });
+              editJobWin.on('destroy',function(){
+                jobDS.reload();
+              })
+              editJobWin.resizable = false;
+              editJobWin.show()
+            }
+          }
+        })
+
+        var delJobButton = new Ext.Button({
+          text: '删除job',
+          width: 50,
+          iconCls: 'remove',
+          handler: function(){
+            if(jobGrid.getSelectionModel().hasSelection()){
+              var rs = jobGrid.getSelectionModel().getSelections();
+              var ids = [];
+              var name = '';
+              for(var i = 0 ; i < rs.length ; i++){
+                var data = rs[i].data
+                ids.push(data.id);
+                name += data.company_name + '<br />'
+              }
+              var keys = Ext.util.JSON.encode(ids)
+              Ext.MessageBox.confirm('警告','确定删除job?<br /><font color="red">' + name + '</font>',function(button){
+                if(button == 'yes'){
+                  Ext.Ajax.request({
+                    url: '/admin/job/destroy_list',
+                    method: 'post',
+                    success: function(response,opts){
+                      var data = Ext.util.JSON.decode(response.responseText);
+                      if(data.success&&data.info == 'success'){
+                        jobDS.reload();
+                      }else{
+                        Ext.Msg.alert('提示',data.info);
+                      }
+
+                    },
+                    params:{'id':keys}
+                  })
+                }
+              })
+            }else{
+              Ext.MessageBox.alert('提示','请选择要删除的job');
+            }
+          }
+        })
+        var jobGrid =  new Ext.grid.GridPanel({
+          ds: jobDS,
+          cm: jobCM,
+          sm: jobSM,
+          width: screenWidth-425,
+          height: screenHeight-338,
+          iconCls: 'icon-grid',
+          tbar:['-',addJobButton,editJobButton,delJobButton],
+          bbar: new Ext.PagingToolbar({
+            pageSize: pageSize,
+            store: jobDS,
+            displayInfo: true,
+            displayMsg: "显示第 {0} 条到 {1} 条记录，一共 {2} 条",
+            emptyMsg: "没有记录"
+          })
+        });
+        jobGrid.render('job_list');
+        jobDS.load();
+
+      })
+
+    </script>
+  </head>
+
+  <body>
+    <div id="job_list"></div>
+  </body>
+</html>

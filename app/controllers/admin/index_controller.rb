@@ -54,6 +54,16 @@ class Admin::IndexController < ApplicationController
           }
         ]
       },
+      # === 招聘 ===
+      { :id => 2, :name => '应聘', :image => '/images/icons/plugin.gif',
+        :url => 'messages', :qtip => '应聘', :leaf => false,
+        :children => [
+          # --- 用户管理 ---
+          { :id => 20, :name => '应聘列表', :image => '/images/icons/plugin.gif',
+            :url => '/admin/job', :qtip => '应聘列表', :leaf => true
+          }
+        ]
+      },
       # === 后台管理 ===
       { :id => 3, :name => '后台管理', :image => '/images/icons/plugin.gif',
         :url => 'admins', :qtip => '后台管理', :leaf => false,

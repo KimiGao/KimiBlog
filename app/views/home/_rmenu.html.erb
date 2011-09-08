@@ -15,7 +15,7 @@
  <h2>Tags Cloud</h2>
  <div class="right_bg">
      <div class="right_grad">
-         <%=raw cloud_tag(tag_link_hash,height="230",width="280")%>
+         <%=raw cloud_tag(tag_link_hash,"230","280")%>
      </div>
  </div>
  <div class="right_bot"></div>
@@ -26,7 +26,6 @@
          <div class="recent">
              <ul>
                  <%= render :partial => "home/post",:collection => posts%>
-
              </ul>
          </div>
      </div>

@@ -1,0 +1,6 @@
+.bundle
+db/*.sqlite3
+log/
+tmp/
+nbproject/
+config/initializers/send_mail.rb
