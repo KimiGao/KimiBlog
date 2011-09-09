@@ -1,8 +1,6 @@
 class BlogsController < ApplicationController
   before_filter :get_recent_posts
   
-  caches_page :index,:show
-
   def index
     @tag = params[:tag]
     @blogs = Blog.where('tag_name like ?','%'+params[:tag].to_s+'%').order('updated_at DESC').paginate(:page => params[:page]||1,:per_page => 50)

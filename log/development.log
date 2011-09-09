@@ -9977,3 +9977,117 @@ Rendered home/_post.html.erb (0.4ms)
 Rendered home/_rmenu.html.erb (56.4ms)
 Rendered home/index.html.erb within layouts/home (68.4ms)
 Completed 200 OK in 78ms (Views: 71.0ms | ActiveRecord: 0.4ms)
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from E:/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 09 11:35:58 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (140.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (118.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[35mTag Load (65.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (119.0ms)
+Rendered home/index.html.erb within layouts/home (272.0ms)
+Completed 200 OK in 872ms (Views: 234.0ms | ActiveRecord: 206.0ms)
+
+
+Started GET "/messages/messages_list" for 127.0.0.1 at Fri Sep 09 11:50:28 +0800 2011
+  Processing by MessagesController#messages_list as HTML
+  [1m[35mMessage Load (85.0ms)[0m  SELECT `messages`.* FROM `messages`
+Completed   in 198ms
+
+ActionView::MissingTemplate (Missing template messages/messages_list with {:handlers=>[:erb, :rjs, :rhtml, :rxml, :builder], :locale=>[:en, :en], :formats=>[:html]} in view paths "E:/apps/rails_apps/KimiBlog/app/views", "E:/apps/rails_apps/KimiBlog/vendor/plugins/cloud_tag/app/views", "D:/Ruby/lib/ruby/gems/1.8/gems/rails_kindeditor-0.0.2/app/views"):
+  
+
+Rendered D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Sep 09 11:50:32 +0800 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (1.0ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (blog_id is null) ORDER BY created_at[0m
+Rendered home/_message.html.erb (12.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[35mTag Load (1.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (17.0ms)
+Rendered home/_rmenu.html.erb (58.0ms)
+Rendered messages/index.html.erb within layouts/messages (106.0ms)
+Completed 200 OK in 172ms (Views: 131.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Fri Sep 09 11:51:47 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[35mBlog Load (2.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC
+Rendered home/_blog.html.erb (18.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (2.0ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (2.0ms)
+Rendered home/_rmenu.html.erb (44.0ms)
+Rendered home/index.html.erb within layouts/home (94.0ms)
+Write page E:/apps/rails_apps/KimiBlog/public/home.html (2.0ms)
+Completed 200 OK in 142ms (Views: 119.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/about/test" for 127.0.0.1 at Fri Sep 09 12:03:48 +0800 2011
+  Processing by AboutController#test as HTML
+Rendered text template (0.0ms)
+Write page E:/apps/rails_apps/KimiBlog/public/about/test.html (69.0ms)
+Completed 200 OK in 96ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/test" for 127.0.0.1 at Fri Sep 09 12:06:45 +0800 2011
+  Processing by AboutController#test as HTML
+Rendered text template (0.0ms)
+Write page E:/apps/rails_apps/KimiBlog/public/about/test.html (2.0ms)
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/test" for 127.0.0.1 at Fri Sep 09 12:07:22 +0800 2011
+  Processing by AboutController#test as HTML
+Read fragment views/localhost:3000/about/test (0.0ms)
+Rendered text template (0.0ms)
+Write fragment views/localhost:3000/about/test (15.0ms)
+Completed 200 OK in 34ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/test" for 127.0.0.1 at Fri Sep 09 12:07:30 +0800 2011
+  Processing by AboutController#test as HTML
+Read fragment views/localhost:3000/about/test (1.0ms)
+Completed 200 OK in 16ms
+
+
+Started GET "/about/test" for 127.0.0.1 at Fri Sep 09 12:08:00 +0800 2011
+  Processing by AboutController#test as HTML
+Read fragment views/localhost:3000/about/test (1.0ms)
+Completed 200 OK in 15ms
+
+
+Started GET "/about/test" for 127.0.0.1 at Fri Sep 09 12:08:31 +0800 2011
+  Processing by AboutController#test as HTML
+Read fragment views/localhost:3000/about/test (1.0ms)
+Rendered text template (0.0ms)
+Write fragment views/localhost:3000/about/test (7.0ms)
+Completed 200 OK in 25ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/test" for 127.0.0.1 at Fri Sep 09 12:08:37 +0800 2011
+  Processing by AboutController#test as HTML
+Read fragment views/localhost:3000/about/test (1.0ms)
+Completed 200 OK in 19ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 09 12:28:29 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (2.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+Rendered home/_blog.html.erb (17.0ms)
+Rendered home/_header.html.erb (0.0ms)
+  [1m[35mTag Load (0.0ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (1.0ms)
+Rendered home/_rmenu.html.erb (40.0ms)
+Rendered home/index.html.erb within layouts/home (89.0ms)
+Write page E:/apps/rails_apps/KimiBlog/public/index.html (2.0ms)
+Completed 200 OK in 133ms (Views: 114.0ms | ActiveRecord: 3.0ms)
