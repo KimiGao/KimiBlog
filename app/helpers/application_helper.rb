@@ -38,8 +38,8 @@ module ApplicationHelper
     end
   end
 
-  def show_time time
-    time.strftime("%Y/%m/%d")
+  def format_time create_time
+    create_time.strftime("%Y-%m-%d %I:%M")
   end
 
 end

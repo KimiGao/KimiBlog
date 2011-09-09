@@ -1,6 +1,10 @@
 class Admin::MessagesController < ApplicationController
   before_filter :user_authorize
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> f8fc94b4a9a0b597ae4ffe2200f9432ad5667772
   def get_messages
     messages = Message.board.offset(params[:start].to_i).limit(params[:limit].to_i)
     render :text => get_json(Message.count,messages.to_json),:layout => false
@@ -13,7 +17,7 @@ class Admin::MessagesController < ApplicationController
 
   def create
     message = Message.new(params[:message])
-    result = get_result(message.save ? 'success' : '保存出错，请重新操作')
+    result = get_result(message.save ? 'success' : message.errors.to_s)
     render :text => result,:layout => false
   end
 

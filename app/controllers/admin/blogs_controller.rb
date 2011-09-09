@@ -11,6 +11,8 @@ class Admin::BlogsController < ApplicationController
     if blog.save
       result = 'success'
       create_tag params[:blog][:tag_name]
+
+      expire_page :controller => :blogs,:action => :index
     else
       result = '保存出错，请重新操作'
     end
@@ -22,6 +24,9 @@ class Admin::BlogsController < ApplicationController
     if blog.update_attributes(params[:blog])
       result = 'success'
       create_tag params[:blog][:tag_name]
+
+      expire_page :controller => :blogs,:action => :index
+      expire_page :controller => :blogs,:action => :show, :id => params[:id]
     else
       result = '更新出错，请重新操作'
     end
@@ -41,6 +46,12 @@ class Admin::BlogsController < ApplicationController
       ids = params[:id][1..params[:id].length-2].split(',')
       Blog.destroy(ids)
       info = 'success'
+
+      ids.each do |id|
+        expire_page :controller => :blogs,:action => :show, :id => id
+      end
+      expire_page :controller => :blogs, :action => :index
+      expire_page :controller => :home, :action => :index
     rescue Exception => e
       logger.error e.to_s
       info = "删除异常"

@@ -329,8 +329,9 @@ body
     text-decoration:none;
 }
 #date {
+    float: left;
     color: #0000ff;
-    padding-right: 470px;
+    margin-left: 10px;
     display: inline;
 }
 
