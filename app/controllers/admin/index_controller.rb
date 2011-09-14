@@ -1,11 +1,13 @@
 class Admin::IndexController < ApplicationController
   before_filter :user_authorize,:except => [:login,:validate_user]
 
+  #注销
   def logout
     reset_session
     redirect_to "/admin/login"
   end
 
+  #登录验证
   def validate_user
     begin
       admin = Admin.validate_user params[:login_name],params[:login_pwd]
@@ -22,13 +24,15 @@ class Admin::IndexController < ApplicationController
 
     render :text => get_result(info),:layout => false
   end
-  
+
+  #后台首页
   def index
     @menus = @@menus_map[1].to_json
   end
 
   private
 
+  #后台管理界面功能列表
   @@menus_map = {
     1 => [
       # === 博客管理 ===

@@ -10,6 +10,7 @@ class Admin::JobController < ApplicationController
     job = Job.new(params[:job])
     if job.save
       result = 'success'
+      #创建成功即可发送简历
       JobMailer.job_email(job).deliver
     else
       result = job.errors.to_s

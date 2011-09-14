@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_filter :get_recent_posts
 
+  #留言板
   def index
     @messages = Message.board
     @message = Message.new
@@ -14,6 +15,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  #留言版留言
   def comment
     @message = Message.new(params[:message])
 
