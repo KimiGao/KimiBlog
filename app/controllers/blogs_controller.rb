@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_filter :get_recent_posts
   
-  caches_page :index,:show
+  #caches_page :index,:show
 
   def index
     @tag = params[:tag]
@@ -10,6 +10,8 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @blog.r_number += 1
+    @blog.save
     @message = Message.new
   end
 

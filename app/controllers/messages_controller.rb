@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_filter :get_recent_posts
 
+  #caches_page :index,:messages_list
   def index
     @messages = Message.board
     @message = Message.new

@@ -2,4 +2,4 @@
 <div class="text">
     <%=raw blog.content%>
 </div>
-<div class="read"><div id="date">更新日期：<%= format_time(blog.updated_at)%></div><a href="/blog/<%= blog.id%>#comment">comments</a></div>
+<%= render :partial => "blogs/info", :object => blog %>

@@ -1,10 +1,6 @@
 class Admin::AdminsController < ApplicationController
   before_filter :user_authorize
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> f8fc94b4a9a0b597ae4ffe2200f9432ad5667772
   def get_admins
     admins = Admin.all
     render :text => get_json(Admin.count,admins.to_json),:layout => false

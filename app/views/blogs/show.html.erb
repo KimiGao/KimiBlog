@@ -4,12 +4,12 @@
     <div class="text">
       <%=raw  @blog.content%>
     </div>
-    <div class="read"><div id="date">更新日期：<%= format_time(@blog.updated_at)%></div><a href="/blogs/<%= @blog.id%>#comment">comments</a></div>
-    
+    <%= render :partial => "blogs/info", :object => @blog%>
+
     <div id="message_content"></div>
     <h1><a href="#center">留言</a></h1>
        <div class="text">
-          <%= show_message @blog.messages%>     
+          <%=h show_message @blog.messages%>     
        </div>
        <div class="message_end"></div>
        
