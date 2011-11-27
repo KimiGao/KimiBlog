@@ -4,9 +4,6 @@ class JobMailer < ActionMailer::Base
 
   def job_email(job)
     @job = job
-    mail(:to => job.email,:subject => job.subject) do |format|
-      format.text
-      format.html
-    end
+    mail(:to => job.email,:subject => job.subject)
   end
 end

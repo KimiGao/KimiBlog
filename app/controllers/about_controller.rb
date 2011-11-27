@@ -1,6 +1,6 @@
 class AboutController < ApplicationController
   before_filter :get_recent_posts
-
+  
   def index
     @about = Aboutme.first
   end

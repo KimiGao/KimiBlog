@@ -12,7 +12,7 @@ class Admin::BlogsController < ApplicationController
       result = 'success'
       create_tag params[:blog][:tag_name]
 
-      expire_page :controller => :blogs,:action => :index
+      #expire_page :controller => :blogs,:action => :index
     else
       result = '保存出错，请重新操作'
     end
@@ -25,8 +25,8 @@ class Admin::BlogsController < ApplicationController
       result = 'success'
       create_tag params[:blog][:tag_name]
 
-      expire_page :controller => :blogs,:action => :index
-      expire_page :controller => :blogs,:action => :show, :id => params[:id]
+#      expire_page :controller => :blogs,:action => :index
+#      expire_page :controller => :blogs,:action => :show, :id => params[:id]
     else
       result = '更新出错，请重新操作'
     end
@@ -47,11 +47,11 @@ class Admin::BlogsController < ApplicationController
       Blog.destroy(ids)
       info = 'success'
 
-      ids.each do |id|
-        expire_page :controller => :blogs,:action => :show, :id => id
-      end
-      expire_page :controller => :blogs, :action => :index
-      expire_page :controller => :home, :action => :index
+#      ids.each do |id|
+#        expire_page :controller => :blogs,:action => :show, :id => id
+#      end
+#      expire_page :controller => :blogs, :action => :index
+#      expire_page :controller => :home, :action => :index
     rescue Exception => e
       logger.error e.to_s
       info = "删除异常"
@@ -79,6 +79,7 @@ class Admin::BlogsController < ApplicationController
 
   private
 
+  #创建tag
   def create_tag tag_names
     tags = tag_names.split(",")
     tags.each do |tag|

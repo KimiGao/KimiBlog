@@ -1,11 +1,13 @@
 class Admin::AdminsController < ApplicationController
   before_filter :user_authorize
 
+  #获取所有admin
   def get_admins
     admins = Admin.all
     render :text => get_json(Admin.count,admins.to_json),:layout => false
   end
 
+  #创建admin
   def create
     admin = Admin.new(params[:admin])
     result = get_result(admin.save ? 'success' : admin.errors.to_s)
@@ -30,6 +32,7 @@ class Admin::AdminsController < ApplicationController
     end
   end
 
+  #批量删除admin
   def destroy_list
     begin
       ids = params[:id][1..params[:id].length-2].split(',')
