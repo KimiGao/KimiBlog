@@ -11923,3 +11923,100 @@ Started POST "/admin/job/get_jobs" for 127.0.0.1 at Tue Sep 13 14:05:02 +0800 20
 Rendered text template (0.0ms)
 Completed 200 OK in 28ms (Views: 1.0ms | ActiveRecord: 1.0ms)
 >>>>>>> 590d412dfde076fe024a51cddf1dd618d1bae428
+DEPRECATION WARNING: Calling a method in Rails::Application is deprecated, please call it directly in your application constant KimiBlog::Application. (called from /home/kimi/apps/rails_apps/KimiBlog/config/environment.rb:5)
+
+
+Started GET "/home" for 127.0.0.1 at Sun Nov 27 16:12:03 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 10)
+Rendered blogs/_info.html.erb (15.1ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 9)[0m
+Rendered blogs/_info.html.erb (1.6ms)
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 8)
+Rendered blogs/_info.html.erb (1.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 7)[0m
+Rendered blogs/_info.html.erb (1.3ms)
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 6)
+Rendered blogs/_info.html.erb (1.3ms)
+Rendered home/_blog.html.erb (37.5ms)
+Rendered home/_header.html.erb (0.3ms)
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (0.3ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (0.6ms)
+Rendered home/_rmenu.html.erb (12.9ms)
+Rendered home/index.html.erb within layouts/home (55.8ms)
+Completed 200 OK in 123ms (Views: 57.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at Sun Nov 27 16:12:18 +0800 2011
+  Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` WHERE (tag_name like '%%') ORDER BY updated_at DESC[0m
+Rendered blogs/_blog.html.erb (11.5ms)
+Rendered home/_header.html.erb (0.2ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (0.6ms)
+Rendered home/_rmenu.html.erb (13.6ms)
+Rendered blogs/index.html.erb within layouts/blogs (29.7ms)
+Completed 200 OK in 41ms (Views: 32.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at Sun Nov 27 16:12:33 +0800 2011
+  Processing by HomeController#index as HTML
+  [1m[35mBlog Load (0.3ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 10)[0m
+Rendered blogs/_info.html.erb (9.6ms)
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 9)
+Rendered blogs/_info.html.erb (1.5ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 8)[0m
+Rendered blogs/_info.html.erb (1.2ms)
+  [1m[35mMessage Load (0.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 7)
+Rendered blogs/_info.html.erb (1.8ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 6)[0m
+Rendered blogs/_info.html.erb (1.4ms)
+Rendered home/_blog.html.erb (31.4ms)
+Rendered home/_header.html.erb (0.2ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (0.6ms)
+Rendered home/_rmenu.html.erb (12.9ms)
+Rendered home/index.html.erb within layouts/home (49.5ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/blogs/10" for 127.0.0.1 at Sun Nov 27 16:12:37 +0800 2011
+  Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT `blogs`.* FROM `blogs` WHERE `blogs`.`id` = 10 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE `blogs` SET `updated_at` = '2011-11-27 08:12:37', `r_number` = 9 WHERE `blogs`.`id` = 10[0m
+  [1m[35mSQL (54.9ms)[0m  COMMIT
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 10)[0m
+Rendered blogs/_info.html.erb (3.4ms)
+Rendered home/_header.html.erb (0.2ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT `tags`.* FROM `tags`
+  [1m[36mBlog Load (1.0ms)[0m  [1mSELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10[0m
+Rendered home/_post.html.erb (0.6ms)
+Rendered home/_rmenu.html.erb (13.8ms)
+Rendered blogs/show.html.erb within layouts/blogs (29.6ms)
+Completed 200 OK in 119ms (Views: 31.2ms | ActiveRecord: 57.2ms)
+
+
+Started GET "/blogs/10" for 127.0.0.1 at Sun Nov 27 16:12:41 +0800 2011
+  Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mBlog Load (0.4ms)[0m  SELECT `blogs`.* FROM `blogs` WHERE `blogs`.`id` = 10 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE `blogs` SET `r_number` = 10, `updated_at` = '2011-11-27 08:12:41' WHERE `blogs`.`id` = 10
+  [1m[36mSQL (59.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE (`messages`.blog_id = 10)
+Rendered blogs/_info.html.erb (3.2ms)
+Rendered home/_header.html.erb (0.2ms)
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT `tags`.* FROM `tags`[0m
+  [1m[35mBlog Load (0.9ms)[0m  SELECT `blogs`.* FROM `blogs` ORDER BY created_at DESC LIMIT 10
+Rendered home/_post.html.erb (1.5ms)
+Rendered home/_rmenu.html.erb (17.2ms)
+Rendered blogs/show.html.erb within layouts/blogs (32.5ms)
+Completed 200 OK in 128ms (Views: 34.4ms | ActiveRecord: 61.6ms)

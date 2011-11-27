@@ -1,10 +1,5 @@
 class BlogsController < ApplicationController
   before_filter :get_recent_posts
-<<<<<<< HEAD
-  
-  #caches_page :index,:show
-=======
->>>>>>> 590d412dfde076fe024a51cddf1dd618d1bae428
 
   #获取博客列表
   def index
